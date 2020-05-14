@@ -1,0 +1,8 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,payAmount,payeeOutUserId,remark,profitOutUserId,profitAmount,profitPercent,profitRemark
+1001,FAIL,~C0023,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~outuseridenterprise00001,只收钱不分钱,,,,
+1002,FAIL,~C0023,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~outuseridenterprise00001,,~hft00000001111111,0.05,,拿钥匙的给0.05块
+1003,FAIL,~C0023,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,~11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111,~outuseridenterprise00001,0.05,,拿钥匙的给0.05块
+1004,FAIL,~comn_06_0001,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00002,0.05,,拿钥匙的给0.05块
+1005,FAIL,~comn_06_0001,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00002,0.05,,拿钥匙的给0.05块
+1006,FAIL,~comn_06_0001,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00002,0.05,0.5,拿钥匙的给0.05块
+1007,FAIL,~comn_06_0001,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00002,0.05,0.5,~11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111

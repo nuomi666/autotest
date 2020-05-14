@@ -1,0 +1,4 @@
+testId,status,code,permissionId,deviceType,name,name1,permissionCode,permissionCode1,url,category,resourceType,orderNo,order-->,gid,deviceType_order,parentId,name_order,code_order,url_order,resourceType_order,permissionCategory,orderNo_order,icon,memo,permissionId_order
+1001,FAIL,~comn_00_0000,OID,BOSS,统计报表,财务报表,MENU0482,MENU0483,#,COMMON,MENU,1,,GID,POS,,现金支付方式,cashPay,01,MENU,COMMON,1,,,OID
+1002,FAIL,~comn_00_0000,OID,BOSS,统计报表,财务报表,MENU0482,MENU0483,#,COMMON,MENU,1,,GID,POS,,现金支付方式,cashPay,01,MENU,COMMON,1,,,OID
+1003,FAIL,~comn_00_0000,OID,BOSS,统计报表,财务报表,MENU0482,MENU0483,#,COMMON,MENU,1,,GID,POS,,现金支付方式,cashPay,MENU0483,MENU,COMMON,1,,,OID

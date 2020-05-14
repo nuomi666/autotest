@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,deviceType,parentId,name,code_order,url,resourceType,orderNo,icon,memo
+1001,FAIL,~comn_00_0000,,,BOSS,,油站员工新增限,station_staff_add,/coupon/delete,FUNCTION,3,我是图标,配置油站员工权限的

@@ -1,0 +1,4 @@
+testId,status,code,deviceType,deviceType1,parentId,permissionId,permissionId1,permissionId2,parentName,name,name1,name2,parentCode,permissionCode,permissionCode1,permissionCode2,url,url1,url2,url3,category,category1,resourceType,resourceType1,orderNo,orderNo1,orderNo2,order-->,gid,pageNo,pageSize,deviceType_order,resourceType_order,permissionCategory,name_order
+1001,SUCCESS,~comn_00_0000,BOSS,POS,OID,OID,OID,OID,油站中心,油站管理,员工管理,电子发票,stationCenter,stations,operators,invoice,1,2,3,4,COMMON,COMMON,MENU,MENU,1,2,3,,GID,1,10,BOSS,,,
+1002,SUCCESS,~comn_00_0000,BOSS,BOSS,OID,OID,OID,OID,油站中心,油站管理,员工管理,电子发票,stationCenter,stations,operators,invoice,1,2,3,4,COMMON,STATION,MENU,MENU,1,2,3,,GID,2,2,BOSS,,COMMON,
+1003,SUCCESS,~comn_00_0000,BOSS,H5,OID,OID,OID,OID,油站中心,油站管理,员工管理,油站中心,stationCenter,stations,operators,invoice,1,2,3,4,COMMON,COMMON,MENU,FUNCTION,1,2,3,,GID,1,10,BOSS,MENU,,油站中心

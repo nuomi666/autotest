@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.jhy.PRefundDAO">
+  <resultMap id="BaseResultMap" type="dal.model.jhy.PRefundDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="REFUND_NO" jdbcType="VARCHAR" property="refundNo" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="ORDER_NO" jdbcType="VARCHAR" property="orderNo" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="LOGIN_NO" jdbcType="VARCHAR" property="loginNo" />
+    <result column="SUPPLIER_ID" jdbcType="VARCHAR" property="supplierId" />
+    <result column="SHOP_ID" jdbcType="VARCHAR" property="shopId" />
+    <result column="SELLER_LOGIN_NO" jdbcType="VARCHAR" property="sellerLoginNo" />
+    <result column="REFUND_AMOUNT" jdbcType="INTEGER" property="refundAmount" />
+    <result column="ORDER_AMOUNT" jdbcType="INTEGER" property="orderAmount" />
+    <result column="APPLY_DATE" jdbcType="TIMESTAMP" property="applyDate" />
+    <result column="REFUND_REASON" jdbcType="VARCHAR" property="refundReason" />
+    <result column="REFUND_TYPE" jdbcType="VARCHAR" property="refundType" />
+    <result column="SELLER_REFUSE_REASON" jdbcType="VARCHAR" property="sellerRefuseReason" />
+    <result column="HANDLE_DATE" jdbcType="TIMESTAMP" property="handleDate" />
+    <result column="RETURN_DATE" jdbcType="TIMESTAMP" property="returnDate" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="BIGINT" property="versionId" />
+    <result column="PAY_NO" jdbcType="VARCHAR" property="payNo" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, REFUND_NO, STATUS, ORDER_NO, USER_ID, LOGIN_NO, SUPPLIER_ID, SHOP_ID, SELLER_LOGIN_NO, 
+    REFUND_AMOUNT, ORDER_AMOUNT, APPLY_DATE, REFUND_REASON, REFUND_TYPE, SELLER_REFUSE_REASON, 
+    HANDLE_DATE, RETURN_DATE, REMARK, CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, 
+    MARK_DELETE, VERSION_ID, PAY_NO
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.jhy.PRefundDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from p_refund
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.jhy.PRefundDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from p_refund
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.jhy.PRefundDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from p_refund
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_refund
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refundNo != null">
+        REFUND_NO = #{record.refundNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNo != null">
+        ORDER_NO = #{record.orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loginNo != null">
+        LOGIN_NO = #{record.loginNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierId != null">
+        SUPPLIER_ID = #{record.supplierId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopId != null">
+        SHOP_ID = #{record.shopId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerLoginNo != null">
+        SELLER_LOGIN_NO = #{record.sellerLoginNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refundAmount != null">
+        REFUND_AMOUNT = #{record.refundAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderAmount != null">
+        ORDER_AMOUNT = #{record.orderAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyDate != null">
+        APPLY_DATE = #{record.applyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.refundReason != null">
+        REFUND_REASON = #{record.refundReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refundType != null">
+        REFUND_TYPE = #{record.refundType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerRefuseReason != null">
+        SELLER_REFUSE_REASON = #{record.sellerRefuseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleDate != null">
+        HANDLE_DATE = #{record.handleDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.returnDate != null">
+        RETURN_DATE = #{record.returnDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.payNo != null">
+        PAY_NO = #{record.payNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_refund
+    set ID = #{record.id,jdbcType=VARCHAR},
+      REFUND_NO = #{record.refundNo,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      ORDER_NO = #{record.orderNo,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      LOGIN_NO = #{record.loginNo,jdbcType=VARCHAR},
+      SUPPLIER_ID = #{record.supplierId,jdbcType=VARCHAR},
+      SHOP_ID = #{record.shopId,jdbcType=VARCHAR},
+      SELLER_LOGIN_NO = #{record.sellerLoginNo,jdbcType=VARCHAR},
+      REFUND_AMOUNT = #{record.refundAmount,jdbcType=INTEGER},
+      ORDER_AMOUNT = #{record.orderAmount,jdbcType=INTEGER},
+      APPLY_DATE = #{record.applyDate,jdbcType=TIMESTAMP},
+      REFUND_REASON = #{record.refundReason,jdbcType=VARCHAR},
+      REFUND_TYPE = #{record.refundType,jdbcType=VARCHAR},
+      SELLER_REFUSE_REASON = #{record.sellerRefuseReason,jdbcType=VARCHAR},
+      HANDLE_DATE = #{record.handleDate,jdbcType=TIMESTAMP},
+      RETURN_DATE = #{record.returnDate,jdbcType=TIMESTAMP},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=BIGINT},
+      PAY_NO = #{record.payNo,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

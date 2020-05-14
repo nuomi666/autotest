@@ -1,0 +1,9 @@
+testId,status,code,registerMerchantOrder-->,gid,partnerName,shortName,mobileNo,email,status_registerMerchantOrder,headImgUrl,sourceType,sourceKey,queryDepth,collectionModel
+1001,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1002,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1003,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1004,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1005,FAIL,~comn_00_0000,,,琪琪诺,诺,188888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1006,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qwe,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1007,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant
+1008,FAIL,~comn_00_0000,,,琪琪诺,诺,18888888888,5858@qq.com,ABLE,dadada,WeChat,wx80997fa3af6c5f10,2019-08-03 18:33:10,Merchant

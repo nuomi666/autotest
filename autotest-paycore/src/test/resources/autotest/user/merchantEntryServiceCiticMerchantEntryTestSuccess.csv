@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,subMerchantName,subMerchantAbbr,subMerchantAddress,subMerchantContact,subMerchantContactPhone,subMerchantEmail
+1001,SUCCESS,~comn_00_0000,,,,~20180615001234567890,,~20180615001234567890,,重庆市十三区,十三区,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qq.com
+1002,SUCCESS,~comn_00_0000,,,,~20180615001234567890,,~20180615001234567890,,重庆市爱车联,爱车,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qq.com
+1003,SUCCESS,~comn_00_0000,,,,~20180615001234567893,,~20180615001234567890,,重庆市大竹林1,竹林1,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qq.com

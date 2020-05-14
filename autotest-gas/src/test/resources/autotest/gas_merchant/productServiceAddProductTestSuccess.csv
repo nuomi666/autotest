@@ -1,0 +1,3 @@
+testId,status,code,permissionId,deviceType,name,permissionCode,url,category,resourceType,order-->,gid,productName,productType,productCategory,status_order,permissionList,memo
+1001,SUCCESS,~comn_00_0000,OID,BOSS,统计报表,MENU0482,finance/list,COMMON,MENU,,GID,统计报表,BOSS,COMMON,ABLE,,统计报表
+1002,SUCCESS,~comn_00_0000,OID,BOSS,统计报表,MENU0482,finance/list,COMMON,MENU,,GID,统计报表,BOSS,COMMON,ABLE,,统计报表

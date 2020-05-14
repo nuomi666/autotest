@@ -1,0 +1,2 @@
+testId,status,code,payway-->,paywayCode,paywayName,payway1-->,paywayCode1,paywayName1,order-->,gid,partnerId,platPartnerId,payways
+1001,SUCCESS,~comn_00_0000,,WECHAT,微信,,ALI,支付宝,,GID,,S0301909161100092061,

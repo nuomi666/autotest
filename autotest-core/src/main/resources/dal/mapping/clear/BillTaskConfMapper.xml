@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.clear.BillTaskConfDAO">
+  <resultMap id="BaseResultMap" type="dal.model.clear.BillTaskConfDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="partner_real_name" jdbcType="VARCHAR" property="partnerRealName" />
+    <result column="bill_channel_time" jdbcType="VARCHAR" property="billChannelTime" />
+    <result column="bill_time" jdbcType="VARCHAR" property="billTime" />
+    <result column="bill_cycle" jdbcType="INTEGER" property="billCycle" />
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId" />
+    <result column="use_status" jdbcType="CHAR" property="useStatus" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, partner_id, partner_real_name, bill_channel_time, bill_time, bill_cycle, channel_id, 
+    use_status, memo, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.clear.BillTaskConfDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bill_task_conf
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.clear.BillTaskConfDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from bill_task_conf
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.clear.BillTaskConfDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from bill_task_conf
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update bill_task_conf
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerRealName != null">
+        partner_real_name = #{record.partnerRealName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billChannelTime != null">
+        bill_channel_time = #{record.billChannelTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billTime != null">
+        bill_time = #{record.billTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billCycle != null">
+        bill_cycle = #{record.billCycle,jdbcType=INTEGER},
+      </if>
+      <if test="record.channelId != null">
+        channel_id = #{record.channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useStatus != null">
+        use_status = #{record.useStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update bill_task_conf
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      partner_real_name = #{record.partnerRealName,jdbcType=VARCHAR},
+      bill_channel_time = #{record.billChannelTime,jdbcType=VARCHAR},
+      bill_time = #{record.billTime,jdbcType=VARCHAR},
+      bill_cycle = #{record.billCycle,jdbcType=INTEGER},
+      channel_id = #{record.channelId,jdbcType=VARCHAR},
+      use_status = #{record.useStatus,jdbcType=CHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

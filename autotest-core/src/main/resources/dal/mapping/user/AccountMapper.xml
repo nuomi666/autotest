@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.user.AccountDAO">
+  <resultMap id="BaseResultMap" type="dal.model.user.AccountDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="account_no" jdbcType="VARCHAR" property="accountNo" />
+    <result column="band_account_no" jdbcType="VARCHAR" property="bandAccountNo" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="balance" jdbcType="BIGINT" property="balance" />
+    <result column="freeze_balance" jdbcType="BIGINT" property="freezeBalance" />
+    <result column="credit_amount" jdbcType="BIGINT" property="creditAmount" />
+    <result column="his_in_amount" jdbcType="BIGINT" property="hisInAmount" />
+    <result column="his_out_amount" jdbcType="BIGINT" property="hisOutAmount" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="account_type" jdbcType="VARCHAR" property="accountType" />
+    <result column="pay_model" jdbcType="VARCHAR" property="payModel" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, plat_partner_id, partner_id, account_no, band_account_no, user_id, balance, freeze_balance, 
+    credit_amount, his_in_amount, his_out_amount, status, account_type, pay_model, tag, 
+    memo, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.user.AccountDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.user.AccountDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.user.AccountDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update account
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountNo != null">
+        account_no = #{record.accountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bandAccountNo != null">
+        band_account_no = #{record.bandAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=BIGINT},
+      </if>
+      <if test="record.freezeBalance != null">
+        freeze_balance = #{record.freezeBalance,jdbcType=BIGINT},
+      </if>
+      <if test="record.creditAmount != null">
+        credit_amount = #{record.creditAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.hisInAmount != null">
+        his_in_amount = #{record.hisInAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.hisOutAmount != null">
+        his_out_amount = #{record.hisOutAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountType != null">
+        account_type = #{record.accountType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payModel != null">
+        pay_model = #{record.payModel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tag != null">
+        tag = #{record.tag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update account
+    set id = #{record.id,jdbcType=BIGINT},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      account_no = #{record.accountNo,jdbcType=VARCHAR},
+      band_account_no = #{record.bandAccountNo,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=BIGINT},
+      freeze_balance = #{record.freezeBalance,jdbcType=BIGINT},
+      credit_amount = #{record.creditAmount,jdbcType=BIGINT},
+      his_in_amount = #{record.hisInAmount,jdbcType=BIGINT},
+      his_out_amount = #{record.hisOutAmount,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=VARCHAR},
+      account_type = #{record.accountType,jdbcType=VARCHAR},
+      pay_model = #{record.payModel,jdbcType=VARCHAR},
+      tag = #{record.tag,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

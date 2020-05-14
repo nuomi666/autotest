@@ -1,0 +1,2 @@
+testId,status,code,partnerId,mobile,sourceKey,model,merchantStatus,account,password,operatorMobile,order-->,gid,userId
+1001,SUCCESS,~comn_00_0000,S0301910221500092102,18825814766,wxa2557eabb23b47e5,Merchant,ABLE,admin,123456,15525814777,,GID,

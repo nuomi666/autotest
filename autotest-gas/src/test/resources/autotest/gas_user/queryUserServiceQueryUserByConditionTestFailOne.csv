@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,pageNo,pageSize,partnerId,platPartnerId,mobile,sex,grades,startShortBirthday,endShortBirthday,birthdayStartTime,birthdayEndTime
+1001,FAIL,~comn_00_0000,,GID,1,10,S0301909161100092061,S0301909161100092061,,,,,,,
+1002,FAIL,~comn_00_0000,,GID,1,10,S0301909161100092061,S0301909161100092061,,,,,,,
+1003,FAIL,~comn_00_0000,,GID,1,10,S0301909161100092061,S0301909161100092061,,,,,,,

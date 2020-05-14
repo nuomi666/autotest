@@ -1,0 +1,7 @@
+testId,status,code,order-->,gid,pageNo,pageSize,partnerId,platPartnerId,deviceType,deviceCode,userId
+1001,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv
+1002,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv
+1003,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv
+1004,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv
+1005,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv
+1006,FAIL,~comn_00_0000,,,1,10,, S0301909161100092061,POS,3b6fe3a7,1jmwfv64p0g021hge6uv

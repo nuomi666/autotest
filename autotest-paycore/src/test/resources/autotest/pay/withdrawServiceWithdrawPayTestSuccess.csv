@@ -1,0 +1,2 @@
+testId,status,code,message,description,params,idempotent,info,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,externalMetaData,memo,extensionContext,notifyCategory,notifyUrl,notifyGroup,notifyVersion,userId,payAmount,bindNo,payChannel,delay
+1001,SUCCESS,~comn_00_0000,,,,,,,,~20180615001234567890,merchantOrderNo,~20180615001234567890,platMerchantOrderNo,externalMetaData,memo,,HTTP,http://rx.autotest.fun/api/receive.json,pay,~1.0,~20180615001234567891,1.1,abc,Wechat,0

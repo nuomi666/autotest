@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_merchant.GasMerchantCardRuleDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_merchant.GasMerchantCardRuleDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="range_start" jdbcType="INTEGER" property="rangeStart" />
+    <result column="range_end" jdbcType="INTEGER" property="rangeEnd" />
+    <result column="exclude_card_no" jdbcType="VARCHAR" property="excludeCardNo" />
+    <result column="exclude_number" jdbcType="VARCHAR" property="excludeNumber" />
+    <result column="valid_count" jdbcType="INTEGER" property="validCount" />
+    <result column="operator_account" jdbcType="VARCHAR" property="operatorAccount" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, partner_id, plat_partner_id, range_start, range_end, exclude_card_no, exclude_number, 
+    valid_count, operator_account, memo, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.gas_merchant.GasMerchantCardRuleDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_merchant_card_rule
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_merchant.GasMerchantCardRuleDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_merchant_card_rule
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_merchant.GasMerchantCardRuleDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_merchant_card_rule
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_merchant_card_rule
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rangeStart != null">
+        range_start = #{record.rangeStart,jdbcType=INTEGER},
+      </if>
+      <if test="record.rangeEnd != null">
+        range_end = #{record.rangeEnd,jdbcType=INTEGER},
+      </if>
+      <if test="record.excludeCardNo != null">
+        exclude_card_no = #{record.excludeCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.excludeNumber != null">
+        exclude_number = #{record.excludeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.validCount != null">
+        valid_count = #{record.validCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.operatorAccount != null">
+        operator_account = #{record.operatorAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_merchant_card_rule
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      range_start = #{record.rangeStart,jdbcType=INTEGER},
+      range_end = #{record.rangeEnd,jdbcType=INTEGER},
+      exclude_card_no = #{record.excludeCardNo,jdbcType=VARCHAR},
+      exclude_number = #{record.excludeNumber,jdbcType=VARCHAR},
+      valid_count = #{record.validCount,jdbcType=INTEGER},
+      operator_account = #{record.operatorAccount,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

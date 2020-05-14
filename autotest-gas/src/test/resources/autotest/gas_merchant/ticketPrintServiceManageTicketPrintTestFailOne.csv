@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,stationId,printOrders,printSleep,ticketPrintOrder-->,printType,printNum,memo
+1001,FAIL,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票
+1002,FAIL,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票
+1003,FAIL,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票
+1004,FAIL,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票
+1005,FAIL,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票

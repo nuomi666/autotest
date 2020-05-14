@@ -1,0 +1,5 @@
+testId,status,code,partnerId,mobile,sourceKey,stationCode,stationName,userType,roleType,roleName,deviceType,sourceName,account,password,operatorMobile,order-->,gid,userId
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,BOSS,Station,站长,BOSS,商家管理,nuomi,123456,18825814722,,GID,
+1002,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,DEVICE,Terminal,收银员,POS,,nuomi,123456,18825814722,,GID,
+1003,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,DEVICE,Nonoperation,地推员,POS,,nuomi,123456,18825814722,,GID,
+1004,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,DEVICE,Nonoperation,地推员,POS,,nuomi,123456,18825814722,,GID,OID

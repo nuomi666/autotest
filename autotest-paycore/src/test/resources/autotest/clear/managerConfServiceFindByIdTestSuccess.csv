@@ -1,0 +1,2 @@
+testId,GID_KEY,gid,id,id_billTaskConfDO,partnerId,billChannelTime,billTime,billCycle,channelId,useStatus,memo,rawAddTime,rawUpdateTime,id1,partnerId1,billChannelTime1,billTime1,billCycle1,channelId1,useStatus1,memo1,rawAddTime1,rawUpdateTime1,code,description
+1001,~gid,~12345678912345678912345678912345678,1,~1,~20180716001234567890,16:00:00,12:00:00,10,~20180716001,Y,备注1,~2018-07-25 00:00:00,~2018-07-25 00:00:00,~2,~20180716001234567877,14:00:00,11:00:00,12,~20180716233,N,备注2,~2018-07-24 00:00:00,~2018-07-24 00:00:00,comn_00_0000,处理成功

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.squid.TAppManagerDAO">
+  <resultMap id="BaseResultMap" type="dal.model.squid.TAppManagerDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="BIGINT" property="entityId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="TYPE" jdbcType="INTEGER" property="type" />
+    <result column="SERIAL_NUMBER" jdbcType="INTEGER" property="serialNumber" />
+    <result column="APP_VERSION" jdbcType="VARCHAR" property="appVersion" />
+    <result column="URL" jdbcType="VARCHAR" property="url" />
+    <result column="LOG" jdbcType="VARCHAR" property="log" />
+    <result column="MUST_UPDATE" jdbcType="INTEGER" property="mustUpdate" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, NAME, TYPE, SERIAL_NUMBER, APP_VERSION, URL, LOG, MUST_UPDATE, STATUS, 
+    MODIFIED_DATE, CREATED_USER, UPDATED_USER, VERSION_ID, CREATED_DATE, MARK_DELETE
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.squid.TAppManagerDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_app_manager
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.squid.TAppManagerDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from t_app_manager
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.squid.TAppManagerDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from t_app_manager
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_app_manager
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        TYPE = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.serialNumber != null">
+        SERIAL_NUMBER = #{record.serialNumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.appVersion != null">
+        APP_VERSION = #{record.appVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url != null">
+        URL = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.log != null">
+        LOG = #{record.log,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mustUpdate != null">
+        MUST_UPDATE = #{record.mustUpdate,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_app_manager
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=INTEGER},
+      SERIAL_NUMBER = #{record.serialNumber,jdbcType=INTEGER},
+      APP_VERSION = #{record.appVersion,jdbcType=VARCHAR},
+      URL = #{record.url,jdbcType=VARCHAR},
+      LOG = #{record.log,jdbcType=VARCHAR},
+      MUST_UPDATE = #{record.mustUpdate,jdbcType=INTEGER},
+      STATUS = #{record.status,jdbcType=INTEGER},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

@@ -1,0 +1,3 @@
+testId,status,code,partnerId,order-->,gid,partnerId_order,platPartnerId,mobile,openId,type,smsValidateCode,realName,birthday,nickName,headImgUrl,sex,carNumber,importSource,payPwd,rawAddTime,grade,operatorId
+1001,FAIL,~comn_00_0000,S0301909161100092061,,GID,S0301909161100092061,S0301909161100092061,18825814711,oHGRLvyg6vOHTd2smcSFBynOXMPo,WE_CHAT,9852,,,,,,,,,,,OID
+1002,FAIL,~comn_00_0000,S0301909161100092061,,GID,S0301909161100092061,S0301909161100092061,18825814711,oHGRLvyg6vOHTd2smcSFBynOXMPo,WE_CHAT,9852,,,,,,,,,,,OID

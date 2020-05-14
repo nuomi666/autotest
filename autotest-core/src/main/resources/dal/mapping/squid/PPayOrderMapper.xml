@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.squid.PPayOrderDAO">
+  <resultMap id="BaseResultMap" type="dal.model.squid.PPayOrderDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="order_no" jdbcType="CHAR" property="orderNo" />
+    <result column="pay_no" jdbcType="VARCHAR" property="payNo" />
+    <result column="out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="openid" jdbcType="CHAR" property="openid" />
+    <result column="account_id" jdbcType="VARCHAR" property="accountId" />
+    <result column="auth_code" jdbcType="CHAR" property="authCode" />
+    <result column="mch_id" jdbcType="INTEGER" property="mchId" />
+    <result column="order_fee" jdbcType="INTEGER" property="orderFee" />
+    <result column="oil" jdbcType="VARCHAR" property="oil" />
+    <result column="attach" jdbcType="VARCHAR" property="attach" />
+    <result column="oil_station" jdbcType="VARCHAR" property="oilStation" />
+    <result column="volume" jdbcType="DOUBLE" property="volume" />
+    <result column="station_lon" jdbcType="DOUBLE" property="stationLon" />
+    <result column="station_lat" jdbcType="DOUBLE" property="stationLat" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="profit_rate" jdbcType="DOUBLE" property="profitRate" />
+    <result column="profit_fee" jdbcType="INTEGER" property="profitFee" />
+    <result column="dis_account_id" jdbcType="CHAR" property="disAccountId" />
+    <result column="dis_fee" jdbcType="INTEGER" property="disFee" />
+    <result column="coupon_id" jdbcType="VARCHAR" property="couponId" />
+    <result column="coupon_fee" jdbcType="INTEGER" property="couponFee" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="notify_url" jdbcType="VARCHAR" property="notifyUrl" />
+    <result column="body" jdbcType="VARCHAR" property="body" />
+    <result column="time_expire" jdbcType="TIMESTAMP" property="timeExpire" />
+    <result column="pay_fee" jdbcType="INTEGER" property="payFee" />
+    <result column="order_day" jdbcType="CHAR" property="orderDay" />
+    <result column="pay_type" jdbcType="VARCHAR" property="payType" />
+    <result column="mch_station_id" jdbcType="VARCHAR" property="mchStationId" />
+    <result column="vice_card_no" jdbcType="VARCHAR" property="viceCardNo" />
+    <result column="invoice_id" jdbcType="VARCHAR" property="invoiceId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_no, pay_no, out_trade_no, openid, account_id, auth_code, mch_id, order_fee, 
+    oil, attach, oil_station, volume, station_lon, station_lat, status, pay_time, profit_rate, 
+    profit_fee, dis_account_id, dis_fee, coupon_id, coupon_fee, CREATED_USER, CREATED_DATE, 
+    UPDATED_USER, MODIFIED_DATE, MARK_DELETE, VERSION_ID, notify_url, body, time_expire, 
+    pay_fee, order_day, pay_type, mch_station_id, vice_card_no, invoice_id
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.squid.PPayOrderDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from p_pay_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.squid.PPayOrderDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from p_pay_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.squid.PPayOrderDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from p_pay_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_pay_order
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=CHAR},
+      </if>
+      <if test="record.orderNo != null">
+        order_no = #{record.orderNo,jdbcType=CHAR},
+      </if>
+      <if test="record.payNo != null">
+        pay_no = #{record.payNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.outTradeNo != null">
+        out_trade_no = #{record.outTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openid != null">
+        openid = #{record.openid,jdbcType=CHAR},
+      </if>
+      <if test="record.accountId != null">
+        account_id = #{record.accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authCode != null">
+        auth_code = #{record.authCode,jdbcType=CHAR},
+      </if>
+      <if test="record.mchId != null">
+        mch_id = #{record.mchId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderFee != null">
+        order_fee = #{record.orderFee,jdbcType=INTEGER},
+      </if>
+      <if test="record.oil != null">
+        oil = #{record.oil,jdbcType=VARCHAR},
+      </if>
+      <if test="record.attach != null">
+        attach = #{record.attach,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oilStation != null">
+        oil_station = #{record.oilStation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.volume != null">
+        volume = #{record.volume,jdbcType=DOUBLE},
+      </if>
+      <if test="record.stationLon != null">
+        station_lon = #{record.stationLon,jdbcType=DOUBLE},
+      </if>
+      <if test="record.stationLat != null">
+        station_lat = #{record.stationLat,jdbcType=DOUBLE},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payTime != null">
+        pay_time = #{record.payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.profitRate != null">
+        profit_rate = #{record.profitRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.profitFee != null">
+        profit_fee = #{record.profitFee,jdbcType=INTEGER},
+      </if>
+      <if test="record.disAccountId != null">
+        dis_account_id = #{record.disAccountId,jdbcType=CHAR},
+      </if>
+      <if test="record.disFee != null">
+        dis_fee = #{record.disFee,jdbcType=INTEGER},
+      </if>
+      <if test="record.couponId != null">
+        coupon_id = #{record.couponId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couponFee != null">
+        coupon_fee = #{record.couponFee,jdbcType=INTEGER},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.notifyUrl != null">
+        notify_url = #{record.notifyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.body != null">
+        body = #{record.body,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeExpire != null">
+        time_expire = #{record.timeExpire,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payFee != null">
+        pay_fee = #{record.payFee,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderDay != null">
+        order_day = #{record.orderDay,jdbcType=CHAR},
+      </if>
+      <if test="record.payType != null">
+        pay_type = #{record.payType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mchStationId != null">
+        mch_station_id = #{record.mchStationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.viceCardNo != null">
+        vice_card_no = #{record.viceCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceId != null">
+        invoice_id = #{record.invoiceId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_pay_order
+    set id = #{record.id,jdbcType=CHAR},
+      order_no = #{record.orderNo,jdbcType=CHAR},
+      pay_no = #{record.payNo,jdbcType=VARCHAR},
+      out_trade_no = #{record.outTradeNo,jdbcType=VARCHAR},
+      openid = #{record.openid,jdbcType=CHAR},
+      account_id = #{record.accountId,jdbcType=VARCHAR},
+      auth_code = #{record.authCode,jdbcType=CHAR},
+      mch_id = #{record.mchId,jdbcType=INTEGER},
+      order_fee = #{record.orderFee,jdbcType=INTEGER},
+      oil = #{record.oil,jdbcType=VARCHAR},
+      attach = #{record.attach,jdbcType=VARCHAR},
+      oil_station = #{record.oilStation,jdbcType=VARCHAR},
+      volume = #{record.volume,jdbcType=DOUBLE},
+      station_lon = #{record.stationLon,jdbcType=DOUBLE},
+      station_lat = #{record.stationLat,jdbcType=DOUBLE},
+      status = #{record.status,jdbcType=VARCHAR},
+      pay_time = #{record.payTime,jdbcType=TIMESTAMP},
+      profit_rate = #{record.profitRate,jdbcType=DOUBLE},
+      profit_fee = #{record.profitFee,jdbcType=INTEGER},
+      dis_account_id = #{record.disAccountId,jdbcType=CHAR},
+      dis_fee = #{record.disFee,jdbcType=INTEGER},
+      coupon_id = #{record.couponId,jdbcType=VARCHAR},
+      coupon_fee = #{record.couponFee,jdbcType=INTEGER},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      notify_url = #{record.notifyUrl,jdbcType=VARCHAR},
+      body = #{record.body,jdbcType=VARCHAR},
+      time_expire = #{record.timeExpire,jdbcType=TIMESTAMP},
+      pay_fee = #{record.payFee,jdbcType=INTEGER},
+      order_day = #{record.orderDay,jdbcType=CHAR},
+      pay_type = #{record.payType,jdbcType=VARCHAR},
+      mch_station_id = #{record.mchStationId,jdbcType=VARCHAR},
+      vice_card_no = #{record.viceCardNo,jdbcType=VARCHAR},
+      invoice_id = #{record.invoiceId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

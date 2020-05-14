@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.fkd.SSystemUserDAO">
+  <resultMap id="BaseResultMap" type="dal.model.fkd.SSystemUserDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="BIGINT" property="entityId" />
+    <result column="SUPPLIER_HEAD_ID" jdbcType="DECIMAL" property="supplierHeadId" />
+    <result column="SHOP_HEAD_ID" jdbcType="DECIMAL" property="shopHeadId" />
+    <result column="USER_TYPE" jdbcType="VARCHAR" property="userType" />
+    <result column="USRE_NAME" jdbcType="VARCHAR" property="usreName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="REAL_NAME" jdbcType="VARCHAR" property="realName" />
+    <result column="USER_TELE" jdbcType="VARCHAR" property="userTele" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="USER_PARENT" jdbcType="DECIMAL" property="userParent" />
+    <result column="LOGIN_COUNT" jdbcType="DECIMAL" property="loginCount" />
+    <result column="LAST_IP" jdbcType="VARCHAR" property="lastIp" />
+    <result column="LAST_TIME" jdbcType="TIMESTAMP" property="lastTime" />
+    <result column="IS_LOCKED" jdbcType="VARCHAR" property="isLocked" />
+    <result column="ERROR_COUNT" jdbcType="DECIMAL" property="errorCount" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="IMAGE" jdbcType="VARCHAR" property="image" />
+    <result column="OPENID" jdbcType="VARCHAR" property="openid" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="MARK_DELETE" jdbcType="VARCHAR" property="markDelete" />
+    <result column="SALER" jdbcType="CHAR" property="saler" />
+    <result column="AUTO_SALER" jdbcType="CHAR" property="autoSaler" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, SUPPLIER_HEAD_ID, SHOP_HEAD_ID, USER_TYPE, USRE_NAME, PASSWORD, REAL_NAME, 
+    USER_TELE, USER_EMAIL, USER_PARENT, LOGIN_COUNT, LAST_IP, LAST_TIME, IS_LOCKED, ERROR_COUNT, 
+    REMARK, IMAGE, OPENID, CREATED_DATE, CREATED_USER, MODIFIED_DATE, UPDATED_USER, VERSION_ID, 
+    MARK_DELETE, SALER, AUTO_SALER
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.fkd.SSystemUserDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from s_system_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.fkd.SSystemUserDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from s_system_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.fkd.SSystemUserDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from s_system_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update s_system_user
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.supplierHeadId != null">
+        SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shopHeadId != null">
+        SHOP_HEAD_ID = #{record.shopHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.userType != null">
+        USER_TYPE = #{record.userType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usreName != null">
+        USRE_NAME = #{record.usreName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realName != null">
+        REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userTele != null">
+        USER_TELE = #{record.userTele,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userEmail != null">
+        USER_EMAIL = #{record.userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userParent != null">
+        USER_PARENT = #{record.userParent,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loginCount != null">
+        LOGIN_COUNT = #{record.loginCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.lastIp != null">
+        LAST_IP = #{record.lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastTime != null">
+        LAST_TIME = #{record.lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isLocked != null">
+        IS_LOCKED = #{record.isLocked,jdbcType=VARCHAR},
+      </if>
+      <if test="record.errorCount != null">
+        ERROR_COUNT = #{record.errorCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null">
+        IMAGE = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openid != null">
+        OPENID = #{record.openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.saler != null">
+        SALER = #{record.saler,jdbcType=CHAR},
+      </if>
+      <if test="record.autoSaler != null">
+        AUTO_SALER = #{record.autoSaler,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update s_system_user
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      SHOP_HEAD_ID = #{record.shopHeadId,jdbcType=DECIMAL},
+      USER_TYPE = #{record.userType,jdbcType=VARCHAR},
+      USRE_NAME = #{record.usreName,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+      USER_TELE = #{record.userTele,jdbcType=VARCHAR},
+      USER_EMAIL = #{record.userEmail,jdbcType=VARCHAR},
+      USER_PARENT = #{record.userParent,jdbcType=DECIMAL},
+      LOGIN_COUNT = #{record.loginCount,jdbcType=DECIMAL},
+      LAST_IP = #{record.lastIp,jdbcType=VARCHAR},
+      LAST_TIME = #{record.lastTime,jdbcType=TIMESTAMP},
+      IS_LOCKED = #{record.isLocked,jdbcType=VARCHAR},
+      ERROR_COUNT = #{record.errorCount,jdbcType=DECIMAL},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      IMAGE = #{record.image,jdbcType=VARCHAR},
+      OPENID = #{record.openid,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=VARCHAR},
+      SALER = #{record.saler,jdbcType=CHAR},
+      AUTO_SALER = #{record.autoSaler,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

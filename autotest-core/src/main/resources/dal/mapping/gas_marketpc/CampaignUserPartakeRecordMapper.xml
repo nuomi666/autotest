@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_marketpc.CampaignUserPartakeRecordDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_marketpc.CampaignUserPartakeRecordDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="event_id" jdbcType="VARCHAR" property="eventId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="campaign_no" jdbcType="VARCHAR" property="campaignNo" />
+    <result column="campaign_type" jdbcType="VARCHAR" property="campaignType" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="partake_time" jdbcType="TIMESTAMP" property="partakeTime" />
+    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="gift_no" jdbcType="VARCHAR" property="giftNo" />
+    <result column="gift_name" jdbcType="VARCHAR" property="giftName" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.gas_marketpc.CampaignUserPartakeRecordDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="give_details" jdbcType="LONGVARCHAR" property="giveDetails" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, event_id, plat_partner_id, partner_id, user_id, mobile, name, campaign_no, campaign_type, 
+    status, partake_time, finish_time, real_name, gift_no, gift_name, gid, raw_add_time, 
+    raw_update_time
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    give_details
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.gas_marketpc.CampaignUserPartakeRecordDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from campaign_user_partake_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.gas_marketpc.CampaignUserPartakeRecordDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from campaign_user_partake_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_marketpc.CampaignUserPartakeRecordDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from campaign_user_partake_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_marketpc.CampaignUserPartakeRecordDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from campaign_user_partake_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update campaign_user_partake_record
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.eventId != null">
+        event_id = #{record.eventId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.campaignNo != null">
+        campaign_no = #{record.campaignNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.campaignType != null">
+        campaign_type = #{record.campaignType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partakeTime != null">
+        partake_time = #{record.partakeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.finishTime != null">
+        finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.realName != null">
+        real_name = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giftNo != null">
+        gift_no = #{record.giftNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giftName != null">
+        gift_name = #{record.giftName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.giveDetails != null">
+        give_details = #{record.giveDetails,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update campaign_user_partake_record
+    set id = #{record.id,jdbcType=BIGINT},
+      event_id = #{record.eventId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      campaign_no = #{record.campaignNo,jdbcType=VARCHAR},
+      campaign_type = #{record.campaignType,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      partake_time = #{record.partakeTime,jdbcType=TIMESTAMP},
+      finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      gift_no = #{record.giftNo,jdbcType=VARCHAR},
+      gift_name = #{record.giftName,jdbcType=VARCHAR},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      give_details = #{record.giveDetails,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update campaign_user_partake_record
+    set id = #{record.id,jdbcType=BIGINT},
+      event_id = #{record.eventId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      campaign_no = #{record.campaignNo,jdbcType=VARCHAR},
+      campaign_type = #{record.campaignType,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      partake_time = #{record.partakeTime,jdbcType=TIMESTAMP},
+      finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      gift_no = #{record.giftNo,jdbcType=VARCHAR},
+      gift_name = #{record.giftName,jdbcType=VARCHAR},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

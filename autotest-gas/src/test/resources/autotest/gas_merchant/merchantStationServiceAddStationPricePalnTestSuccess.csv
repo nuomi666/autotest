@@ -1,0 +1,3 @@
+testId,status,code,goodsName,goodsCode,price,listedPrice,order-->,gid,partnerId,platPartnerId,stationId,priceName,effectTime,operatorId,operatorName,goodsPriceOrders
+1001,SUCCESS,~comn_00_0000,95#汽油,95,7.5,8.1,,GID,S0301909161100092061,S0301909161100092061,OID,测试油价,,,,
+1002,SUCCESS,~comn_00_0000,95#汽油,95,7.5,8.1,,GID,S0301909161100092061,S0301909161100092061,OID,测试油价,,OID,站长233,

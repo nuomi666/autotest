@@ -1,0 +1,2 @@
+testId,status,code,gid,reqId,partnerId,merchantOrderNo,terminalType,terminalCode,operateId,stationId,tradeNo,description,message
+1001,SUCCESS,~comn_00_0000,,,,,,,,,,,

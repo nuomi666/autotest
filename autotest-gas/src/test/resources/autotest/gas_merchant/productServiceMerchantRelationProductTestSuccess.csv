@@ -1,0 +1,4 @@
+testId,status,code,roleNo,roleNo1,roleNo2,productId,productId1,productName,productName1,type,type1,category,category1,parentId,permissionId,permissionId1,order-->,gid,platPartnerId,productList
+1001,SUCCESS,~comn_00_0000,OID,OID,OID,OID,OID,会员设置,会员中心,BOSS,BOSS,COMMON,COMMON,OID,OID,OID,,GID,S0301909161100092061,
+1002,SUCCESS,~comn_00_0000,OID,OID,OID,OID,OID,会员设置,会员中心,BOSS,BOSS,MERCHANT,STATION,OID,OID,OID,,GID,S0301909161100092061,
+1003,SUCCESS,~comn_00_0000,OID,OID,OID,OID,OID,会员设置,会员中心,BOSS,BOSS,STATION,COMMON,OID,OID,OID,,GID,S0301909161100092061,

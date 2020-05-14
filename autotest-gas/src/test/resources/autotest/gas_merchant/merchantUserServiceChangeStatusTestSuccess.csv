@@ -1,0 +1,4 @@
+testId,status,code,partnerId,mobile,sourceKey,stationCode,stationName,userType,userStatus,roleType,roleName,deviceType,sourceName,account,password,operatorMobile,order-->,gid,userId,userStatus_order
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,BOSS,NORMAL,Station,站长,BOSS,商家管理,nuomi,123456,18825814722,,GID,,FREEZE
+1002,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,DEVICE,FREEZE,Terminal,收银员,POS,,nuomi,123456,18825814722,,GID,,NORMAL
+1003,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,DEVICE,NORMAL,Nonoperation,地推员,POS,,nuomi,123456,18825814722,,GID,,CANCEL

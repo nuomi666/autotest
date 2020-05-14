@@ -1,0 +1,2 @@
+testId,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,externalMetaData,memo,extensionContext,bizNo,transType,status,code,description,rawAddTime,finishTime,receiptOrder
+1001,,,,,,,,,,,,SUCCESS,~comn_00_0000,,,,

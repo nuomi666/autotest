@@ -1,0 +1,2 @@
+testId,GID_KEY,gid,bizNo,id,bizNo_userBankCardDO,userId,bankCardNo,bankCardName,certType,certNo,province,city,address,bankAccountType,bankCardType,bankCode,bankKey,defaultBind,bankBindId,rawAddTime,rawUpdateTime,code,description,message
+1001,~gid,~12345678912345678912345678912345678,~20180626000000000003,~2,~20180626000000000002,~20180626000000000001,~6228481200290317812,~绿豆,IDENTITY_CARD,~511622199507230036,重庆,重庆,渝北区,PUBLIC,CREDIT_CARD,ABC,~124,true,~1234567899,2018-06-26 00:00:00,2018-06-26 00:00:00,S03_02_0002,没有找到银行卡,业务异常

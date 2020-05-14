@@ -1,0 +1,2 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,accountNo,amount,linkAccountNo,memo,payChannel,transType
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,S0301808281000000075,0.02,,测试上账,,

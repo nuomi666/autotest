@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,stationId,printOrders,printSleep,ticketPrintOrder-->,printType,printNum,memo,ticketPrintOrder1-->,printType1,printNum1,memo1,ticketPrintOrder2-->,printType2,printNum2,memo2
+1001,SUCCESS,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票,,Recharge,2,充值小票
+1002,SUCCESS,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票,,Recharge,2,充值小票
+1003,SUCCESS,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票,,Recharge,2,充值小票
+1004,SUCCESS,~comn_00_0000,,GID,OID,,2,,Cashier,2,收银小票,,RechargeRefund,1,充值退款小票,,Recharge,2,充值小票

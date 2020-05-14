@@ -1,0 +1,2 @@
+testId,status,code,message,description,id,switchState,id_conditionStrategyDO,priority,type,cronExpress,conditionExpress,state,ruleId,rawAddTime,rawUpdateTime,serialExpress
+1001,SUCCESS,comn_00_0000,,,1001,DEACTIVATE,1001,1,TRANSACTION,,~amount = 10000,ACTIVATE,1003,,,serialExpress333

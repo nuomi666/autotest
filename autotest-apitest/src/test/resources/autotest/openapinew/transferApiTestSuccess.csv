@@ -1,0 +1,2 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,externalMetaData,memo,payAmount,payeeFreezeAmount,payeeFreezeCode,payeeUserId,payeeUserTag,payerUnFreezeAmount,payerUnFreezeCode,payerUserId,payerUserTag
+1001,SUCCESS,C0001,,~1.0.0,,,MD5,,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,,单笔转账,0.1,,,~20180615001234567892,~20180615001234567892,,,~20180615001234567891,~20180615001234567891

@@ -1,0 +1,2 @@
+testId,GID_KEY,gid,id,id_billTaskConfDO,partnerId,billChannelTime,billTime,billCycle,channelId,useStatus,memo,rawAddTime,rawUpdateTime,code,description
+1001,~gid,~12345678913254678913254678913254678,~3,~1,~20180716001234567890,16:00:00,12:00:00,10,~20180716001,Y,备注1,~2018-07-25 00:00:00,~2018-07-25 00:00:00,S09_01_0002,对账任务不存在

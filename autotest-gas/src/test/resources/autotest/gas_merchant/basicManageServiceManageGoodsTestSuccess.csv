@@ -1,0 +1,5 @@
+testId,status,code,id,goodsCode,goodsType,goodsGroupType,goodsName,rawAddTime,rawUpdateTime,order-->,gid,id_order,goodsType_order,goodsGroupType_order,goodsName_order,goodsCode_order,orderNo
+1001,SUCCESS,~comn_00_0000,,98,OIL,GASOLINE,98#,2019-08-03 15:22:00,2019-08-03 15:22:00,,GID,,OTHER,,商品,default,
+1002,SUCCESS,~comn_00_0000,,98,OIL,GASOLINE,98#,2019-08-03 15:22:00,2019-08-03 15:22:00,,GID,,OIL,GASOLINE,95#,95,3
+1003,SUCCESS,~comn_00_0000,,98,OIL,GASOLINE,98#,2019-08-03 15:22:00,2019-08-03 15:22:00,,GID,,OIL,GASOLINE,92#,92,3
+1004,SUCCESS,~comn_00_0000,,98,OIL,GASOLINE,98#,2019-08-03 15:22:00,2019-08-03 15:22:00,,GID,,OTHER,,商品,default,

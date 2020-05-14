@@ -1,0 +1,2 @@
+testId,tr,partnerId,operateName,payType,refundType,beginTime,finishTime,stationName,oils,counts,amounts,refunds,favourAmounts,settleAmounts
+1001,1,S0301909161100092061,ddd,PAYMENT,REFUND,,,爱车联加油站,,,,,,

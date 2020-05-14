@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,exchangeOrderNo,status_order
+1001,FAIL,~comn_00_0000,,GID,OID,SUCCESS
+1002,FAIL,~comn_00_0000,,GID,OID,SUCCESS
+1003,FAIL,~comn_00_0000,,GID,OID,SUCCESS
+1004,FAIL,~comn_00_0000,,GID,OID,SUCCESS

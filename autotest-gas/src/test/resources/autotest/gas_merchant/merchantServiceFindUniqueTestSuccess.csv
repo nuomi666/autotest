@@ -1,0 +1,4 @@
+testId,status,code,partnerId,partnerId1,partnerName,partnerName1,shortName,shortName1,mobile,mobile1,sourceKey,sourceKey1,merchantStatus,merchantStatus1,model,model1,order-->,gid,sourceType,sourceKey_order,partnerId_order,platPartnerId
+1001,SUCCESS,~comn_00_0000,G0701909142100270040,G0701909142100258983,高速东站加油站,洞口县湘运加油站,高速东站加油站,洞口县湘运加油站,15525814711,18825814711,1jlitb46wppo11hge7qi,1jlitai9bppo11hge7qi,ABLE,ABLE,Merchant,Merchant,,GID,,,,G0701909142100270040
+1002,SUCCESS,~comn_00_0000,G0701909142100270040,G0701909142100258983,高速东站加油站,洞口县湘运加油站,高速东站加油站,洞口县湘运加油站,15525814711,18825814711,1jlitb46wppo11hge7qi,1jlitai9bppo11hge7qi,ABLE,ABLE,Merchant,Merchant,,GID,WeChat,1jlitb46wppo11hge7qi,,
+1003,SUCCESS,~comn_00_0000,G0701909142100270040,G0701909142100258983,高速东站加油站,洞口县湘运加油站,高速东站加油站,洞口县湘运加油站,15525814711,18825814711,1jlitb46wppo11hge7qi,1jlitai9bppo11hge7qi,ABLE,ABLE,Merchant,Merchant,,GID,WeChat,1jlitb46wppo11hge7qi,,G0701909142100270040

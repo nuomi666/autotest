@@ -1,0 +1,2 @@
+testId,status,code,partnerId,stationId,stationId1,stationId2,stationId3,stationName,stationName1,stationName2,stationCode,stationCode1,stationCode2,goodsCode,goodsName,order-->,gid,pageNo,pageSize,keywords,partnerId_order,platPartnerId,stationIds,status_order
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,OID,OID,OID,OID,测试油站1,测试油站2,测试油站3,test001,test002,test003,92,92号汽油,,GID,1,10,,S0301909161100092061,S0301909161100092061,,

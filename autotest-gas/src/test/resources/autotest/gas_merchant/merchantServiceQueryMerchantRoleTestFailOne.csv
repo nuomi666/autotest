@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,roleTypes
+1001,FAIL,~comn_00_0000,,GID,,20180615001234600000,
+1002,FAIL,~comn_00_0000,,GID,,20180615001234600000,
+1003,FAIL,~comn_00_0000,,GID,,20180615001234600000,

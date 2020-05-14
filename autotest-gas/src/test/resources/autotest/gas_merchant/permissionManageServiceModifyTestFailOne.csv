@@ -1,0 +1,9 @@
+testId,status,code,order-->,gid,deviceType,parentId,name,code_order,url,resourceType,permissionCategory,orderNo,icon,memo,permissionId
+1001,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1002,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1003,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1004,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1005,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1006,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1007,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID
+1008,FAIL,~comn_00_0000,,GID,BOSS,,营业分析,MENU00004,welcome,MENU,COMMON,0,,,OID

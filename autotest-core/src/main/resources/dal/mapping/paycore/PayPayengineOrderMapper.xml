@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.paycore.PayPayengineOrderDAO">
+  <resultMap id="BaseResultMap" type="dal.model.paycore.PayPayengineOrderDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="account_no" jdbcType="VARCHAR" property="accountNo" />
+    <result column="amount" jdbcType="BIGINT" property="amount" />
+    <result column="amount_in" jdbcType="BIGINT" property="amountIn" />
+    <result column="balance" jdbcType="BIGINT" property="balance" />
+    <result column="bat_order_no" jdbcType="VARCHAR" property="batOrderNo" />
+    <result column="comments" jdbcType="VARCHAR" property="comments" />
+    <result column="ext_context_json" jdbcType="VARCHAR" property="extContextJson" />
+    <result column="freeze_amount" jdbcType="BIGINT" property="freezeAmount" />
+    <result column="freeze_orig_merchant_no" jdbcType="VARCHAR" property="freezeOrigMerchantNo" />
+    <result column="freeze_type" jdbcType="VARCHAR" property="freezeType" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="merchant_no" jdbcType="VARCHAR" property="merchantNo" />
+    <result column="notify_msg" jdbcType="VARCHAR" property="notifyMsg" />
+    <result column="notify_status" jdbcType="VARCHAR" property="notifyStatus" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="pay_type" jdbcType="VARCHAR" property="payType" />
+    <result column="ref_account_no" jdbcType="VARCHAR" property="refAccountNo" />
+    <result column="ref_balance" jdbcType="BIGINT" property="refBalance" />
+    <result column="ref_freeze_amount" jdbcType="BIGINT" property="refFreezeAmount" />
+    <result column="ref_freeze_type" jdbcType="VARCHAR" property="refFreezeType" />
+    <result column="ref_user_id" jdbcType="VARCHAR" property="refUserId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="sub_order_no" jdbcType="VARCHAR" property="subOrderNo" />
+    <result column="trade_type" jdbcType="VARCHAR" property="tradeType" />
+    <result column="transfer_type" jdbcType="VARCHAR" property="transferType" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="trade_scene" jdbcType="VARCHAR" property="tradeScene" />
+    <result column="pay_scene" jdbcType="VARCHAR" property="payScene" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, create_time, update_time, account_no, amount, amount_in, balance, bat_order_no, 
+    comments, ext_context_json, freeze_amount, freeze_orig_merchant_no, freeze_type, 
+    gid, ip_address, memo, merchant_no, notify_msg, notify_status, order_no, partner_id, 
+    pay_type, ref_account_no, ref_balance, ref_freeze_amount, ref_freeze_type, ref_user_id, 
+    status, sub_order_no, trade_type, transfer_type, user_id, trade_scene, pay_scene
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.paycore.PayPayengineOrderDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pay_payengine_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.paycore.PayPayengineOrderDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from pay_payengine_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.paycore.PayPayengineOrderDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from pay_payengine_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update pay_payengine_order
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.accountNo != null">
+        account_no = #{record.accountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=BIGINT},
+      </if>
+      <if test="record.amountIn != null">
+        amount_in = #{record.amountIn,jdbcType=BIGINT},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=BIGINT},
+      </if>
+      <if test="record.batOrderNo != null">
+        bat_order_no = #{record.batOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comments != null">
+        comments = #{record.comments,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extContextJson != null">
+        ext_context_json = #{record.extContextJson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.freezeAmount != null">
+        freeze_amount = #{record.freezeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.freezeOrigMerchantNo != null">
+        freeze_orig_merchant_no = #{record.freezeOrigMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.freezeType != null">
+        freeze_type = #{record.freezeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ipAddress != null">
+        ip_address = #{record.ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantNo != null">
+        merchant_no = #{record.merchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notifyMsg != null">
+        notify_msg = #{record.notifyMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notifyStatus != null">
+        notify_status = #{record.notifyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNo != null">
+        order_no = #{record.orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payType != null">
+        pay_type = #{record.payType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refAccountNo != null">
+        ref_account_no = #{record.refAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refBalance != null">
+        ref_balance = #{record.refBalance,jdbcType=BIGINT},
+      </if>
+      <if test="record.refFreezeAmount != null">
+        ref_freeze_amount = #{record.refFreezeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.refFreezeType != null">
+        ref_freeze_type = #{record.refFreezeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refUserId != null">
+        ref_user_id = #{record.refUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subOrderNo != null">
+        sub_order_no = #{record.subOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeType != null">
+        trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transferType != null">
+        transfer_type = #{record.transferType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeScene != null">
+        trade_scene = #{record.tradeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payScene != null">
+        pay_scene = #{record.payScene,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update pay_payengine_order
+    set id = #{record.id,jdbcType=BIGINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      account_no = #{record.accountNo,jdbcType=VARCHAR},
+      amount = #{record.amount,jdbcType=BIGINT},
+      amount_in = #{record.amountIn,jdbcType=BIGINT},
+      balance = #{record.balance,jdbcType=BIGINT},
+      bat_order_no = #{record.batOrderNo,jdbcType=VARCHAR},
+      comments = #{record.comments,jdbcType=VARCHAR},
+      ext_context_json = #{record.extContextJson,jdbcType=VARCHAR},
+      freeze_amount = #{record.freezeAmount,jdbcType=BIGINT},
+      freeze_orig_merchant_no = #{record.freezeOrigMerchantNo,jdbcType=VARCHAR},
+      freeze_type = #{record.freezeType,jdbcType=VARCHAR},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      ip_address = #{record.ipAddress,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      merchant_no = #{record.merchantNo,jdbcType=VARCHAR},
+      notify_msg = #{record.notifyMsg,jdbcType=VARCHAR},
+      notify_status = #{record.notifyStatus,jdbcType=VARCHAR},
+      order_no = #{record.orderNo,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      pay_type = #{record.payType,jdbcType=VARCHAR},
+      ref_account_no = #{record.refAccountNo,jdbcType=VARCHAR},
+      ref_balance = #{record.refBalance,jdbcType=BIGINT},
+      ref_freeze_amount = #{record.refFreezeAmount,jdbcType=BIGINT},
+      ref_freeze_type = #{record.refFreezeType,jdbcType=VARCHAR},
+      ref_user_id = #{record.refUserId,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      sub_order_no = #{record.subOrderNo,jdbcType=VARCHAR},
+      trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      transfer_type = #{record.transferType,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      trade_scene = #{record.tradeScene,jdbcType=VARCHAR},
+      pay_scene = #{record.payScene,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

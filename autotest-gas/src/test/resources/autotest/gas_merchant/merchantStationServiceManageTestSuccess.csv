@@ -1,0 +1,5 @@
+testId,status,code,stationName,stationCode,phoneNo,goodsName,goodsCode,goodsName1,goodsCode1,order-->,gid,partnerId,platPartnerId,stationId,stationName_order,stationCode_order,phoneNo_order,status_order,connectOilMachine,provinceId,cityId,districtId,stationAddress,goodsCodeList
+1001,SUCCESS,~comn_00_0000,亏成马油站,rose111,18825814777,95#汽油,95,98#汽油,98,,GID,S0301909161100092061,S0301909161100092061,,新建油站,reset000,15525814799,ABLE,,510000,510100,510104,成都锦江区工业园区8幢8楼,
+1002,SUCCESS,~comn_00_0000,亏成马油站,rose111,18825814777,95#汽油,95,98#汽油,98,,GID,S0301909161100092061,S0301909161100092061,,新建油站,reset000,15525814799,ABLE,,510000,510100,510104,成都锦江区工业园区8幢8楼,
+1003,SUCCESS,~comn_00_0000,亏成马油站,rose111,18825814777,95#汽油,95,98#汽油,98,,GID,S0301909161100092061,S0301909161100092061,OID,修改油站,upd333,15525814799,ABLE,,510000,510100,510104,成都锦江区工业园区8幢8楼,
+1004,SUCCESS,~comn_00_0000,亏成马油站,rose111,18825814777,95#汽油,95,98#汽油,98,,GID,S0301909161100092061,S0301909161100092061,OID,修改油站,upd333,15525814799,ABLE,,510000,510100,510104,成都锦江区工业园区8幢8楼,

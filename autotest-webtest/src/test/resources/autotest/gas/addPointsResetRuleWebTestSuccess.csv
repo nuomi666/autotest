@@ -1,0 +1,5 @@
+testId,userName,password,platPartnerId,resetType,useTimeUnit,day,memo
+1001,aichelian,123456,S0301909161100092061,CYCLE,每周,周日,新增会员积分清零规则
+1002,aichelian,123456,S0301909161100092061,CYCLE,每月,1,新增会员积分清零规则
+1003,aichelian,123456,S0301909161100092061,CYCLE,每年,12-31,新增会员积分清零规则
+1004,aichelian,123456,S0301909161100092061,FIXED_POINT_ZERO,,2080-12-31,新增会员积分清零规则

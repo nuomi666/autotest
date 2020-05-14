@@ -1,0 +1,2 @@
+testId,status,code,partnerId,mobile,sourceKey,model,merchantStatus,goodsCode,goodsName,account,password,operatorMobile,deviceCode,loginStatus,order-->,gid,account_order,password_order,deviceCode_order
+1001,SUCCESS,~comn_00_0000,S0301910221500092102,18825814766,wxa2557eabb23b47e5,Merchant,ABLE,98,98#汽油,admin,123456,15525814777,8a7ffd5b,logout,,GID,admin,123456,8a7ffd5b

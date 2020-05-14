@@ -1,0 +1,2 @@
+testId,goodsType,couponGoodsName,couponExchangePoint,couponStoreNum,couponOneExchangeTimes,couponForSaleTime,couponInvalidTime,couponGoodsDescription
+1001,COUPON,20元满减券,20,1000,2,2020-02-26 00:00:00,2020-03-26 00:00:00,商品描述

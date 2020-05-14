@@ -1,0 +1,4 @@
+testId,status,code,partnerId,mobile,sourceKey,model,merchantStatus,account,password,operatorMobile,goodsCode,goodsName,goodsCode1,goodsName1,deviceCode,order-->,gid,userId,deviceCode_order
+1002,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e8,Merchant,ABLE,caibi,123456,18825814777,95,95#汽油,98,98#汽油,E73672025,,GID,OID,3b6fe3a7
+1003,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e8,Merchant,ABLE,caibi,123456,18825814777,95,95#汽油,98,98#汽油,E73672025,,GID,OID,3b6fe3a7
+1004,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e8,Merchant,ABLE,caibi,123456,18825814777,95,95#汽油,98,98#汽油,E73672025,,GID,OID,3b6fe3a7

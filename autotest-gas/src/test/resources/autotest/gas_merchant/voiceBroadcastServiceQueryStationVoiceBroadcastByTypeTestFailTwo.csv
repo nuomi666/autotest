@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,stationId,broadcastType
+1001,FAIL,~comn_00_0000,,GID,OID,Cashier

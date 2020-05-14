@@ -1,0 +1,3 @@
+testId,status,code,platPartnerId,ruleType,dec,decxx,order-->,gid,partnerId,platPartnerId_order,ruleType_order
+1001,SUCCESS,~comn_00_0000,S0301908161400091859,Point,这是会员等级规则,这是会员积分规则,,GID,,S0301908161400091859,Grade
+1002,SUCCESS,~comn_00_0000,S0301908201000091930,Recharge,这是充值说明,这是充值说明,,GID,,S0301908161400091859,Recharge

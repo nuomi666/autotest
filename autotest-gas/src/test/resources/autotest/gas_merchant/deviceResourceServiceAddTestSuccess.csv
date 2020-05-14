@@ -1,0 +1,5 @@
+testId,status,code,parentId,order-->,gid,deviceType,parentId_order,name,code_order,url,resourceType,orderNo,icon,memo
+1001,SUCCESS,~comn_00_0000,,,,POS,,一键加油管理,OneKeyPayManage,,MENU,,,
+1002,SUCCESS,~comn_00_0000,,,,BOSS,,油站员工新增限,station_staff_add,/coupon/delete,FUNCTION,3,我是图标,配置油站员工权限的
+1003,SUCCESS,~comn_00_0000,,,,BOSS,,油站员工新增限,station_staff_add,/coupon/delete,MENU,3,我是图标,配置油站员工权限的
+1004,SUCCESS,~comn_00_0000,,,,BOSS,,油站员工新增限,station_staff_add,/coupon/delete,MENU,3,我是图标,配置油站员工权限的

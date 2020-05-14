@@ -1,0 +1,3 @@
+testId,status,code,taxCompany,taxCode,taxAddress,taxMobile,taxDrawer,taxBankNo,taxReviewer,taxPayee,taxAppId,taxKey,taxCertPath,taxCertPwd,order-->,gid,platPartnerId,stationId
+1001,SUCCESS,~comn_00_0000,百旺电子测试,110109500321633,重庆市北部新区222,2312345890,李珊,工商银行 621234567890123555,李三,张四,a03d52eb9685c04464492d59918b6f41c988d8628d57c20b61da78l98a441702,7681C0B09F678549,/media/jhy/jhy/img/invoice/11010950085888.pfx,23456,,GID,S0301909161100092061,OID
+1002,SUCCESS,~comn_00_0000,百旺电子测试,110109500321633,重庆市北部新区222,2312345890,李珊,工商银行 621234567890123555,李三,张四,a03d52eb9685c04464492d59918b6f41c988d8628d57c20b61da78l98a441702,7681C0B09F678549,/media/jhy/jhy/img/invoice/11010950085888.pfx,23456,,GID,S0301909161100092061,OID

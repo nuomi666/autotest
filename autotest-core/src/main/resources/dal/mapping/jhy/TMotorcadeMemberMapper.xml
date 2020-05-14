@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.jhy.TMotorcadeMemberDAO">
+  <resultMap id="BaseResultMap" type="dal.model.jhy.TMotorcadeMemberDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="CHAR" property="entityId" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="supplier_id" jdbcType="BIGINT" property="supplierId" />
+    <result column="account_card_no" jdbcType="VARCHAR" property="accountCardNo" />
+    <result column="card_no" jdbcType="VARCHAR" property="cardNo" />
+    <result column="card_balance" jdbcType="BIGINT" property="cardBalance" />
+    <result column="card_state" jdbcType="CHAR" property="cardState" />
+    <result column="cardholder" jdbcType="VARCHAR" property="cardholder" />
+    <result column="cellphone" jdbcType="VARCHAR" property="cellphone" />
+    <result column="plate_no" jdbcType="VARCHAR" property="plateNo" />
+    <result column="clearing_account_no" jdbcType="VARCHAR" property="clearingAccountNo" />
+    <result column="tied_time" jdbcType="TIMESTAMP" property="tiedTime" />
+    <result column="tied_state" jdbcType="CHAR" property="tiedState" />
+    <result column="tied_password" jdbcType="VARCHAR" property="tiedPassword" />
+    <result column="payment_password" jdbcType="VARCHAR" property="paymentPassword" />
+    <result column="amount_restrict_type" jdbcType="VARCHAR" property="amountRestrictType" />
+    <result column="times_restrict_type" jdbcType="VARCHAR" property="timesRestrictType" />
+    <result column="single_amount" jdbcType="BIGINT" property="singleAmount" />
+    <result column="daily_amount" jdbcType="BIGINT" property="dailyAmount" />
+    <result column="monthly_amount" jdbcType="BIGINT" property="monthlyAmount" />
+    <result column="daily_times" jdbcType="INTEGER" property="dailyTimes" />
+    <result column="monthly_times" jdbcType="INTEGER" property="monthlyTimes" />
+    <result column="customer_id" jdbcType="VARCHAR" property="customerId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, VERSION_ID, MARK_DELETE, 
+    supplier_id, account_card_no, card_no, card_balance, card_state, cardholder, cellphone, 
+    plate_no, clearing_account_no, tied_time, tied_state, tied_password, payment_password, 
+    amount_restrict_type, times_restrict_type, single_amount, daily_amount, monthly_amount, 
+    daily_times, monthly_times, customer_id
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.jhy.TMotorcadeMemberDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_motorcade_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.jhy.TMotorcadeMemberDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from t_motorcade_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.jhy.TMotorcadeMemberDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from t_motorcade_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_motorcade_member
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=CHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.supplierId != null">
+        supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="record.accountCardNo != null">
+        account_card_no = #{record.accountCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cardNo != null">
+        card_no = #{record.cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cardBalance != null">
+        card_balance = #{record.cardBalance,jdbcType=BIGINT},
+      </if>
+      <if test="record.cardState != null">
+        card_state = #{record.cardState,jdbcType=CHAR},
+      </if>
+      <if test="record.cardholder != null">
+        cardholder = #{record.cardholder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cellphone != null">
+        cellphone = #{record.cellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.plateNo != null">
+        plate_no = #{record.plateNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearingAccountNo != null">
+        clearing_account_no = #{record.clearingAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tiedTime != null">
+        tied_time = #{record.tiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.tiedState != null">
+        tied_state = #{record.tiedState,jdbcType=CHAR},
+      </if>
+      <if test="record.tiedPassword != null">
+        tied_password = #{record.tiedPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paymentPassword != null">
+        payment_password = #{record.paymentPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amountRestrictType != null">
+        amount_restrict_type = #{record.amountRestrictType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timesRestrictType != null">
+        times_restrict_type = #{record.timesRestrictType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.singleAmount != null">
+        single_amount = #{record.singleAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.dailyAmount != null">
+        daily_amount = #{record.dailyAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.monthlyAmount != null">
+        monthly_amount = #{record.monthlyAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.dailyTimes != null">
+        daily_times = #{record.dailyTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.monthlyTimes != null">
+        monthly_times = #{record.monthlyTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.customerId != null">
+        customer_id = #{record.customerId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_motorcade_member
+    set ENTITY_ID = #{record.entityId,jdbcType=CHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      account_card_no = #{record.accountCardNo,jdbcType=VARCHAR},
+      card_no = #{record.cardNo,jdbcType=VARCHAR},
+      card_balance = #{record.cardBalance,jdbcType=BIGINT},
+      card_state = #{record.cardState,jdbcType=CHAR},
+      cardholder = #{record.cardholder,jdbcType=VARCHAR},
+      cellphone = #{record.cellphone,jdbcType=VARCHAR},
+      plate_no = #{record.plateNo,jdbcType=VARCHAR},
+      clearing_account_no = #{record.clearingAccountNo,jdbcType=VARCHAR},
+      tied_time = #{record.tiedTime,jdbcType=TIMESTAMP},
+      tied_state = #{record.tiedState,jdbcType=CHAR},
+      tied_password = #{record.tiedPassword,jdbcType=VARCHAR},
+      payment_password = #{record.paymentPassword,jdbcType=VARCHAR},
+      amount_restrict_type = #{record.amountRestrictType,jdbcType=VARCHAR},
+      times_restrict_type = #{record.timesRestrictType,jdbcType=VARCHAR},
+      single_amount = #{record.singleAmount,jdbcType=BIGINT},
+      daily_amount = #{record.dailyAmount,jdbcType=BIGINT},
+      monthly_amount = #{record.monthlyAmount,jdbcType=BIGINT},
+      daily_times = #{record.dailyTimes,jdbcType=INTEGER},
+      monthly_times = #{record.monthlyTimes,jdbcType=INTEGER},
+      customer_id = #{record.customerId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

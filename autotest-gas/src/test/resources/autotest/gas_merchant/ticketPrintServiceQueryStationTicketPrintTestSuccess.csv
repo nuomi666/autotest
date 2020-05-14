@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,stationId,ticketPrintOrder-->,printType,printNum,memo,ticketPrintOrder1-->,printType1,printNum1,memo1
+1001,SUCCESS,~comn_00_0000,,GID,OID,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票
+1002,SUCCESS,~comn_00_0000,,GID,OID,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票
+1003,SUCCESS,~comn_00_0000,,GID,OID,,Cashier,2,收银小票,,CashierRefund,1,收银退款小票

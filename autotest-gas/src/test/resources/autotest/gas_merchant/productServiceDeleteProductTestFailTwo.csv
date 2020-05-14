@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,permissionId,permissionName,permissionCode,productName,type,category,order-->,gid,productId
+1001,FAIL,~comn_00_0000,S0301910311800092118,OID,统计报表,MENU0482,数据中心,BOSS,MERCHANT,,GID,OID
+1002,FAIL,~comn_00_0000,S0301910311800092118,OID,统计报表,MENU0482,数据中心,BOSS,MERCHANT,,GID,OID
+1003,FAIL,~comn_00_0000,S0301910311800092118,OID,统计报表,MENU0482,数据中心,BOSS,MERCHANT,,GID,OID

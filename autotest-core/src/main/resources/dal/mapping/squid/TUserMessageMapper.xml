@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.squid.TUserMessageDAO">
+  <resultMap id="BaseResultMap" type="dal.model.squid.TUserMessageDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="BIGINT" property="entityId" />
+    <result column="MESSAGE_ID" jdbcType="BIGINT" property="messageId" />
+    <result column="MESSAGE_TYPE" jdbcType="INTEGER" property="messageType" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="TITLE_IMAGE_URL" jdbcType="VARCHAR" property="titleImageUrl" />
+    <result column="MESSAGE_CONTENT" jdbcType="VARCHAR" property="messageContent" />
+    <result column="DETAIL_URL" jdbcType="VARCHAR" property="detailUrl" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, MESSAGE_ID, MESSAGE_TYPE, USER_ID, TITLE, TITLE_IMAGE_URL, MESSAGE_CONTENT, 
+    DETAIL_URL, STATUS, MARK_DELETE, MODIFIED_DATE, CREATED_DATE, CREATED_USER, UPDATED_USER, 
+    VERSION_ID
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.squid.TUserMessageDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.squid.TUserMessageDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from t_user_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.squid.TUserMessageDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from t_user_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_user_message
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.messageId != null">
+        MESSAGE_ID = #{record.messageId,jdbcType=BIGINT},
+      </if>
+      <if test="record.messageType != null">
+        MESSAGE_TYPE = #{record.messageType,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null">
+        TITLE = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.titleImageUrl != null">
+        TITLE_IMAGE_URL = #{record.titleImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.messageContent != null">
+        MESSAGE_CONTENT = #{record.messageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailUrl != null">
+        DETAIL_URL = #{record.detailUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_user_message
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      MESSAGE_ID = #{record.messageId,jdbcType=BIGINT},
+      MESSAGE_TYPE = #{record.messageType,jdbcType=INTEGER},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      TITLE = #{record.title,jdbcType=VARCHAR},
+      TITLE_IMAGE_URL = #{record.titleImageUrl,jdbcType=VARCHAR},
+      MESSAGE_CONTENT = #{record.messageContent,jdbcType=VARCHAR},
+      DETAIL_URL = #{record.detailUrl,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

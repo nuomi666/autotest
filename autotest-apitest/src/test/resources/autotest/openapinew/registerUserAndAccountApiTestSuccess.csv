@@ -1,0 +1,2 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,accountType,address,certifyStatus,certNo,certType,city,country,district,memo,merchantUserId,mobile,parentUserId,partnerId1,payPassword,phone,province,realName,registerFrom,registerIp,tag,userName,userStatus,userType,zipCode
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,NORMAL ,重庆,ALREADY_CERTIFIED ,,,,,,,,,,,111111,,,测试1,,,123456,hr01,NORMAL ,PERSONAL ,100000

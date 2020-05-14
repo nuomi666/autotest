@@ -1,0 +1,3 @@
+testId,status,code,order-->,gid,platPartnerId,expireTime,minInvoiceAmount,invoiceOils,invoicePayway,remark,oilCode,oilCode1,payWay,payWay1,payStatus,payStatus1
+1001,SUCCESS,~comn_00_0000,,GID,S0301909161100092061,30,2,,,开票说明,92,95,ALI,CASH,DISABLE,ABLE
+1002,SUCCESS,~comn_00_0000,,GID,S0301909161100092061,30,2,,,开票说明,92,95,ALI,CASH,ABLE,ABLE

@@ -1,0 +1,2 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,jumpUrl
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,

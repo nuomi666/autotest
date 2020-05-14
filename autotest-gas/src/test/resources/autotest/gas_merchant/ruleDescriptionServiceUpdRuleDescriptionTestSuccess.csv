@@ -1,0 +1,4 @@
+testId,status,code,ruleType,dec,order-->,gid,partnerId,platPartnerId,desciptionOrderList,desciptionOrder-->,ruleType_desciptionOrder,description,desciptionOrder1-->,ruleType1,description1
+1001,SUCCESS,~comn_00_0000,Grade,等级规则描述,,GID,S0301908201000091930,S0301908201000091930,,,Point,积分描述,,Invitation,好友邀请描述
+1002,SUCCESS,~comn_00_0000,Point,积分描述,,GID,S0301908201000091930,S0301908201000091930,,,Point,积分描述233,,Invitation,好友邀请描述
+1003,SUCCESS,~comn_00_0000,Grade,等级规则描述,,GID,S0301908201000091930,S0301908201000091930,,,Grade,等级规则描述233,,Recharge,充值协议

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.yc_shell_trade.GasTradeGiveDAO">
+  <resultMap id="BaseResultMap" type="dal.model.yc_shell_trade.GasTradeGiveDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_no" jdbcType="VARCHAR" property="bizNo" />
+    <result column="trade_type" jdbcType="VARCHAR" property="tradeType" />
+    <result column="campaign_name" jdbcType="VARCHAR" property="campaignName" />
+    <result column="give_id" jdbcType="VARCHAR" property="giveId" />
+    <result column="give_definition_id" jdbcType="VARCHAR" property="giveDefinitionId" />
+    <result column="give_name" jdbcType="VARCHAR" property="giveName" />
+    <result column="give_type" jdbcType="VARCHAR" property="giveType" />
+    <result column="give_content" jdbcType="VARCHAR" property="giveContent" />
+    <result column="give_index" jdbcType="VARCHAR" property="giveIndex" />
+    <result column="give_amount" jdbcType="DECIMAL" property="giveAmount" />
+    <result column="give_num" jdbcType="INTEGER" property="giveNum" />
+    <result column="give_obj" jdbcType="VARCHAR" property="giveObj" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, biz_no, trade_type, campaign_name, give_id, give_definition_id, give_name, give_type, 
+    give_content, give_index, give_amount, give_num, give_obj, user_id, real_name, nick_name, 
+    mobile, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.yc_shell_trade.GasTradeGiveDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_trade_give
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.yc_shell_trade.GasTradeGiveDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_trade_give
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.yc_shell_trade.GasTradeGiveDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_trade_give
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_trade_give
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.bizNo != null">
+        biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeType != null">
+        trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.campaignName != null">
+        campaign_name = #{record.campaignName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveId != null">
+        give_id = #{record.giveId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveDefinitionId != null">
+        give_definition_id = #{record.giveDefinitionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveName != null">
+        give_name = #{record.giveName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveType != null">
+        give_type = #{record.giveType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveContent != null">
+        give_content = #{record.giveContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveIndex != null">
+        give_index = #{record.giveIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giveAmount != null">
+        give_amount = #{record.giveAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.giveNum != null">
+        give_num = #{record.giveNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.giveObj != null">
+        give_obj = #{record.giveObj,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realName != null">
+        real_name = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickName != null">
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_trade_give
+    set id = #{record.id,jdbcType=BIGINT},
+      biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      campaign_name = #{record.campaignName,jdbcType=VARCHAR},
+      give_id = #{record.giveId,jdbcType=VARCHAR},
+      give_definition_id = #{record.giveDefinitionId,jdbcType=VARCHAR},
+      give_name = #{record.giveName,jdbcType=VARCHAR},
+      give_type = #{record.giveType,jdbcType=VARCHAR},
+      give_content = #{record.giveContent,jdbcType=VARCHAR},
+      give_index = #{record.giveIndex,jdbcType=VARCHAR},
+      give_amount = #{record.giveAmount,jdbcType=DECIMAL},
+      give_num = #{record.giveNum,jdbcType=INTEGER},
+      give_obj = #{record.giveObj,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

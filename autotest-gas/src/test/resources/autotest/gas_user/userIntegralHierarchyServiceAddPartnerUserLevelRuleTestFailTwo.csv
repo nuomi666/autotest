@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,cumulativeOfDays,levelRule,levelUpdateType,useTimeUnit,days
+1001,FAIL,~comn_00_0000,,GID,S0301909161100092061,S0301909161100092061,30,,CYCLE,DAILY,0

@@ -1,0 +1,3 @@
+testId,status,code,deviceType,parentId,parentName,name,parentCode,permissionCode,url,category,resourceType,orderNo,order-->,gid,permissionId
+1001,SUCCESS,~comn_00_0000,BOSS,,统计报表,结算报表,MENU0482,MENU0483,#,COMMON,MENU,1,,GID,OID
+1002,SUCCESS,~comn_00_0000,BOSS,OID,统计报表,结算报表,MENU0482,MENU0483,#,COMMON,MENU,1,,GID,OID

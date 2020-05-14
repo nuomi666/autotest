@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.pay.PaymentInstructionDAO">
+  <resultMap id="BaseResultMap" type="dal.model.pay.PaymentInstructionDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="trans_type" jdbcType="VARCHAR" property="transType" />
+    <result column="trans_tag" jdbcType="VARCHAR" property="transTag" />
+    <result column="biz_no" jdbcType="VARCHAR" property="bizNo" />
+    <result column="req_id" jdbcType="VARCHAR" property="reqId" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="merchant_order_no" jdbcType="VARCHAR" property="merchantOrderNo" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="plat_merchant_order_no" jdbcType="VARCHAR" property="platMerchantOrderNo" />
+    <result column="merchant_mode" jdbcType="VARCHAR" property="merchantMode" />
+    <result column="redirect_url" jdbcType="VARCHAR" property="redirectUrl" />
+    <result column="payer_user_id" jdbcType="VARCHAR" property="payerUserId" />
+    <result column="payee_user_id" jdbcType="VARCHAR" property="payeeUserId" />
+    <result column="payer_account_no" jdbcType="VARCHAR" property="payerAccountNo" />
+    <result column="relation_account_no" jdbcType="VARCHAR" property="relationAccountNo" />
+    <result column="payee_account_no" jdbcType="VARCHAR" property="payeeAccountNo" />
+    <result column="payer_user_tag" jdbcType="VARCHAR" property="payerUserTag" />
+    <result column="relation_user_tag" jdbcType="VARCHAR" property="relationUserTag" />
+    <result column="payee_user_tag" jdbcType="VARCHAR" property="payeeUserTag" />
+    <result column="partner_rate" jdbcType="INTEGER" property="partnerRate" />
+    <result column="channel_rate" jdbcType="INTEGER" property="channelRate" />
+    <result column="channel_fee" jdbcType="DECIMAL" property="channelFee" />
+    <result column="partner_fee" jdbcType="DECIMAL" property="partnerFee" />
+    <result column="pay_amount" jdbcType="DECIMAL" property="payAmount" />
+    <result column="real_pay_amount" jdbcType="DECIMAL" property="realPayAmount" />
+    <result column="discount_amount" jdbcType="DECIMAL" property="discountAmount" />
+    <result column="payer_balance" jdbcType="DECIMAL" property="payerBalance" />
+    <result column="relation_balance" jdbcType="DECIMAL" property="relationBalance" />
+    <result column="payee_balance" jdbcType="DECIMAL" property="payeeBalance" />
+    <result column="channel_biz_no" jdbcType="VARCHAR" property="channelBizNo" />
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId" />
+    <result column="channel_name" jdbcType="VARCHAR" property="channelName" />
+    <result column="pay_channel" jdbcType="VARCHAR" property="payChannel" />
+    <result column="pay_channel_id" jdbcType="VARCHAR" property="payChannelId" />
+    <result column="pay_type" jdbcType="VARCHAR" property="payType" />
+    <result column="pay_info" jdbcType="VARCHAR" property="payInfo" />
+    <result column="payer_acc_biz_no" jdbcType="VARCHAR" property="payerAccBizNo" />
+    <result column="relation_acc_biz_no" jdbcType="VARCHAR" property="relationAccBizNo" />
+    <result column="payee_acc_biz_no" jdbcType="VARCHAR" property="payeeAccBizNo" />
+    <result column="payer_trans_date" jdbcType="TIMESTAMP" property="payerTransDate" />
+    <result column="relation_trans_date" jdbcType="TIMESTAMP" property="relationTransDate" />
+    <result column="payee_trans_date" jdbcType="TIMESTAMP" property="payeeTransDate" />
+    <result column="payment_biz_no" jdbcType="VARCHAR" property="paymentBizNo" />
+    <result column="account_day" jdbcType="VARCHAR" property="accountDay" />
+    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="payer_id" jdbcType="VARCHAR" property="payerId" />
+    <result column="order_refund_status" jdbcType="VARCHAR" property="orderRefundStatus" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="run_memo" jdbcType="VARCHAR" property="runMemo" />
+    <result column="receipt" jdbcType="VARCHAR" property="receipt" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="compensate" jdbcType="VARCHAR" property="compensate" />
+    <result column="profit_info" jdbcType="VARCHAR" property="profitInfo" />
+    <result column="externalMetaData" jdbcType="VARCHAR" property="externalmetadata" />
+    <result column="extension_context" jdbcType="VARCHAR" property="extensionContext" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, trans_type, trans_tag, biz_no, req_id, gid, partner_id, merchant_order_no, plat_partner_id, 
+    plat_merchant_order_no, merchant_mode, redirect_url, payer_user_id, payee_user_id, 
+    payer_account_no, relation_account_no, payee_account_no, payer_user_tag, relation_user_tag, 
+    payee_user_tag, partner_rate, channel_rate, channel_fee, partner_fee, pay_amount, 
+    real_pay_amount, discount_amount, payer_balance, relation_balance, payee_balance, 
+    channel_biz_no, channel_id, channel_name, pay_channel, pay_channel_id, pay_type, 
+    pay_info, payer_acc_biz_no, relation_acc_biz_no, payee_acc_biz_no, payer_trans_date, 
+    relation_trans_date, payee_trans_date, payment_biz_no, account_day, finish_time, 
+    payer_id, order_refund_status, status, state, code, run_memo, receipt, description, 
+    memo, compensate, profit_info, externalMetaData, extension_context, raw_add_time, 
+    raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.pay.PaymentInstructionDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from payment_instruction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.pay.PaymentInstructionDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from payment_instruction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.pay.PaymentInstructionDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from payment_instruction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update payment_instruction
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.transType != null">
+        trans_type = #{record.transType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transTag != null">
+        trans_tag = #{record.transTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bizNo != null">
+        biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reqId != null">
+        req_id = #{record.reqId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantOrderNo != null">
+        merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platMerchantOrderNo != null">
+        plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantMode != null">
+        merchant_mode = #{record.merchantMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redirectUrl != null">
+        redirect_url = #{record.redirectUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerUserId != null">
+        payer_user_id = #{record.payerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeUserId != null">
+        payee_user_id = #{record.payeeUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerAccountNo != null">
+        payer_account_no = #{record.payerAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relationAccountNo != null">
+        relation_account_no = #{record.relationAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeAccountNo != null">
+        payee_account_no = #{record.payeeAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerUserTag != null">
+        payer_user_tag = #{record.payerUserTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relationUserTag != null">
+        relation_user_tag = #{record.relationUserTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeUserTag != null">
+        payee_user_tag = #{record.payeeUserTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerRate != null">
+        partner_rate = #{record.partnerRate,jdbcType=INTEGER},
+      </if>
+      <if test="record.channelRate != null">
+        channel_rate = #{record.channelRate,jdbcType=INTEGER},
+      </if>
+      <if test="record.channelFee != null">
+        channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.partnerFee != null">
+        partner_fee = #{record.partnerFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.payAmount != null">
+        pay_amount = #{record.payAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.realPayAmount != null">
+        real_pay_amount = #{record.realPayAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.discountAmount != null">
+        discount_amount = #{record.discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.payerBalance != null">
+        payer_balance = #{record.payerBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.relationBalance != null">
+        relation_balance = #{record.relationBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.payeeBalance != null">
+        payee_balance = #{record.payeeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelBizNo != null">
+        channel_biz_no = #{record.channelBizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelId != null">
+        channel_id = #{record.channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelName != null">
+        channel_name = #{record.channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payChannel != null">
+        pay_channel = #{record.payChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payChannelId != null">
+        pay_channel_id = #{record.payChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payType != null">
+        pay_type = #{record.payType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payInfo != null">
+        pay_info = #{record.payInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerAccBizNo != null">
+        payer_acc_biz_no = #{record.payerAccBizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relationAccBizNo != null">
+        relation_acc_biz_no = #{record.relationAccBizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeAccBizNo != null">
+        payee_acc_biz_no = #{record.payeeAccBizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerTransDate != null">
+        payer_trans_date = #{record.payerTransDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.relationTransDate != null">
+        relation_trans_date = #{record.relationTransDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payeeTransDate != null">
+        payee_trans_date = #{record.payeeTransDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.paymentBizNo != null">
+        payment_biz_no = #{record.paymentBizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountDay != null">
+        account_day = #{record.accountDay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finishTime != null">
+        finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payerId != null">
+        payer_id = #{record.payerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderRefundStatus != null">
+        order_refund_status = #{record.orderRefundStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.runMemo != null">
+        run_memo = #{record.runMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.receipt != null">
+        receipt = #{record.receipt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.compensate != null">
+        compensate = #{record.compensate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profitInfo != null">
+        profit_info = #{record.profitInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.externalmetadata != null">
+        externalMetaData = #{record.externalmetadata,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extensionContext != null">
+        extension_context = #{record.extensionContext,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update payment_instruction
+    set id = #{record.id,jdbcType=BIGINT},
+      trans_type = #{record.transType,jdbcType=VARCHAR},
+      trans_tag = #{record.transTag,jdbcType=VARCHAR},
+      biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      req_id = #{record.reqId,jdbcType=VARCHAR},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      merchant_mode = #{record.merchantMode,jdbcType=VARCHAR},
+      redirect_url = #{record.redirectUrl,jdbcType=VARCHAR},
+      payer_user_id = #{record.payerUserId,jdbcType=VARCHAR},
+      payee_user_id = #{record.payeeUserId,jdbcType=VARCHAR},
+      payer_account_no = #{record.payerAccountNo,jdbcType=VARCHAR},
+      relation_account_no = #{record.relationAccountNo,jdbcType=VARCHAR},
+      payee_account_no = #{record.payeeAccountNo,jdbcType=VARCHAR},
+      payer_user_tag = #{record.payerUserTag,jdbcType=VARCHAR},
+      relation_user_tag = #{record.relationUserTag,jdbcType=VARCHAR},
+      payee_user_tag = #{record.payeeUserTag,jdbcType=VARCHAR},
+      partner_rate = #{record.partnerRate,jdbcType=INTEGER},
+      channel_rate = #{record.channelRate,jdbcType=INTEGER},
+      channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      partner_fee = #{record.partnerFee,jdbcType=DECIMAL},
+      pay_amount = #{record.payAmount,jdbcType=DECIMAL},
+      real_pay_amount = #{record.realPayAmount,jdbcType=DECIMAL},
+      discount_amount = #{record.discountAmount,jdbcType=DECIMAL},
+      payer_balance = #{record.payerBalance,jdbcType=DECIMAL},
+      relation_balance = #{record.relationBalance,jdbcType=DECIMAL},
+      payee_balance = #{record.payeeBalance,jdbcType=DECIMAL},
+      channel_biz_no = #{record.channelBizNo,jdbcType=VARCHAR},
+      channel_id = #{record.channelId,jdbcType=VARCHAR},
+      channel_name = #{record.channelName,jdbcType=VARCHAR},
+      pay_channel = #{record.payChannel,jdbcType=VARCHAR},
+      pay_channel_id = #{record.payChannelId,jdbcType=VARCHAR},
+      pay_type = #{record.payType,jdbcType=VARCHAR},
+      pay_info = #{record.payInfo,jdbcType=VARCHAR},
+      payer_acc_biz_no = #{record.payerAccBizNo,jdbcType=VARCHAR},
+      relation_acc_biz_no = #{record.relationAccBizNo,jdbcType=VARCHAR},
+      payee_acc_biz_no = #{record.payeeAccBizNo,jdbcType=VARCHAR},
+      payer_trans_date = #{record.payerTransDate,jdbcType=TIMESTAMP},
+      relation_trans_date = #{record.relationTransDate,jdbcType=TIMESTAMP},
+      payee_trans_date = #{record.payeeTransDate,jdbcType=TIMESTAMP},
+      payment_biz_no = #{record.paymentBizNo,jdbcType=VARCHAR},
+      account_day = #{record.accountDay,jdbcType=VARCHAR},
+      finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      payer_id = #{record.payerId,jdbcType=VARCHAR},
+      order_refund_status = #{record.orderRefundStatus,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR},
+      code = #{record.code,jdbcType=VARCHAR},
+      run_memo = #{record.runMemo,jdbcType=VARCHAR},
+      receipt = #{record.receipt,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      compensate = #{record.compensate,jdbcType=VARCHAR},
+      profit_info = #{record.profitInfo,jdbcType=VARCHAR},
+      externalMetaData = #{record.externalmetadata,jdbcType=VARCHAR},
+      extension_context = #{record.extensionContext,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

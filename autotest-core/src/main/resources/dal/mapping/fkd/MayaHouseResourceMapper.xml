@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.fkd.MayaHouseResourceDAO">
+  <resultMap id="BaseResultMap" type="dal.model.fkd.MayaHouseResourceDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="PREMISES_ID" jdbcType="BIGINT" property="premisesId" />
+    <result column="RESOURCE_TYPE" jdbcType="VARCHAR" property="resourceType" />
+    <result column="HOUSE_TYPE" jdbcType="VARCHAR" property="houseType" />
+    <result column="BUILD_UNIT" jdbcType="VARCHAR" property="buildUnit" />
+    <result column="INSIDE_UNIT_PRICE" jdbcType="DOUBLE" property="insideUnitPrice" />
+    <result column="INSIDE_ACREAGE" jdbcType="DOUBLE" property="insideAcreage" />
+    <result column="BUILD_UNIT_PRICE" jdbcType="DOUBLE" property="buildUnitPrice" />
+    <result column="BUILD_ACREAGE" jdbcType="DOUBLE" property="buildAcreage" />
+    <result column="ALL_FLOOR" jdbcType="INTEGER" property="allFloor" />
+    <result column="CONCRETE_FLOOR" jdbcType="INTEGER" property="concreteFloor" />
+    <result column="FLOOR" jdbcType="VARCHAR" property="floor" />
+    <result column="FITMENT" jdbcType="VARCHAR" property="fitment" />
+    <result column="ORIENTATION" jdbcType="VARCHAR" property="orientation" />
+    <result column="BUILD_YEAR" jdbcType="INTEGER" property="buildYear" />
+    <result column="FITMENT_YEAR" jdbcType="INTEGER" property="fitmentYear" />
+    <result column="FEATURE" jdbcType="VARCHAR" property="feature" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="OWNER_PHONE" jdbcType="VARCHAR" property="ownerPhone" />
+    <result column="OWNER_CALL" jdbcType="VARCHAR" property="ownerCall" />
+    <result column="DISK_SOURCE" jdbcType="VARCHAR" property="diskSource" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="OWNER_SEX" jdbcType="VARCHAR" property="ownerSex" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, PREMISES_ID, RESOURCE_TYPE, HOUSE_TYPE, BUILD_UNIT, INSIDE_UNIT_PRICE, INSIDE_ACREAGE, 
+    BUILD_UNIT_PRICE, BUILD_ACREAGE, ALL_FLOOR, CONCRETE_FLOOR, FLOOR, FITMENT, ORIENTATION, 
+    BUILD_YEAR, FITMENT_YEAR, FEATURE, DESCRIPTION, REMARK, OWNER_PHONE, OWNER_CALL, 
+    DISK_SOURCE, CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, MARK_DELETE, 
+    VERSION_ID, OWNER_SEX
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.fkd.MayaHouseResourceDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from maya_house_resource
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.fkd.MayaHouseResourceDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from maya_house_resource
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.fkd.MayaHouseResourceDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from maya_house_resource
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update maya_house_resource
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.premisesId != null">
+        PREMISES_ID = #{record.premisesId,jdbcType=BIGINT},
+      </if>
+      <if test="record.resourceType != null">
+        RESOURCE_TYPE = #{record.resourceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseType != null">
+        HOUSE_TYPE = #{record.houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildUnit != null">
+        BUILD_UNIT = #{record.buildUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insideUnitPrice != null">
+        INSIDE_UNIT_PRICE = #{record.insideUnitPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.insideAcreage != null">
+        INSIDE_ACREAGE = #{record.insideAcreage,jdbcType=DOUBLE},
+      </if>
+      <if test="record.buildUnitPrice != null">
+        BUILD_UNIT_PRICE = #{record.buildUnitPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.buildAcreage != null">
+        BUILD_ACREAGE = #{record.buildAcreage,jdbcType=DOUBLE},
+      </if>
+      <if test="record.allFloor != null">
+        ALL_FLOOR = #{record.allFloor,jdbcType=INTEGER},
+      </if>
+      <if test="record.concreteFloor != null">
+        CONCRETE_FLOOR = #{record.concreteFloor,jdbcType=INTEGER},
+      </if>
+      <if test="record.floor != null">
+        FLOOR = #{record.floor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fitment != null">
+        FITMENT = #{record.fitment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orientation != null">
+        ORIENTATION = #{record.orientation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildYear != null">
+        BUILD_YEAR = #{record.buildYear,jdbcType=INTEGER},
+      </if>
+      <if test="record.fitmentYear != null">
+        FITMENT_YEAR = #{record.fitmentYear,jdbcType=INTEGER},
+      </if>
+      <if test="record.feature != null">
+        FEATURE = #{record.feature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ownerPhone != null">
+        OWNER_PHONE = #{record.ownerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ownerCall != null">
+        OWNER_CALL = #{record.ownerCall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.diskSource != null">
+        DISK_SOURCE = #{record.diskSource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.ownerSex != null">
+        OWNER_SEX = #{record.ownerSex,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update maya_house_resource
+    set ID = #{record.id,jdbcType=BIGINT},
+      PREMISES_ID = #{record.premisesId,jdbcType=BIGINT},
+      RESOURCE_TYPE = #{record.resourceType,jdbcType=VARCHAR},
+      HOUSE_TYPE = #{record.houseType,jdbcType=VARCHAR},
+      BUILD_UNIT = #{record.buildUnit,jdbcType=VARCHAR},
+      INSIDE_UNIT_PRICE = #{record.insideUnitPrice,jdbcType=DOUBLE},
+      INSIDE_ACREAGE = #{record.insideAcreage,jdbcType=DOUBLE},
+      BUILD_UNIT_PRICE = #{record.buildUnitPrice,jdbcType=DOUBLE},
+      BUILD_ACREAGE = #{record.buildAcreage,jdbcType=DOUBLE},
+      ALL_FLOOR = #{record.allFloor,jdbcType=INTEGER},
+      CONCRETE_FLOOR = #{record.concreteFloor,jdbcType=INTEGER},
+      FLOOR = #{record.floor,jdbcType=VARCHAR},
+      FITMENT = #{record.fitment,jdbcType=VARCHAR},
+      ORIENTATION = #{record.orientation,jdbcType=VARCHAR},
+      BUILD_YEAR = #{record.buildYear,jdbcType=INTEGER},
+      FITMENT_YEAR = #{record.fitmentYear,jdbcType=INTEGER},
+      FEATURE = #{record.feature,jdbcType=VARCHAR},
+      DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      OWNER_PHONE = #{record.ownerPhone,jdbcType=VARCHAR},
+      OWNER_CALL = #{record.ownerCall,jdbcType=VARCHAR},
+      DISK_SOURCE = #{record.diskSource,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      OWNER_SEX = #{record.ownerSex,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

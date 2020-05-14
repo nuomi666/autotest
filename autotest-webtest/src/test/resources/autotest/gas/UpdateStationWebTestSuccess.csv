@@ -1,0 +1,4 @@
+testId,userName,password,platPartnerId,partnerId,stationCode,stationName,phone,addr,oilCode,oilName,oilCode1,oilName1,stationCodexx,stationNamexx,phonexx,addrxx,addOil,statusCode,stationStatus
+1001,aichelian,123456,S0301909161100092061,S0301909161100092321,test111,测试油站222,13637958369,互联网产业园,92,92#汽油,-35,-35#柴油,,,,,98#汽油,ABLE,开启
+1002,sj001,123456,S0301910241700092111,S0301910241700092111,test111,测试油站222,13637958369,互联网产业园,92,92#汽油,-35,-35#柴油,test322,修改后油站名称,18825814777,修改后地址,,DISABLE,关闭
+1003,sj001,123456,S0301910241700092111,S0301910241700092111,test111,测试油站222,13637958369,互联网产业园,92,92#汽油,-35,-35#柴油,test322,修改后油站名称,18825814777,修改后地址,98#汽油,ABLE,开启

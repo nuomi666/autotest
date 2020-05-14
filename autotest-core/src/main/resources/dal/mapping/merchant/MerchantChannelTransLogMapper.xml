@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.merchant.MerchantChannelTransLogDAO">
+  <resultMap id="BaseResultMap" type="dal.model.merchant.MerchantChannelTransLogDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="biz_no" jdbcType="VARCHAR" property="bizNo" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="channel_trans_id" jdbcType="VARCHAR" property="channelTransId" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="channel_sub_merchant_id" jdbcType="VARCHAR" property="channelSubMerchantId" />
+    <result column="settlement_account" jdbcType="VARCHAR" property="settlementAccount" />
+    <result column="amount" jdbcType="BIGINT" property="amount" />
+    <result column="handling_fee" jdbcType="BIGINT" property="handlingFee" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="trade_status" jdbcType="VARCHAR" property="tradeStatus" />
+    <result column="trans_description" jdbcType="VARCHAR" property="transDescription" />
+    <result column="trans_amount_type" jdbcType="VARCHAR" property="transAmountType" />
+    <result column="channel_processing_time" jdbcType="VARCHAR" property="channelProcessingTime" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, gid, biz_no, partner_id, channel_trans_id, channel, channel_sub_merchant_id, 
+    settlement_account, amount, handling_fee, memo, trade_status, trans_description, 
+    trans_amount_type, channel_processing_time, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.merchant.MerchantChannelTransLogDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from merchant_channel_trans_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.merchant.MerchantChannelTransLogDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from merchant_channel_trans_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.merchant.MerchantChannelTransLogDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from merchant_channel_trans_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_channel_trans_log
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bizNo != null">
+        biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelTransId != null">
+        channel_trans_id = #{record.channelTransId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channel != null">
+        channel = #{record.channel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelSubMerchantId != null">
+        channel_sub_merchant_id = #{record.channelSubMerchantId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccount != null">
+        settlement_account = #{record.settlementAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=BIGINT},
+      </if>
+      <if test="record.handlingFee != null">
+        handling_fee = #{record.handlingFee,jdbcType=BIGINT},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeStatus != null">
+        trade_status = #{record.tradeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transDescription != null">
+        trans_description = #{record.transDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transAmountType != null">
+        trans_amount_type = #{record.transAmountType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelProcessingTime != null">
+        channel_processing_time = #{record.channelProcessingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_channel_trans_log
+    set id = #{record.id,jdbcType=BIGINT},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      channel_trans_id = #{record.channelTransId,jdbcType=VARCHAR},
+      channel = #{record.channel,jdbcType=VARCHAR},
+      channel_sub_merchant_id = #{record.channelSubMerchantId,jdbcType=VARCHAR},
+      settlement_account = #{record.settlementAccount,jdbcType=VARCHAR},
+      amount = #{record.amount,jdbcType=BIGINT},
+      handling_fee = #{record.handlingFee,jdbcType=BIGINT},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      trade_status = #{record.tradeStatus,jdbcType=VARCHAR},
+      trans_description = #{record.transDescription,jdbcType=VARCHAR},
+      trans_amount_type = #{record.transAmountType,jdbcType=VARCHAR},
+      channel_processing_time = #{record.channelProcessingTime,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

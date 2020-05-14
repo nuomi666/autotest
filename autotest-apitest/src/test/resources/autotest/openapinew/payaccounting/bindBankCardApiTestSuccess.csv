@@ -1,0 +1,5 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,bankCardIDcard,bankCardName,bankCardNo,bankCardPhone,outUserId
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~500123196703030983,蒋可用,~6228481234567898346 ,~18723088153,outuseridenterprise00001
+1002,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~511023198905050999,个人,~6228481234567898346 ,~18723088155,~hft00000001111111
+1003,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~511023198905050888,大个子,~6228481234567898346 ,~18723088157,~hft00000001111112
+1004,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~500123196703030982,王君双 ,~6228481234567898346 ,~18723088159,outuseridenterprise00002

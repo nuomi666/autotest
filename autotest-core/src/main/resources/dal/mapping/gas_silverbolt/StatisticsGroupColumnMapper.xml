@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_silverbolt.StatisticsGroupColumnDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_silverbolt.StatisticsGroupColumnDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="pools_name" jdbcType="VARCHAR" property="poolsName" />
+    <result column="pools_code" jdbcType="VARCHAR" property="poolsCode" />
+    <result column="column_name" jdbcType="VARCHAR" property="columnName" />
+    <result column="column_code" jdbcType="VARCHAR" property="columnCode" />
+    <result column="order_by_code" jdbcType="VARCHAR" property="orderByCode" />
+    <result column="column_type" jdbcType="VARCHAR" property="columnType" />
+    <result column="must_filter" jdbcType="VARCHAR" property="mustFilter" />
+    <result column="subtotal" jdbcType="VARCHAR" property="subtotal" />
+    <result column="across" jdbcType="VARCHAR" property="across" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="show_value" jdbcType="VARCHAR" property="showValue" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, pools_name, pools_code, column_name, column_code, order_by_code, column_type, 
+    must_filter, subtotal, across, cycle, show_value, memo, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.gas_silverbolt.StatisticsGroupColumnDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from statistics_group_column
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_silverbolt.StatisticsGroupColumnDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from statistics_group_column
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_silverbolt.StatisticsGroupColumnDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from statistics_group_column
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update statistics_group_column
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.poolsName != null">
+        pools_name = #{record.poolsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.poolsCode != null">
+        pools_code = #{record.poolsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnName != null">
+        column_name = #{record.columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnCode != null">
+        column_code = #{record.columnCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderByCode != null">
+        order_by_code = #{record.orderByCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnType != null">
+        column_type = #{record.columnType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mustFilter != null">
+        must_filter = #{record.mustFilter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subtotal != null">
+        subtotal = #{record.subtotal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.across != null">
+        across = #{record.across,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cycle != null">
+        cycle = #{record.cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.showValue != null">
+        show_value = #{record.showValue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update statistics_group_column
+    set id = #{record.id,jdbcType=BIGINT},
+      pools_name = #{record.poolsName,jdbcType=VARCHAR},
+      pools_code = #{record.poolsCode,jdbcType=VARCHAR},
+      column_name = #{record.columnName,jdbcType=VARCHAR},
+      column_code = #{record.columnCode,jdbcType=VARCHAR},
+      order_by_code = #{record.orderByCode,jdbcType=VARCHAR},
+      column_type = #{record.columnType,jdbcType=VARCHAR},
+      must_filter = #{record.mustFilter,jdbcType=VARCHAR},
+      subtotal = #{record.subtotal,jdbcType=VARCHAR},
+      across = #{record.across,jdbcType=VARCHAR},
+      cycle = #{record.cycle,jdbcType=VARCHAR},
+      show_value = #{record.showValue,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

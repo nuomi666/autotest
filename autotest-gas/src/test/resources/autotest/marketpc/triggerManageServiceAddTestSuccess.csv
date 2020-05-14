@@ -1,0 +1,7 @@
+testId,status,code,gid,conditionName,description,eventRoute,params,keyCode
+1001,SUCCESS,~comn_00_0000,,充值触发,充值送金额触发条件,DEPOSIT,,transAmount
+1002,SUCCESS,~comn_00_0000,,注册触发,注册送券触发条件,userRegister,,transAmount
+1003,SUCCESS,~comn_00_0000,,完善资料触发,注册送券触发条件,userUpdate,,transAmount
+1004,SUCCESS,~comn_00_0000,,付款触发,消费送券触发条件,PAYMENT,,transAmount
+1005,SUCCESS,~comn_00_0000,,生日触发,生日送券触发条件,USER_BIRTHDAY,,short_birthday
+1006,SUCCESS,~comn_00_0000,,实付触发,消费送券触发条件,PAYMENT,,payAmount

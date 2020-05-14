@@ -1,0 +1,3 @@
+testId,status,code,platPartnerId,userId,stationId,deviceCode,order-->,gid,stationId_order,deviceCode_order,userId_order,open
+1001,FAIL,~comn_00_0000,S0301810081500000065,gas0000000000000yc20141,1jipf178zgg021hge6uv,8a7ffd5b,,,1jipf178zgg021hge6uv,565b1e6d,gas0000000000000yc20162,1
+1002,FAIL,~comn_00_0000,S0301810081500000065,gas0000000000000yc20141,1jipf178zgg021hge6uv,8a7ffd5b,,,1jipf178zgg031hge6uv,565b1e6d,gas0000000000000yc20162,0

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.jhy.TCustomerHeadDAO">
+  <resultMap id="BaseResultMap" type="dal.model.jhy.TCustomerHeadDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="VARCHAR" property="entityId" />
+    <result column="MEMBER_NO" jdbcType="VARCHAR" property="memberNo" />
+    <result column="SUPPLIER_ID" jdbcType="INTEGER" property="supplierId" />
+    <result column="REAL_NAME" jdbcType="VARCHAR" property="realName" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="BIRTHDAY" jdbcType="VARCHAR" property="birthday" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="CAR_NUMBER" jdbcType="VARCHAR" property="carNumber" />
+    <result column="CAR_TYPE" jdbcType="VARCHAR" property="carType" />
+    <result column="AUTHENTICATE_IMG" jdbcType="VARCHAR" property="authenticateImg" />
+    <result column="SPECIAL_FLAG" jdbcType="CHAR" property="specialFlag" />
+    <result column="AUDIT_STATUS" jdbcType="VARCHAR" property="auditStatus" />
+    <result column="APPLY_DATE" jdbcType="TIMESTAMP" property="applyDate" />
+    <result column="AUDIT_DATE" jdbcType="TIMESTAMP" property="auditDate" />
+    <result column="REGISTRATION_TIME" jdbcType="TIMESTAMP" property="registrationTime" />
+    <result column="CONCERTING_TIME" jdbcType="TIMESTAMP" property="concertingTime" />
+    <result column="PAYING" jdbcType="CHAR" property="paying" />
+    <result column="CONCERTING" jdbcType="CHAR" property="concerting" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, MEMBER_NO, SUPPLIER_ID, REAL_NAME, PHONE, BIRTHDAY, TYPE, CAR_NUMBER, 
+    CAR_TYPE, AUTHENTICATE_IMG, SPECIAL_FLAG, AUDIT_STATUS, APPLY_DATE, AUDIT_DATE, REGISTRATION_TIME, 
+    CONCERTING_TIME, PAYING, CONCERTING, REMARK, CREATED_DATE, MODIFIED_DATE, CREATED_USER, 
+    UPDATED_USER, MARK_DELETE, VERSION_ID
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.jhy.TCustomerHeadDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_customer_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.jhy.TCustomerHeadDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from t_customer_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.jhy.TCustomerHeadDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from t_customer_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_customer_head
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memberNo != null">
+        MEMBER_NO = #{record.memberNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierId != null">
+        SUPPLIER_ID = #{record.supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="record.realName != null">
+        REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null">
+        BIRTHDAY = #{record.birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        TYPE = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carNumber != null">
+        CAR_NUMBER = #{record.carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carType != null">
+        CAR_TYPE = #{record.carType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authenticateImg != null">
+        AUTHENTICATE_IMG = #{record.authenticateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.specialFlag != null">
+        SPECIAL_FLAG = #{record.specialFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.auditStatus != null">
+        AUDIT_STATUS = #{record.auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applyDate != null">
+        APPLY_DATE = #{record.applyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.auditDate != null">
+        AUDIT_DATE = #{record.auditDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.registrationTime != null">
+        REGISTRATION_TIME = #{record.registrationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.concertingTime != null">
+        CONCERTING_TIME = #{record.concertingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.paying != null">
+        PAYING = #{record.paying,jdbcType=CHAR},
+      </if>
+      <if test="record.concerting != null">
+        CONCERTING = #{record.concerting,jdbcType=CHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_customer_head
+    set ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      MEMBER_NO = #{record.memberNo,jdbcType=VARCHAR},
+      SUPPLIER_ID = #{record.supplierId,jdbcType=INTEGER},
+      REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      BIRTHDAY = #{record.birthday,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      CAR_NUMBER = #{record.carNumber,jdbcType=VARCHAR},
+      CAR_TYPE = #{record.carType,jdbcType=VARCHAR},
+      AUTHENTICATE_IMG = #{record.authenticateImg,jdbcType=VARCHAR},
+      SPECIAL_FLAG = #{record.specialFlag,jdbcType=CHAR},
+      AUDIT_STATUS = #{record.auditStatus,jdbcType=VARCHAR},
+      APPLY_DATE = #{record.applyDate,jdbcType=TIMESTAMP},
+      AUDIT_DATE = #{record.auditDate,jdbcType=TIMESTAMP},
+      REGISTRATION_TIME = #{record.registrationTime,jdbcType=TIMESTAMP},
+      CONCERTING_TIME = #{record.concertingTime,jdbcType=TIMESTAMP},
+      PAYING = #{record.paying,jdbcType=CHAR},
+      CONCERTING = #{record.concerting,jdbcType=CHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.merchant.MerchantSettlementDAO">
+  <resultMap id="BaseResultMap" type="dal.model.merchant.MerchantSettlementDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="partner_abbr_name" jdbcType="VARCHAR" property="partnerAbbrName" />
+    <result column="settlement_account_type" jdbcType="VARCHAR" property="settlementAccountType" />
+    <result column="settlement_account_name" jdbcType="VARCHAR" property="settlementAccountName" />
+    <result column="settlement_account" jdbcType="VARCHAR" property="settlementAccount" />
+    <result column="settlement_account_bank" jdbcType="VARCHAR" property="settlementAccountBank" />
+    <result column="settlement_account_bank_code" jdbcType="VARCHAR" property="settlementAccountBankCode" />
+    <result column="settlement_account_sub_bank" jdbcType="VARCHAR" property="settlementAccountSubBank" />
+    <result column="settlement_account_sub_bank_no" jdbcType="VARCHAR" property="settlementAccountSubBankNo" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, partner_id, partner_abbr_name, settlement_account_type, settlement_account_name, 
+    settlement_account, settlement_account_bank, settlement_account_bank_code, settlement_account_sub_bank, 
+    settlement_account_sub_bank_no, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.merchant.MerchantSettlementDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from merchant_settlement
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.merchant.MerchantSettlementDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from merchant_settlement
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.merchant.MerchantSettlementDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from merchant_settlement
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_settlement
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerAbbrName != null">
+        partner_abbr_name = #{record.partnerAbbrName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountType != null">
+        settlement_account_type = #{record.settlementAccountType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountName != null">
+        settlement_account_name = #{record.settlementAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccount != null">
+        settlement_account = #{record.settlementAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountBank != null">
+        settlement_account_bank = #{record.settlementAccountBank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountBankCode != null">
+        settlement_account_bank_code = #{record.settlementAccountBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountSubBank != null">
+        settlement_account_sub_bank = #{record.settlementAccountSubBank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAccountSubBankNo != null">
+        settlement_account_sub_bank_no = #{record.settlementAccountSubBankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_settlement
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      partner_abbr_name = #{record.partnerAbbrName,jdbcType=VARCHAR},
+      settlement_account_type = #{record.settlementAccountType,jdbcType=VARCHAR},
+      settlement_account_name = #{record.settlementAccountName,jdbcType=VARCHAR},
+      settlement_account = #{record.settlementAccount,jdbcType=VARCHAR},
+      settlement_account_bank = #{record.settlementAccountBank,jdbcType=VARCHAR},
+      settlement_account_bank_code = #{record.settlementAccountBankCode,jdbcType=VARCHAR},
+      settlement_account_sub_bank = #{record.settlementAccountSubBank,jdbcType=VARCHAR},
+      settlement_account_sub_bank_no = #{record.settlementAccountSubBankNo,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

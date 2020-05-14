@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,settleChannelId,memo,channelPartnerId,params,mock,authorizerAppid,componentAppid,componentAccessToken
+1001,SUCCESS,~comn_00_0000,,,,～20180615001234567890,,～20180615001234567800,,get_public_account_message,,2222,,,,wx8ac8b1cffae74437,17_VSA1neXLR7fnmLGddaoBYxoNUL8Pq3hQ6vqJYWh__iXGd7cc8bGtFEbW3BcaEFy6FEe99BBSHa2bXp5Q64NO8MaFbVU0x4OJ7pruwvK4yeD5Fh3gfkwZ9g_kecV9UISCKOsu0EAeaTs583cFRWPhAFACHA

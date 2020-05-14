@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.promotion.SnapshotEventEntryDAO">
+  <resultMap id="BaseResultMap" type="dal.model.promotion.SnapshotEventEntryDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aggregate_identifier" jdbcType="VARCHAR" property="aggregateIdentifier" />
+    <id column="sequence_number" jdbcType="BIGINT" property="sequenceNumber" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="event_identifier" jdbcType="VARCHAR" property="eventIdentifier" />
+    <result column="payload_revision" jdbcType="VARCHAR" property="payloadRevision" />
+    <result column="payload_type" jdbcType="VARCHAR" property="payloadType" />
+    <result column="timestamp" jdbcType="VARCHAR" property="timestamp" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.promotion.SnapshotEventEntryDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="meta_data" jdbcType="LONGVARBINARY" property="metaData" />
+    <result column="payload" jdbcType="LONGVARBINARY" property="payload" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    aggregate_identifier, sequence_number, type, event_identifier, payload_revision, 
+    payload_type, timestamp
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    meta_data, payload
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.promotion.SnapshotEventEntryDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from snapshot_event_entry
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.promotion.SnapshotEventEntryDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from snapshot_event_entry
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.promotion.SnapshotEventEntryDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from snapshot_event_entry
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.promotion.SnapshotEventEntryDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from snapshot_event_entry
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update snapshot_event_entry
+    <set>
+      <if test="record.aggregateIdentifier != null">
+        aggregate_identifier = #{record.aggregateIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sequenceNumber != null">
+        sequence_number = #{record.sequenceNumber,jdbcType=BIGINT},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eventIdentifier != null">
+        event_identifier = #{record.eventIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payloadRevision != null">
+        payload_revision = #{record.payloadRevision,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payloadType != null">
+        payload_type = #{record.payloadType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timestamp != null">
+        timestamp = #{record.timestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.metaData != null">
+        meta_data = #{record.metaData,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="record.payload != null">
+        payload = #{record.payload,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update snapshot_event_entry
+    set aggregate_identifier = #{record.aggregateIdentifier,jdbcType=VARCHAR},
+      sequence_number = #{record.sequenceNumber,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=VARCHAR},
+      event_identifier = #{record.eventIdentifier,jdbcType=VARCHAR},
+      payload_revision = #{record.payloadRevision,jdbcType=VARCHAR},
+      payload_type = #{record.payloadType,jdbcType=VARCHAR},
+      timestamp = #{record.timestamp,jdbcType=VARCHAR},
+      meta_data = #{record.metaData,jdbcType=LONGVARBINARY},
+      payload = #{record.payload,jdbcType=LONGVARBINARY}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update snapshot_event_entry
+    set aggregate_identifier = #{record.aggregateIdentifier,jdbcType=VARCHAR},
+      sequence_number = #{record.sequenceNumber,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=VARCHAR},
+      event_identifier = #{record.eventIdentifier,jdbcType=VARCHAR},
+      payload_revision = #{record.payloadRevision,jdbcType=VARCHAR},
+      payload_type = #{record.payloadType,jdbcType=VARCHAR},
+      timestamp = #{record.timestamp,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

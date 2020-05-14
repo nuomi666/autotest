@@ -1,0 +1,2 @@
+testId,name,title,lifeCycle,beginTime,finishTime,description,prizeNames,stockNums,awards,money,points,couponName,couponNum
+1001,抽奖123,爱车,FOREVER,,,活动规则,"[谢谢参与,储值金,积分]","[1000,30,10]","[NONE,MONEY,POINTS]",5,100,,

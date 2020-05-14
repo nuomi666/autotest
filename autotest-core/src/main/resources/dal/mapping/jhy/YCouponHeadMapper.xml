@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.jhy.YCouponHeadDAO">
+  <resultMap id="BaseResultMap" type="dal.model.jhy.YCouponHeadDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="BIGINT" property="entityId" />
+    <result column="PLATFORM_ID" jdbcType="DECIMAL" property="platformId" />
+    <result column="SUPPLIER_HEAD_ID" jdbcType="DECIMAL" property="supplierHeadId" />
+    <result column="SHOP_HEAD_ID" jdbcType="DECIMAL" property="shopHeadId" />
+    <result column="COUPON_NAME" jdbcType="VARCHAR" property="couponName" />
+    <result column="COUPON_TYPE" jdbcType="VARCHAR" property="couponType" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="COUPON_PRICE" jdbcType="DECIMAL" property="couponPrice" />
+    <result column="GAIN_WAY" jdbcType="VARCHAR" property="gainWay" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="COUPON_IS_GET" jdbcType="VARCHAR" property="couponIsGet" />
+    <result column="MAX_USER_GET" jdbcType="DECIMAL" property="maxUserGet" />
+    <result column="MAX_USER_USE" jdbcType="DECIMAL" property="maxUserUse" />
+    <result column="MAX_SUPERPOSITION" jdbcType="DECIMAL" property="maxSuperposition" />
+    <result column="MAX_RELIEF_AMOUNT" jdbcType="DECIMAL" property="maxReliefAmount" />
+    <result column="NUMS_COUPON" jdbcType="DECIMAL" property="numsCoupon" />
+    <result column="USE_TOGETHER" jdbcType="VARCHAR" property="useTogether" />
+    <result column="TOTAL_AMOUNT" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="COUPON_STATUS" jdbcType="CHAR" property="couponStatus" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.jhy.YCouponHeadDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="COUPON_CONDITION" jdbcType="LONGVARCHAR" property="couponCondition" />
+    <result column="COUPON_PICTURE" jdbcType="LONGVARCHAR" property="couponPicture" />
+    <result column="COUPON_DETAIL" jdbcType="LONGVARCHAR" property="couponDetail" />
+    <result column="USE_DETAIL" jdbcType="LONGVARCHAR" property="useDetail" />
+    <result column="GET_CONDITION" jdbcType="LONGVARCHAR" property="getCondition" />
+    <result column="PRICE_CONDITION" jdbcType="LONGVARCHAR" property="priceCondition" />
+    <result column="REMARK" jdbcType="LONGVARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, PLATFORM_ID, SUPPLIER_HEAD_ID, SHOP_HEAD_ID, COUPON_NAME, COUPON_TYPE, 
+    TYPE, COUPON_PRICE, GAIN_WAY, START_TIME, END_TIME, COUPON_IS_GET, MAX_USER_GET, 
+    MAX_USER_USE, MAX_SUPERPOSITION, MAX_RELIEF_AMOUNT, NUMS_COUPON, USE_TOGETHER, TOTAL_AMOUNT, 
+    COUPON_STATUS, CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, VERSION_ID, 
+    MARK_DELETE
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    COUPON_CONDITION, COUPON_PICTURE, COUPON_DETAIL, USE_DETAIL, GET_CONDITION, PRICE_CONDITION, 
+    REMARK
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.jhy.YCouponHeadDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from y_coupon_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.jhy.YCouponHeadDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from y_coupon_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.jhy.YCouponHeadDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from y_coupon_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.jhy.YCouponHeadDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from y_coupon_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_coupon_head
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.platformId != null">
+        PLATFORM_ID = #{record.platformId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.supplierHeadId != null">
+        SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shopHeadId != null">
+        SHOP_HEAD_ID = #{record.shopHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.couponName != null">
+        COUPON_NAME = #{record.couponName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couponType != null">
+        COUPON_TYPE = #{record.couponType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        TYPE = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couponPrice != null">
+        COUPON_PRICE = #{record.couponPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gainWay != null">
+        GAIN_WAY = #{record.gainWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startTime != null">
+        START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null">
+        END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.couponIsGet != null">
+        COUPON_IS_GET = #{record.couponIsGet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maxUserGet != null">
+        MAX_USER_GET = #{record.maxUserGet,jdbcType=DECIMAL},
+      </if>
+      <if test="record.maxUserUse != null">
+        MAX_USER_USE = #{record.maxUserUse,jdbcType=DECIMAL},
+      </if>
+      <if test="record.maxSuperposition != null">
+        MAX_SUPERPOSITION = #{record.maxSuperposition,jdbcType=DECIMAL},
+      </if>
+      <if test="record.maxReliefAmount != null">
+        MAX_RELIEF_AMOUNT = #{record.maxReliefAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.numsCoupon != null">
+        NUMS_COUPON = #{record.numsCoupon,jdbcType=DECIMAL},
+      </if>
+      <if test="record.useTogether != null">
+        USE_TOGETHER = #{record.useTogether,jdbcType=VARCHAR},
+      </if>
+      <if test="record.totalAmount != null">
+        TOTAL_AMOUNT = #{record.totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.couponStatus != null">
+        COUPON_STATUS = #{record.couponStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.couponCondition != null">
+        COUPON_CONDITION = #{record.couponCondition,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.couponPicture != null">
+        COUPON_PICTURE = #{record.couponPicture,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.couponDetail != null">
+        COUPON_DETAIL = #{record.couponDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.useDetail != null">
+        USE_DETAIL = #{record.useDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.getCondition != null">
+        GET_CONDITION = #{record.getCondition,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.priceCondition != null">
+        PRICE_CONDITION = #{record.priceCondition,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_coupon_head
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      PLATFORM_ID = #{record.platformId,jdbcType=DECIMAL},
+      SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      SHOP_HEAD_ID = #{record.shopHeadId,jdbcType=DECIMAL},
+      COUPON_NAME = #{record.couponName,jdbcType=VARCHAR},
+      COUPON_TYPE = #{record.couponType,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      COUPON_PRICE = #{record.couponPrice,jdbcType=DECIMAL},
+      GAIN_WAY = #{record.gainWay,jdbcType=VARCHAR},
+      START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      COUPON_IS_GET = #{record.couponIsGet,jdbcType=VARCHAR},
+      MAX_USER_GET = #{record.maxUserGet,jdbcType=DECIMAL},
+      MAX_USER_USE = #{record.maxUserUse,jdbcType=DECIMAL},
+      MAX_SUPERPOSITION = #{record.maxSuperposition,jdbcType=DECIMAL},
+      MAX_RELIEF_AMOUNT = #{record.maxReliefAmount,jdbcType=DECIMAL},
+      NUMS_COUPON = #{record.numsCoupon,jdbcType=DECIMAL},
+      USE_TOGETHER = #{record.useTogether,jdbcType=VARCHAR},
+      TOTAL_AMOUNT = #{record.totalAmount,jdbcType=DECIMAL},
+      COUPON_STATUS = #{record.couponStatus,jdbcType=CHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      COUPON_CONDITION = #{record.couponCondition,jdbcType=LONGVARCHAR},
+      COUPON_PICTURE = #{record.couponPicture,jdbcType=LONGVARCHAR},
+      COUPON_DETAIL = #{record.couponDetail,jdbcType=LONGVARCHAR},
+      USE_DETAIL = #{record.useDetail,jdbcType=LONGVARCHAR},
+      GET_CONDITION = #{record.getCondition,jdbcType=LONGVARCHAR},
+      PRICE_CONDITION = #{record.priceCondition,jdbcType=LONGVARCHAR},
+      REMARK = #{record.remark,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_coupon_head
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      PLATFORM_ID = #{record.platformId,jdbcType=DECIMAL},
+      SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      SHOP_HEAD_ID = #{record.shopHeadId,jdbcType=DECIMAL},
+      COUPON_NAME = #{record.couponName,jdbcType=VARCHAR},
+      COUPON_TYPE = #{record.couponType,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      COUPON_PRICE = #{record.couponPrice,jdbcType=DECIMAL},
+      GAIN_WAY = #{record.gainWay,jdbcType=VARCHAR},
+      START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      COUPON_IS_GET = #{record.couponIsGet,jdbcType=VARCHAR},
+      MAX_USER_GET = #{record.maxUserGet,jdbcType=DECIMAL},
+      MAX_USER_USE = #{record.maxUserUse,jdbcType=DECIMAL},
+      MAX_SUPERPOSITION = #{record.maxSuperposition,jdbcType=DECIMAL},
+      MAX_RELIEF_AMOUNT = #{record.maxReliefAmount,jdbcType=DECIMAL},
+      NUMS_COUPON = #{record.numsCoupon,jdbcType=DECIMAL},
+      USE_TOGETHER = #{record.useTogether,jdbcType=VARCHAR},
+      TOTAL_AMOUNT = #{record.totalAmount,jdbcType=DECIMAL},
+      COUPON_STATUS = #{record.couponStatus,jdbcType=CHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

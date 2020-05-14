@@ -1,0 +1,6 @@
+testId,status,code,service,version,description,message,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,amount,bankCardNo,payeeOutUserId
+1001,PROCESSING,~C0001,,~1.0.0,,,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567898346,outuseridenterprise00001
+1002,SUCCESS,~C0001,,~1.0.0,,,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567898346,outuseridenterprise00001
+1003,FAIL,H021_00_0001,,~1.0.0,提现人信息不存在,提现人信息不存在,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567898346,~outuseridenterprise0000x
+1004,FAIL,H021_02_0002,,~1.0.0,余额不足,余额不足,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,10,~6228481234567898346,outuseridenterprise00001
+1005,FAIL,H021_02_0001,,~1.0.0,"该银行卡[6228481234567899999]未绑定,不允许提现","该银行卡[6228481234567899999]未绑定,不允许提现",,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567899999,outuseridenterprise00001

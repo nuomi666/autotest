@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,account,password,deviceCode
+1001,FAIL,~comn_00_0000,,GID,admin,123456,8a7ffd5b
+1002,FAIL,~comn_00_0000,,GID,admin,123456,8a7ffd5b
+1003,FAIL,~comn_00_0000,,GID,admin,123456,8a7ffd5b
+1004,FAIL,~comn_00_0000,,GID,admin,123456,8a7ffd5b
+1005,FAIL,~comn_00_0000,,GID,admin,123456,8a7ffd5b

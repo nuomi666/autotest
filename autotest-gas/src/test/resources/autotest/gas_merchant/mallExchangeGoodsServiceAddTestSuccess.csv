@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,goodsId,goodsType,goodsName,goodsDescription,goodsImg,forSaleTime,invalidTime,exchangePoint,storeNum,oneExchangeTimes,gainStyle,gainStations,station,station1
+1001,SUCCESS,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,ENTITY,海南岛空气,海南岛空气新鲜空气,56.uuu,,,1000,10,1,SELF,,001if9yazl84g025eh00,001if9yazl84g025eh00
+1002,SUCCESS,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,ENTITY,土豪徽章,土豪徽章一枚,78.fff,,,999,10,1,SELF,,001if9yazl84g025eh00,001if9yazl84g025eh00
+1003,SUCCESS,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,COUPON,xxx优惠券,xxx优惠券,555.hhhh,,,500,100,5,AUTO,,001if9yazl84g025eh00,001if9yazl84g025eh00
+1004,SUCCESS,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,COUPON,xxx优惠券,xxx优惠券,kkk.kkk,,,500,100,5,AUTO,,001if9yazl84g025eh00,001if9yazl84g025eh00

@@ -1,0 +1,2 @@
+testId,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,externalMetaData,memo,extensionContext,payerUserId,payeeUserId,amount,redirectUrl
+1001,,,~20180615001234567890,merchantOrderNo,~20180615001234567890,platMerchantOrderNo,externalMetaData,memo,,~20180615001234567891,~20180615001234567892,1,http://rx.autotest.fun/api/receive.json

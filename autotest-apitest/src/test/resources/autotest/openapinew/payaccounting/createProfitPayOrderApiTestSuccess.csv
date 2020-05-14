@@ -1,0 +1,5 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,payAmount,payeeOutUserId,remark,profitOutUserId,profitAmount,profitPercent,profitRemark,profitOutUserId2,profitAmount2,profitPercent2,profitRemark2
+1001,PROCESSING,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~outuseridenterprise00001,只收钱不分钱,,,,,,,,
+1002,PROCESSING,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~outuseridenterprise00001,,~hft00000001111111,0.05,,拿钥匙的给0.05块,,,,
+1003,PROCESSING,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00001,0.05,,拿钥匙的给0.05块,outuseridenterprise00002,,0.25,勘探25%
+1004,PROCESSING,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/tradePay,~0.10,~hft00000001111111,,~outuseridenterprise00002,0.05,,拿钥匙的给0.05块,outuseridenterprise00002,,0.5,勘探50%

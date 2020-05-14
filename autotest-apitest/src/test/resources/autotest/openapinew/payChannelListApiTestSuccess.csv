@@ -1,0 +1,2 @@
+testId,status,code,requestNo,protocol,service,version,partnerId,securityCheckCode,signType,merchOrderNo,context,returnUrl,notifyUrl,payChannel,payType
+1001,SUCCESS,~C0001,requestNo,HTTP_FORM_JSON,,~1.0.0,,,MD5,merchOrderNo,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,WECHAT ,SCAN

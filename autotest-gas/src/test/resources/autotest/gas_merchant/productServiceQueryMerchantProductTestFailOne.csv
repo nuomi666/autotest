@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,platPartnerId,productName,deviceType,productCategoryList,status_order
+1001,FAIL,~comn_00_0000,,GID,S0301910311800092118,,,,
+1002,FAIL,~comn_00_0000,,GID,S0301910311800092118,,,,
+1003,FAIL,~comn_00_0000,,GID,S0301910311800092118,,,,

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.clear.SettlementTaskLogDAO">
+  <resultMap id="BaseResultMap" type="dal.model.clear.SettlementTaskLogDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="settlement_date" jdbcType="VARCHAR" property="settlementDate" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId" />
+    <result column="partner_real_name" jdbcType="VARCHAR" property="partnerRealName" />
+    <result column="clear_status" jdbcType="VARCHAR" property="clearStatus" />
+    <result column="clear_time" jdbcType="TIMESTAMP" property="clearTime" />
+    <result column="clear_comment" jdbcType="VARCHAR" property="clearComment" />
+    <result column="settlement_status" jdbcType="VARCHAR" property="settlementStatus" />
+    <result column="settlement_time" jdbcType="TIMESTAMP" property="settlementTime" />
+    <result column="settlement_comment" jdbcType="VARCHAR" property="settlementComment" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, settlement_date, partner_id, channel_id, partner_real_name, clear_status, clear_time, 
+    clear_comment, settlement_status, settlement_time, settlement_comment, raw_add_time, 
+    raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.clear.SettlementTaskLogDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from settlement_task_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.clear.SettlementTaskLogDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from settlement_task_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.clear.SettlementTaskLogDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from settlement_task_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update settlement_task_log
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.settlementDate != null">
+        settlement_date = #{record.settlementDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelId != null">
+        channel_id = #{record.channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerRealName != null">
+        partner_real_name = #{record.partnerRealName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearStatus != null">
+        clear_status = #{record.clearStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearTime != null">
+        clear_time = #{record.clearTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.clearComment != null">
+        clear_comment = #{record.clearComment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementStatus != null">
+        settlement_status = #{record.settlementStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementTime != null">
+        settlement_time = #{record.settlementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.settlementComment != null">
+        settlement_comment = #{record.settlementComment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update settlement_task_log
+    set id = #{record.id,jdbcType=BIGINT},
+      settlement_date = #{record.settlementDate,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      channel_id = #{record.channelId,jdbcType=VARCHAR},
+      partner_real_name = #{record.partnerRealName,jdbcType=VARCHAR},
+      clear_status = #{record.clearStatus,jdbcType=VARCHAR},
+      clear_time = #{record.clearTime,jdbcType=TIMESTAMP},
+      clear_comment = #{record.clearComment,jdbcType=VARCHAR},
+      settlement_status = #{record.settlementStatus,jdbcType=VARCHAR},
+      settlement_time = #{record.settlementTime,jdbcType=TIMESTAMP},
+      settlement_comment = #{record.settlementComment,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

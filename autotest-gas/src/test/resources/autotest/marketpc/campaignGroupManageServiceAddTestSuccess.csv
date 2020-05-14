@@ -1,0 +1,5 @@
+testId,status,code,gid,groupName,partnerId,couponOverlap,discountMaxAmount,priority,campaignNos,campaignNo
+1001,SUCCESS,~comn_00_0000,,十月活动列表,S0301808271500000065,TRUE,50,1,,
+1002,SUCCESS,~comn_00_0000,,十月活动列表,S0301811011400000108,TRUE,50,1,,
+1003,SUCCESS,~comn_00_0000,,测试等级自动更新活动,S0301811271400000001,TRUE,50,1,,
+1004,SUCCESS,~comn_00_0000,,测试等级更新活动,S0301811261400000001,TRUE,50,1,,

@@ -1,0 +1,2 @@
+testId,status,code,day,order-->,gid,partnerId,platPartnerId,resetSwitch,integralResetType,useTimeUnit,days
+1001,SUCCESS,~comn_00_0000,2020-01-23,,GID,S0301909161100092061,S0301909161100092061,,FIXED_POINT_ZERO,,

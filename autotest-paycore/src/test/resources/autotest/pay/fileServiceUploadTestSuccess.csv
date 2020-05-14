@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,sysCode,type,batchNo,fileName,operateDate,params
+1001,SUCCESS,~comn_00_0000,,,,~20180615001234567890,,~20180615001234567890,,S01,DELAY_WITHDRAW_FILE_UPLOAD,,,,

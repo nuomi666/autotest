@@ -1,0 +1,5 @@
+testId,gid,reqId,partnerId,merchantOrderNo,terminalType,terminalCode,operateId,stationId,orderType,oilCode,oilGun,amount,code_tradeGoodsOrder,amount_tradeGoodsOrder,code,description,message
+1001,,,S0301808271500000065,payb0254112547885,POS,d01254,001if9yav9ikg025eh00,001if9yazl84g025eh00,OIL_GOODS,#95,sasa3232,40,goods,50,G03_04_0001,,
+1002,,,S0301808271500000065,payb0254112547885,POS,d01254,001if9yav9ikg025eh00,001if9yazl84g025eh00,OIL_GOODS,#95,sasa3232,150,goods,50,G03_04_0001,,
+1003,,,S0301808271500000065,payb0254112547885,POS,d01254,001if9yav9ikg025eh00,001if9yazl84g025eh00,OIL,#95,sasa3232,100,goods,100,G03_04_0001,,
+1004,,,S0301808271500000065,payb0254112547885,POS,d01254,001if9yav9ikg025eh00,001if9yazl84g025eh00,GOODS,#95,sasa3232,100,goods,100,G03_04_0001,,

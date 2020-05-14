@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,payWayCode,payWayName,payWayCode1,payWayName1,payWayCode2,payWayName2,payWayType,barCode,applyGoodsType,paywayTerminalType,paywayTerminalType1,paywayTerminalType2,paywayModelType,paywayModelType1,paywayModelType2,paywayActionType,payWayStatus,print,order-->,gid,partnerId,platPartnerId_order,modelType,actionType,terminalType,paywayType,stationId
+1001,SUCCESS,~comn_00_0000,S0301810232300000119,ALI,支付宝,REMAINING,会员卡,CASH,现金,CHANNEL,13,ALL,ALI_H5,WECHAT_H5,POS,PUBLIC,BALANCE,KEY,PAYMENT,ABLE,true,,GID,,S0301810232300000119,,,,,
+1002,SUCCESS,~comn_00_0000,S0301810232300000119,ALI,支付宝,REMAINING,会员卡,CASH,现金,CHANNEL,13,ALL,ALI_H5,WECHAT_H5,POS,PUBLIC,BALANCE,PUBLIC,PAYMENT,ABLE,true,,GID,,S0301810232300000119,PUBLIC,PAYMENT,,CHANNEL,
+1003,SUCCESS,~comn_00_0000,S0301810232300000119,ALI,支付宝,REMAINING,会员卡,CASH,现金,CHANNEL,13,ALL,ALI_H5,WECHAT_H5,POS,PUBLIC,BALANCE,PUBLIC,PAYMENT,ABLE,true,,GID,,S0301810232300000119,PUBLIC,PAYMENT,POS,,

@@ -1,0 +1,2 @@
+testId,goodsType,entityGoodsName,upload,entityGoodsDescription,entityExchangePoint,entityStoreNum,entityOneExchangeTimes,entityForSaleTime,entityInvalidTime,entityGainStations
+1001,ENTITY,新商品名大米,,大米,100,1000,2,2020-02-26 00:00:00,2020-03-26 00:00:00,"[什么油站,后台的油站]"

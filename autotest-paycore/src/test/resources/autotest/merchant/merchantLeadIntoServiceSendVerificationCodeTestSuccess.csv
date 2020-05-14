@@ -1,0 +1,2 @@
+testId,status,code,sendCodeOrder-->,gid,partnerId,outUserId,phone,verificationCodeType
+1001,SUCCESS,~comn_00_0000,,GID,~20180615001234567800,~personoutuserid11111,18723088153,BINDING_MOBILE_PHONE

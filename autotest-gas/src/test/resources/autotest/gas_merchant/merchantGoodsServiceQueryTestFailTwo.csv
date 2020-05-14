@@ -1,0 +1,2 @@
+testId,status,code,platPartnerId,stationId,stationId1,stationCode,stationCode1,stationName,stationName1,goodsCode,goodsCode1,goodsName,goodsName1,stationPlanId,stationPlanId1,merchantPlanId,merchantPlanId1,order-->,gid,partnerId,platPartnerId_order,stationId_order,goodsType,goodsCodes
+1001,FAIL,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,OID,OID,,GID,,S0301910241700092111,OID,OIL,

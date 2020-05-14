@@ -1,0 +1,2 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,bankAccountType,bankCardName,bankCardNo,bankCode,bankKey
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,http://rx.autotest.fun/api/receive.json,http://rx.autotest.fun/api/receive.json,SAME_BANK_PERSONAL_ACCOUNT ,赫溺辟,~6229980700041788,CITIC ,~302653042331

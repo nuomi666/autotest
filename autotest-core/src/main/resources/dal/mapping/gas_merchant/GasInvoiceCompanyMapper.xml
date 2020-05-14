@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_merchant.GasInvoiceCompanyDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_merchant.GasInvoiceCompanyDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="station_id" jdbcType="VARCHAR" property="stationId" />
+    <result column="tax_company" jdbcType="VARCHAR" property="taxCompany" />
+    <result column="tax_code" jdbcType="VARCHAR" property="taxCode" />
+    <result column="tax_address" jdbcType="VARCHAR" property="taxAddress" />
+    <result column="tax_mobile" jdbcType="VARCHAR" property="taxMobile" />
+    <result column="tax_drawer" jdbcType="VARCHAR" property="taxDrawer" />
+    <result column="tax_bank_no" jdbcType="VARCHAR" property="taxBankNo" />
+    <result column="tax_reviewer" jdbcType="VARCHAR" property="taxReviewer" />
+    <result column="tax_payee" jdbcType="VARCHAR" property="taxPayee" />
+    <result column="tax_app_id" jdbcType="VARCHAR" property="taxAppId" />
+    <result column="tax_key" jdbcType="VARCHAR" property="taxKey" />
+    <result column="tax_cert_path" jdbcType="VARCHAR" property="taxCertPath" />
+    <result column="tax_cert_pwd" jdbcType="VARCHAR" property="taxCertPwd" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, plat_partner_id, station_id, tax_company, tax_code, tax_address, tax_mobile, 
+    tax_drawer, tax_bank_no, tax_reviewer, tax_payee, tax_app_id, tax_key, tax_cert_path, 
+    tax_cert_pwd, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.gas_merchant.GasInvoiceCompanyDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_invoice_company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_merchant.GasInvoiceCompanyDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_invoice_company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_merchant.GasInvoiceCompanyDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_invoice_company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_invoice_company
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationId != null">
+        station_id = #{record.stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCompany != null">
+        tax_company = #{record.taxCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCode != null">
+        tax_code = #{record.taxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxAddress != null">
+        tax_address = #{record.taxAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxMobile != null">
+        tax_mobile = #{record.taxMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxDrawer != null">
+        tax_drawer = #{record.taxDrawer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxBankNo != null">
+        tax_bank_no = #{record.taxBankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxReviewer != null">
+        tax_reviewer = #{record.taxReviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxPayee != null">
+        tax_payee = #{record.taxPayee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxAppId != null">
+        tax_app_id = #{record.taxAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxKey != null">
+        tax_key = #{record.taxKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCertPath != null">
+        tax_cert_path = #{record.taxCertPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCertPwd != null">
+        tax_cert_pwd = #{record.taxCertPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_invoice_company
+    set id = #{record.id,jdbcType=BIGINT},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      station_id = #{record.stationId,jdbcType=VARCHAR},
+      tax_company = #{record.taxCompany,jdbcType=VARCHAR},
+      tax_code = #{record.taxCode,jdbcType=VARCHAR},
+      tax_address = #{record.taxAddress,jdbcType=VARCHAR},
+      tax_mobile = #{record.taxMobile,jdbcType=VARCHAR},
+      tax_drawer = #{record.taxDrawer,jdbcType=VARCHAR},
+      tax_bank_no = #{record.taxBankNo,jdbcType=VARCHAR},
+      tax_reviewer = #{record.taxReviewer,jdbcType=VARCHAR},
+      tax_payee = #{record.taxPayee,jdbcType=VARCHAR},
+      tax_app_id = #{record.taxAppId,jdbcType=VARCHAR},
+      tax_key = #{record.taxKey,jdbcType=VARCHAR},
+      tax_cert_path = #{record.taxCertPath,jdbcType=VARCHAR},
+      tax_cert_pwd = #{record.taxCertPwd,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

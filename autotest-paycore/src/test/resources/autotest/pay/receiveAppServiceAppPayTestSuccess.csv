@@ -1,0 +1,2 @@
+testId,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,externalMetaData,memo,extensionContext,notifyCategory,notifyUrl,notifyGroup,notifyVersion,userId,payAmount,userEndIp,goodsDes,returnUrl,description
+1001,,,~20180615001234567890,merchantOrderNo,~20180615001234567890,platMerchantOrderNo,externalMetaData,memo,,HTTP,http://rx.autotest.fun/api/receive.json,,,~20180615001234567891,1,,商品,http://rx.autotest.fun/api/receive.json,描述

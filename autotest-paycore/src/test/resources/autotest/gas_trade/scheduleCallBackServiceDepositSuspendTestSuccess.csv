@@ -1,0 +1,2 @@
+testId,gid,reqId,partnerId,merchantOrderNo,terminalType,terminalCode,operateId,stationId,tradePayType,payModel,authCode,aLiUserId,weChatOpenId,userIp,cardNo,amount,code,description,message
+1001,dpohygsdf0125478541254785425478965d,g1234567890123456789,S0301808271500000065,oxxx0254112547885,POS,d01254,001if9yav9ikg025eh00,001if9yazl84g025eh00,WECHAT,KEY,ftg5455,,nuomi,192.168.2.34,S0301808241600000149,120,~comn_07_0000,充值时，付款超时,

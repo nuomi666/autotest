@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,settleChannelId,payType,payChannel,channel,product,bizType,subBizType,memo,channelPartnerId,params,mock,fileName,payConfigOrder-->,gid_payConfigOrder,payChannelType,partnerId_payConfigOrder,channelId
+1001,SUCCESS,~comn_00_0000,,,,~20180615001234567890,,~20180615001234567890,,,,,,,,,,,,,,,,UPLOAD_QUERY,~20180615001234567890,dsgj

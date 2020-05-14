@@ -1,0 +1,2 @@
+testId,status,code,queryMerchantEntryOrder-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,channelId,cardNo
+1001,SUCCESS,~comn_00_0000,,GID,OID,~20180615001234567895,OID,~20180615001234567800,OID,yst,

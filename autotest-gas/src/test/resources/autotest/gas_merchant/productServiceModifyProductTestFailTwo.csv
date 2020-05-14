@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,productId,status_order,productName,productType,productCategory,permissionList,memo
+1001,FAIL,~comn_00_0000,,GID,OID,,营销中心,BOSS,MERCHANT,,

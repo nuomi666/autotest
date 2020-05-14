@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,subMerchantName,subMerchantAbbr,subMerchantAddress,subMerchantContact,subMerchantContactPhone,subMerchantEmail
+1001,FAIL,BB102005,,,,~20180615001234567891,,~20180615001234567891,,商户全称01,简称01,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qqcom
+1002,FAIL,~comn_06_0001,,,,~20180615001234567891,,~20180615001234567891,,商户全称01,简称01,重庆市渝北区产业园,怀仁,~075788881111,3298887777qqcom
+1003,FAIL,~comn_06_0001,,,,~20180615001234567891,,~20180615001234567891,,商户全称01,重庆市渝北互联网产业园,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qqcom
+1004,FAIL,~BB102005,,,,~20180615001234567899,,~20180615001234567891,,商户全称01,重庆市渝北互联网产业,重庆市渝北区产业园,怀仁,~075788881111,3298887777@qqcom

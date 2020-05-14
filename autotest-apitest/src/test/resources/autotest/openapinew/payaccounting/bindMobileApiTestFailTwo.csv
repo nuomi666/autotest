@@ -1,0 +1,8 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,outUserId,phone,verificationCode
+1001,FAIL,~mcht_01_0001,,~1.0.0,,,MD5,,context,,,~outuseridenterprise0000x,~18723088153,~082476
+1002,FAIL,~C0024,,~1.0.0,parternidi0049329331,,MD5,,context,,,~hft00000001111111,~18723088153,~739611
+1003,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~outuseridenterprise00001,~18723088153,~71295
+1004,FAIL,S03_04_0017,,~1.0.0,,,MD5,,context,,,~hft00000001111111,~18723088153,~71296
+1005,FAIL,~10001,,~1.0.0,,,MD5,,context,,,~outuseridenterprise00002,~18723088153,~99999
+1006,FAIL,~10001,,~1.0.0,,,MD5,,context,,,~hft00000001111112,~18723088153,~111111
+1007,FAIL,~mcht_01_0008,,~1.0.0,,,MD5,,context,,,~outuseridenterprise00003,~18723088159,~71313

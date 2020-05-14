@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,settleChannelId,memo,channelPartnerId,params,mock,lat,lng,ak,pois,radius,latest_admin
+1001,SUCCESS,~comn_00_0000,,,,～20180615001234567890,,～20180615001234567800,,baidumap_coorinate_query,,22222,,,,,MmVUVGB6dkmSzDq7z6M78c4iBMQjbGmm,,,

@@ -1,0 +1,5 @@
+testId,status,code,parentName,roleName,roleName1,memo,memo1,memo2,order-->,gid,pageNo,pageSize,keywords
+1001,SUCCESS,~comn_00_0000,商家管理员,站长,收银员,备注1,备注2,备注3,,GID,1,10,管理员
+1002,SUCCESS,~comn_00_0000,商家管理员,站长,收银员,备注1,备注2,备注3,,GID,1,10,
+1003,SUCCESS,~comn_00_0000,商家管理员,站长,收银员,备注1,备注2,备注3,,GID,1,2,
+1004,SUCCESS,~comn_00_0000,商家管理员,站长,收银员,备注1,备注2,备注3,,GID,2,2,

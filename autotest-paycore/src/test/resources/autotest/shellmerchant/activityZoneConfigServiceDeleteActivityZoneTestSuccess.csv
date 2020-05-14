@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,id,activityZoneConfigDO-->,id_activityZoneConfigDO,activityZoneName,partnerId,memo,activityImgUrl,activityShowState,activityContentUrl,rawAddTime,rawUpdateTime
+1001,SUCCESS,~comn_00_0000,,,,,233,测试活动2,S0301901221100000918,测试活动22222,http://static.xinyebang.xyz:81/jhy/img/201902266c367f0e2fd84aceae1beeca8977a84a.jpeg,0,http://www.7k7k.com,2019-05-01 10:24:41,2019-05-01 10:24:41

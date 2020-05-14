@@ -1,0 +1,5 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,certNo,outUserId,realName
+1001,FAIL,mcht_01_0003,,~1.0.0,,,MD5,,context,,,~511023198905050999,~hft000000xxxxxxx,个人黄
+1002,FAIL,comn_05_0000,,~1.0.0,,,MD5,,context,,,~511023198905050999,~hft000000xxxxxxx,个人绿
+1003,FAIL,comn_05_0000,,~1.0.0,,,MD5,,context,,,~511023198905050999,~hft000000xxxxxxx,个人青
+1004,FAIL,comn_05_0000,,~1.0.0,,,MD5,,context,,,~5110231989050509xx,~hft000000xxxxxxx,个人红

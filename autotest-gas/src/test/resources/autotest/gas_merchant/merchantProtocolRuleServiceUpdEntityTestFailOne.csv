@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,platPartnerId,ruleType,description,status_order,protocol,ruleData
+1001,FAIL,~comn_00_0000,,GID,S0301909161100092061,Recharge,会员充值协议更新,ABLE,充10送2，充50送5,
+1002,FAIL,~comn_00_0000,,GID,S0301909161100092061,Recharge,会员充值协议更新,ABLE,充10送2，充50送5,
+1003,FAIL,~comn_00_0000,,GID,S0301909161100092061,Recharge,会员充值协议更新,ABLE,充10送2，充50送5,
+1004,FAIL,~comn_00_0000,,GID,S0301909161100092061,Recharge,会员充值协议更新,ABLE,充10送2，充50送5,

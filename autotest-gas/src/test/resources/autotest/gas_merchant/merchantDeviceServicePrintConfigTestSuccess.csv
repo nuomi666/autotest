@@ -1,0 +1,5 @@
+testId,status,code,stationId,printId,printType,printTitle,sleepTime,order-->,gid,partnerId,platPartnerId,printId_order,stationId_order,deviceType,printType_order,printTitle_order,printSleep
+1001,SUCCESS,~comn_00_0000,001if9yazl84g025eh00,001iq5yc9bfzG0200100,Cashier,加好油收银小票,3,,,S0301810081500000065,S0301810081500000065,,001if9yazl84g025eh00,POS,CashierRefund,收银小票,5
+1002,SUCCESS,~comn_00_0000,001if9yazl84g025eh00,001iq5yc9bfzG0200100,Cashier,加好油收银小票,3,,,S0301810081500000065,S0301810081500000065,,001if9yazl84g025eh00,POS,CashierRefund,收银退款小票,5
+1003,SUCCESS,~comn_00_0000,001if9yazl84g025eh00,001iq5yc9bfzG0200100,Cashier,加好油收银小票,3,,,S0301810081500000065,S0301810081500000065,001iq5yc9bfzG0200100,001if9wutl84g025eh00,POS,Recharge,充值小票,5
+1004,SUCCESS,~comn_00_0000,001if9yazl84g025eh00,001iq5yc9bfzG0200100,Cashier,加好油收银小票,3,,,S0301810081500000065,S0301810081500000065,,001if9yazl84g025eh00,POS,RechargeRefund,充值退款小票,5

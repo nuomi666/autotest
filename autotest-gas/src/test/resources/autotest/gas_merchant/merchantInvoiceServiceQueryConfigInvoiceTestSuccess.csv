@@ -1,0 +1,3 @@
+testId,status,code,oilCode,oilCode1,payWay,payWay1,payStatus,payStatus1,remark,order-->,gid,id
+1001,SUCCESS,~comn_00_0000,95,98,ALI,CASH,ABLE,ABLE,2333,,GID,S0301909161100092061
+1002,SUCCESS,~comn_00_0000,95,98,ALI,CASH,ABLE,ABLE,2333,,GID,S0301909161100092061

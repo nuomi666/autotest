@@ -1,0 +1,2 @@
+testId,status,code,partnerId,partnerName,shortName,mobile,sourceKey,merchantStatus,stationId,stationName,stationCode,userId,deviceCode,loginStatus,queryOneKeyFuncOrder-->,gid,partnerId_queryOneKeyFuncOrder,platPartnerId,stationId_queryOneKeyFuncOrder
+1001,SUCCESS,~comn_00_0000,S0301810232200000112,糯米测试商家,糯米,13325814711,wxa2557eabb23b47e6,ABLE,OID,测试油站666,test666,OID,N901955405,login,,GID,,S0301810232200000112,

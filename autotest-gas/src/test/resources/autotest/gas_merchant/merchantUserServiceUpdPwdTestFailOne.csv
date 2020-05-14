@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,userId,oldPwd,newPwd
+1001,FAIL,~comn_00_0000,,GID,OID,123456,abc123
+1002,FAIL,~comn_00_0000,,GID,OID,123456,abc123
+1003,FAIL,~comn_00_0000,,GID,OID,123456,abc123
+1004,FAIL,~comn_00_0000,,GID,OID,123456,abc123
+1005,FAIL,~comn_00_0000,,GID,OID,123456,abc123

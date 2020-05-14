@@ -1,0 +1,2 @@
+testId,GID_KEY,gid,accountNo,tag,accountStatus,id,accountNo_accountDO,bandAccountNo,userId,balance,creditAmount,creditBalance,freezeBalance,hisInAmount,hisOutAmount,status,accountType,payModel,tag_accountDO,memo,rawAddTime,rawUpdateTime,code,description,message
+1001,~gid,~12345678923156498723165498732145678,~20180626000000000056,~标签1,FREEZE,~1,~20180626000000000001,~20180626000000000059,~20180626000000000001,1000,1000,1000,2000,1000,1500,ACTIVE,CREDIT,111,标签1,备注1,2018-06-26 00:00:00,2018-06-26 00:00:00,S03_01_0001,资金账户不存在,业务异常

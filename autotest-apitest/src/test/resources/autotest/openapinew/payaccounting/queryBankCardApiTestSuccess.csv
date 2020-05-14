@@ -1,0 +1,4 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,outUserId,size,bankCardNo1,bankCardName1,bankCardPhone1,bankCardNo2,bankCardName2,bankCardPhone2
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~outuseridenterprise00001,2,~1203285309000036369,正光阀门集团有限公司,~18723088153,~6228481234567898346,蒋可用,~18723088153
+1002,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~hft00000001111111,1,~6228481234567898346 ,个人,~18723088155,,,
+1003,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,,,~hft00000001111112,0,,,,,,

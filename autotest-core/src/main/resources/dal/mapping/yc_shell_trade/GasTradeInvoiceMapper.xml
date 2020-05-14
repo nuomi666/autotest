@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.yc_shell_trade.GasTradeInvoiceDAO">
+  <resultMap id="BaseResultMap" type="dal.model.yc_shell_trade.GasTradeInvoiceDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_no" jdbcType="VARCHAR" property="bizNo" />
+    <result column="trade_no" jdbcType="VARCHAR" property="tradeNo" />
+    <result column="req_id" jdbcType="VARCHAR" property="reqId" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="partner_name" jdbcType="VARCHAR" property="partnerName" />
+    <result column="station_id" jdbcType="VARCHAR" property="stationId" />
+    <result column="station_code" jdbcType="VARCHAR" property="stationCode" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="operate_id" jdbcType="VARCHAR" property="operateId" />
+    <result column="operate_name" jdbcType="VARCHAR" property="operateName" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="invoice_type" jdbcType="VARCHAR" property="invoiceType" />
+    <result column="invoice_date" jdbcType="TIMESTAMP" property="invoiceDate" />
+    <result column="invoice_code" jdbcType="VARCHAR" property="invoiceCode" />
+    <result column="invoice_no" jdbcType="VARCHAR" property="invoiceNo" />
+    <result column="invoice_title_type" jdbcType="VARCHAR" property="invoiceTitleType" />
+    <result column="invoice_title" jdbcType="VARCHAR" property="invoiceTitle" />
+    <result column="invoice_content" jdbcType="VARCHAR" property="invoiceContent" />
+    <result column="invoice_amount" jdbcType="DECIMAL" property="invoiceAmount" />
+    <result column="invoice_url" jdbcType="VARCHAR" property="invoiceUrl" />
+    <result column="invoice_file" jdbcType="VARCHAR" property="invoiceFile" />
+    <result column="email_addr" jdbcType="VARCHAR" property="emailAddr" />
+    <result column="tax_no" jdbcType="VARCHAR" property="taxNo" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_account" jdbcType="VARCHAR" property="bankAccount" />
+    <result column="goods_code" jdbcType="VARCHAR" property="goodsCode" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_quantity" jdbcType="DECIMAL" property="goodsQuantity" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_tax_no" jdbcType="VARCHAR" property="companyTaxNo" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="company_mobile" jdbcType="VARCHAR" property="companyMobile" />
+    <result column="company_tax_drawer" jdbcType="VARCHAR" property="companyTaxDrawer" />
+    <result column="company_tax_reviewer" jdbcType="VARCHAR" property="companyTaxReviewer" />
+    <result column="tax_goods_rate" jdbcType="DOUBLE" property="taxGoodsRate" />
+    <result column="tax_goods_code" jdbcType="VARCHAR" property="taxGoodsCode" />
+    <result column="tax_goods_name" jdbcType="VARCHAR" property="taxGoodsName" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, biz_no, trade_no, req_id, gid, partner_id, partner_name, station_id, station_code, 
+    station_name, operate_id, operate_name, user_id, real_name, nick_name, mobile, invoice_type, 
+    invoice_date, invoice_code, invoice_no, invoice_title_type, invoice_title, invoice_content, 
+    invoice_amount, invoice_url, invoice_file, email_addr, tax_no, address, phone, bank_name, 
+    bank_account, goods_code, goods_name, goods_quantity, goods_price, company_name, 
+    company_tax_no, company_address, company_mobile, company_tax_drawer, company_tax_reviewer, 
+    tax_goods_rate, tax_goods_code, tax_goods_name, status, state, code, description, 
+    raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.yc_shell_trade.GasTradeInvoiceDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_trade_invoice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.yc_shell_trade.GasTradeInvoiceDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_trade_invoice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.yc_shell_trade.GasTradeInvoiceDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_trade_invoice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_trade_invoice
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.bizNo != null">
+        biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeNo != null">
+        trade_no = #{record.tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reqId != null">
+        req_id = #{record.reqId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerName != null">
+        partner_name = #{record.partnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationId != null">
+        station_id = #{record.stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationCode != null">
+        station_code = #{record.stationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationName != null">
+        station_name = #{record.stationName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operateId != null">
+        operate_id = #{record.operateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operateName != null">
+        operate_name = #{record.operateName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realName != null">
+        real_name = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickName != null">
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceType != null">
+        invoice_type = #{record.invoiceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceDate != null">
+        invoice_date = #{record.invoiceDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.invoiceCode != null">
+        invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceNo != null">
+        invoice_no = #{record.invoiceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceTitleType != null">
+        invoice_title_type = #{record.invoiceTitleType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceTitle != null">
+        invoice_title = #{record.invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceContent != null">
+        invoice_content = #{record.invoiceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceAmount != null">
+        invoice_amount = #{record.invoiceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.invoiceUrl != null">
+        invoice_url = #{record.invoiceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceFile != null">
+        invoice_file = #{record.invoiceFile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.emailAddr != null">
+        email_addr = #{record.emailAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxNo != null">
+        tax_no = #{record.taxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankName != null">
+        bank_name = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankAccount != null">
+        bank_account = #{record.bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsCode != null">
+        goods_code = #{record.goodsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsQuantity != null">
+        goods_quantity = #{record.goodsQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsPrice != null">
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.companyName != null">
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyTaxNo != null">
+        company_tax_no = #{record.companyTaxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAddress != null">
+        company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyMobile != null">
+        company_mobile = #{record.companyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyTaxDrawer != null">
+        company_tax_drawer = #{record.companyTaxDrawer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyTaxReviewer != null">
+        company_tax_reviewer = #{record.companyTaxReviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxGoodsRate != null">
+        tax_goods_rate = #{record.taxGoodsRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.taxGoodsCode != null">
+        tax_goods_code = #{record.taxGoodsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxGoodsName != null">
+        tax_goods_name = #{record.taxGoodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_trade_invoice
+    set id = #{record.id,jdbcType=BIGINT},
+      biz_no = #{record.bizNo,jdbcType=VARCHAR},
+      trade_no = #{record.tradeNo,jdbcType=VARCHAR},
+      req_id = #{record.reqId,jdbcType=VARCHAR},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      partner_name = #{record.partnerName,jdbcType=VARCHAR},
+      station_id = #{record.stationId,jdbcType=VARCHAR},
+      station_code = #{record.stationCode,jdbcType=VARCHAR},
+      station_name = #{record.stationName,jdbcType=VARCHAR},
+      operate_id = #{record.operateId,jdbcType=VARCHAR},
+      operate_name = #{record.operateName,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      invoice_type = #{record.invoiceType,jdbcType=VARCHAR},
+      invoice_date = #{record.invoiceDate,jdbcType=TIMESTAMP},
+      invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
+      invoice_no = #{record.invoiceNo,jdbcType=VARCHAR},
+      invoice_title_type = #{record.invoiceTitleType,jdbcType=VARCHAR},
+      invoice_title = #{record.invoiceTitle,jdbcType=VARCHAR},
+      invoice_content = #{record.invoiceContent,jdbcType=VARCHAR},
+      invoice_amount = #{record.invoiceAmount,jdbcType=DECIMAL},
+      invoice_url = #{record.invoiceUrl,jdbcType=VARCHAR},
+      invoice_file = #{record.invoiceFile,jdbcType=VARCHAR},
+      email_addr = #{record.emailAddr,jdbcType=VARCHAR},
+      tax_no = #{record.taxNo,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      bank_name = #{record.bankName,jdbcType=VARCHAR},
+      bank_account = #{record.bankAccount,jdbcType=VARCHAR},
+      goods_code = #{record.goodsCode,jdbcType=VARCHAR},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_quantity = #{record.goodsQuantity,jdbcType=DECIMAL},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      company_tax_no = #{record.companyTaxNo,jdbcType=VARCHAR},
+      company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      company_mobile = #{record.companyMobile,jdbcType=VARCHAR},
+      company_tax_drawer = #{record.companyTaxDrawer,jdbcType=VARCHAR},
+      company_tax_reviewer = #{record.companyTaxReviewer,jdbcType=VARCHAR},
+      tax_goods_rate = #{record.taxGoodsRate,jdbcType=DOUBLE},
+      tax_goods_code = #{record.taxGoodsCode,jdbcType=VARCHAR},
+      tax_goods_name = #{record.taxGoodsName,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR},
+      code = #{record.code,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

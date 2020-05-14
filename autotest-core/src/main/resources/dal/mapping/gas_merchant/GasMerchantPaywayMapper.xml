@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_merchant.GasMerchantPaywayDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_merchant.GasMerchantPaywayDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="payway_code" jdbcType="VARCHAR" property="paywayCode" />
+    <result column="payway_name" jdbcType="VARCHAR" property="paywayName" />
+    <result column="payway_type" jdbcType="VARCHAR" property="paywayType" />
+    <result column="payway_icon" jdbcType="VARCHAR" property="paywayIcon" />
+    <result column="payway_small_icon" jdbcType="VARCHAR" property="paywaySmallIcon" />
+    <result column="channel_code" jdbcType="VARCHAR" property="channelCode" />
+    <result column="channel_function" jdbcType="VARCHAR" property="channelFunction" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.gas_merchant.GasMerchantPaywayDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="payway_scene" jdbcType="LONGVARCHAR" property="paywayScene" />
+    <result column="payway_attribute" jdbcType="LONGVARCHAR" property="paywayAttribute" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, partner_id, plat_partner_id, payway_code, payway_name, payway_type, payway_icon, 
+    payway_small_icon, channel_code, channel_function, status, raw_add_time, raw_update_time
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    payway_scene, payway_attribute
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.gas_merchant.GasMerchantPaywayDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from gas_merchant_payway
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.gas_merchant.GasMerchantPaywayDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_merchant_payway
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_merchant.GasMerchantPaywayDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_merchant_payway
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_merchant.GasMerchantPaywayDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_merchant_payway
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_merchant_payway
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paywayCode != null">
+        payway_code = #{record.paywayCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paywayName != null">
+        payway_name = #{record.paywayName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paywayType != null">
+        payway_type = #{record.paywayType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paywayIcon != null">
+        payway_icon = #{record.paywayIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paywaySmallIcon != null">
+        payway_small_icon = #{record.paywaySmallIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelCode != null">
+        channel_code = #{record.channelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelFunction != null">
+        channel_function = #{record.channelFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.paywayScene != null">
+        payway_scene = #{record.paywayScene,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.paywayAttribute != null">
+        payway_attribute = #{record.paywayAttribute,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_merchant_payway
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      payway_code = #{record.paywayCode,jdbcType=VARCHAR},
+      payway_name = #{record.paywayName,jdbcType=VARCHAR},
+      payway_type = #{record.paywayType,jdbcType=VARCHAR},
+      payway_icon = #{record.paywayIcon,jdbcType=VARCHAR},
+      payway_small_icon = #{record.paywaySmallIcon,jdbcType=VARCHAR},
+      channel_code = #{record.channelCode,jdbcType=VARCHAR},
+      channel_function = #{record.channelFunction,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      payway_scene = #{record.paywayScene,jdbcType=LONGVARCHAR},
+      payway_attribute = #{record.paywayAttribute,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_merchant_payway
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      payway_code = #{record.paywayCode,jdbcType=VARCHAR},
+      payway_name = #{record.paywayName,jdbcType=VARCHAR},
+      payway_type = #{record.paywayType,jdbcType=VARCHAR},
+      payway_icon = #{record.paywayIcon,jdbcType=VARCHAR},
+      payway_small_icon = #{record.paywaySmallIcon,jdbcType=VARCHAR},
+      channel_code = #{record.channelCode,jdbcType=VARCHAR},
+      channel_function = #{record.channelFunction,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

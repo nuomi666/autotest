@@ -1,0 +1,2 @@
+testId,status,code,deviceType,name,permissionCode,url,category,resourceType,orderNo,order-->,gid,permissionId
+1001,SUCCESS,~comn_00_0000,BOSS,统计报表,MENU0482,#,COMMON,MENU,1,,GID,OID

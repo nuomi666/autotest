@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,mobile,openId,type,smsValidateCode,realName,birthday,nickName,headImgUrl,sex,carNumber,importSource,payPwd,rawAddTime,grade
+1001,FAIL,~comn_00_0000,,GID,S0301909161100092061,S0301909161100092061,18825814711,,,,,,,,,,,,,

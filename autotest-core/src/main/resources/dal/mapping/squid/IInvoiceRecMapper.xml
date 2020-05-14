@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.squid.IInvoiceRecDAO">
+  <resultMap id="BaseResultMap" type="dal.model.squid.IInvoiceRecDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="VARCHAR" property="entityId" />
+    <result column="CUSTOMER_ID" jdbcType="VARCHAR" property="customerId" />
+    <result column="GOODS_NAME" jdbcType="VARCHAR" property="goodsName" />
+    <result column="INVOICE_NO" jdbcType="VARCHAR" property="invoiceNo" />
+    <result column="INVOICE_AMOUNT" jdbcType="BIGINT" property="invoiceAmount" />
+    <result column="INVOICE_TYPE" jdbcType="VARCHAR" property="invoiceType" />
+    <result column="AUDIT_STATUS" jdbcType="VARCHAR" property="auditStatus" />
+    <result column="PAY_STATUS" jdbcType="VARCHAR" property="payStatus" />
+    <result column="PAY_TYPE" jdbcType="VARCHAR" property="payType" />
+    <result column="REASON" jdbcType="VARCHAR" property="reason" />
+    <result column="TRAGET_NAME" jdbcType="VARCHAR" property="tragetName" />
+    <result column="TRAGET_PHONE" jdbcType="VARCHAR" property="tragetPhone" />
+    <result column="TRAGET_ADDRESS" jdbcType="VARCHAR" property="tragetAddress" />
+    <result column="IMG_URL" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="OPEN_TYPE" jdbcType="VARCHAR" property="openType" />
+    <result column="TAX_CODE" jdbcType="VARCHAR" property="taxCode" />
+    <result column="COMPANY_NAME" jdbcType="VARCHAR" property="companyName" />
+    <result column="COMPANY_ADDRESS" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="COMPANY_TELEPHONE" jdbcType="VARCHAR" property="companyTelephone" />
+    <result column="BANK_NAME" jdbcType="VARCHAR" property="bankName" />
+    <result column="BANK_BRANCH" jdbcType="VARCHAR" property="bankBranch" />
+    <result column="BANK_NO" jdbcType="VARCHAR" property="bankNo" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="CUSTOMER_NAME" jdbcType="VARCHAR" property="customerName" />
+    <result column="E_MAIL" jdbcType="VARCHAR" property="eMail" />
+    <result column="RATE" jdbcType="INTEGER" property="rate" />
+    <result column="RATE_AMOUNT" jdbcType="INTEGER" property="rateAmount" />
+    <result column="RATE_COUNT_AMOUNT" jdbcType="INTEGER" property="rateCountAmount" />
+    <result column="EXPRESS_NAME" jdbcType="VARCHAR" property="expressName" />
+    <result column="EXPRESS_CODE" jdbcType="VARCHAR" property="expressCode" />
+    <result column="EXPRESS_AMOUNT" jdbcType="INTEGER" property="expressAmount" />
+    <result column="INVOICE_PAY_NO" jdbcType="VARCHAR" property="invoicePayNo" />
+    <result column="GOODS_TYPE" jdbcType="VARCHAR" property="goodsType" />
+    <result column="customer_nick_name" jdbcType="VARCHAR" property="customerNickName" />
+    <result column="INVOICE_CODE" jdbcType="VARCHAR" property="invoiceCode" />
+    <result column="INVOICE_NUM" jdbcType="VARCHAR" property="invoiceNum" />
+    <result column="INVOICE_URL" jdbcType="VARCHAR" property="invoiceUrl" />
+    <result column="SOURCE" jdbcType="VARCHAR" property="source" />
+    <result column="OIL_NO" jdbcType="VARCHAR" property="oilNo" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.squid.IInvoiceRecDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ORDER_INFO" jdbcType="LONGVARCHAR" property="orderInfo" />
+    <result column="ORDER_LIST" jdbcType="LONGVARCHAR" property="orderList" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, CUSTOMER_ID, GOODS_NAME, INVOICE_NO, INVOICE_AMOUNT, INVOICE_TYPE, AUDIT_STATUS, 
+    PAY_STATUS, PAY_TYPE, REASON, TRAGET_NAME, TRAGET_PHONE, TRAGET_ADDRESS, IMG_URL, 
+    OPEN_TYPE, TAX_CODE, COMPANY_NAME, COMPANY_ADDRESS, COMPANY_TELEPHONE, BANK_NAME, 
+    BANK_BRANCH, BANK_NO, CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, VERSION_ID, 
+    MARK_DELETE, CUSTOMER_NAME, E_MAIL, RATE, RATE_AMOUNT, RATE_COUNT_AMOUNT, EXPRESS_NAME, 
+    EXPRESS_CODE, EXPRESS_AMOUNT, INVOICE_PAY_NO, GOODS_TYPE, customer_nick_name, INVOICE_CODE, 
+    INVOICE_NUM, INVOICE_URL, SOURCE, OIL_NO
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ORDER_INFO, ORDER_LIST
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.squid.IInvoiceRecDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from i_invoice_rec
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.squid.IInvoiceRecDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from i_invoice_rec
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.squid.IInvoiceRecDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from i_invoice_rec
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.squid.IInvoiceRecDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from i_invoice_rec
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update i_invoice_rec
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerId != null">
+        CUSTOMER_ID = #{record.customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsName != null">
+        GOODS_NAME = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceNo != null">
+        INVOICE_NO = #{record.invoiceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceAmount != null">
+        INVOICE_AMOUNT = #{record.invoiceAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.invoiceType != null">
+        INVOICE_TYPE = #{record.invoiceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditStatus != null">
+        AUDIT_STATUS = #{record.auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payStatus != null">
+        PAY_STATUS = #{record.payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payType != null">
+        PAY_TYPE = #{record.payType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reason != null">
+        REASON = #{record.reason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tragetName != null">
+        TRAGET_NAME = #{record.tragetName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tragetPhone != null">
+        TRAGET_PHONE = #{record.tragetPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tragetAddress != null">
+        TRAGET_ADDRESS = #{record.tragetAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imgUrl != null">
+        IMG_URL = #{record.imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openType != null">
+        OPEN_TYPE = #{record.openType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCode != null">
+        TAX_CODE = #{record.taxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyName != null">
+        COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAddress != null">
+        COMPANY_ADDRESS = #{record.companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyTelephone != null">
+        COMPANY_TELEPHONE = #{record.companyTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankName != null">
+        BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankBranch != null">
+        BANK_BRANCH = #{record.bankBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankNo != null">
+        BANK_NO = #{record.bankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.customerName != null">
+        CUSTOMER_NAME = #{record.customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eMail != null">
+        E_MAIL = #{record.eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rate != null">
+        RATE = #{record.rate,jdbcType=INTEGER},
+      </if>
+      <if test="record.rateAmount != null">
+        RATE_AMOUNT = #{record.rateAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.rateCountAmount != null">
+        RATE_COUNT_AMOUNT = #{record.rateCountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.expressName != null">
+        EXPRESS_NAME = #{record.expressName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expressCode != null">
+        EXPRESS_CODE = #{record.expressCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expressAmount != null">
+        EXPRESS_AMOUNT = #{record.expressAmount,jdbcType=INTEGER},
+      </if>
+      <if test="record.invoicePayNo != null">
+        INVOICE_PAY_NO = #{record.invoicePayNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsType != null">
+        GOODS_TYPE = #{record.goodsType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerNickName != null">
+        customer_nick_name = #{record.customerNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceCode != null">
+        INVOICE_CODE = #{record.invoiceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceNum != null">
+        INVOICE_NUM = #{record.invoiceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceUrl != null">
+        INVOICE_URL = #{record.invoiceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.source != null">
+        SOURCE = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oilNo != null">
+        OIL_NO = #{record.oilNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderInfo != null">
+        ORDER_INFO = #{record.orderInfo,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.orderList != null">
+        ORDER_LIST = #{record.orderList,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update i_invoice_rec
+    set ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      CUSTOMER_ID = #{record.customerId,jdbcType=VARCHAR},
+      GOODS_NAME = #{record.goodsName,jdbcType=VARCHAR},
+      INVOICE_NO = #{record.invoiceNo,jdbcType=VARCHAR},
+      INVOICE_AMOUNT = #{record.invoiceAmount,jdbcType=BIGINT},
+      INVOICE_TYPE = #{record.invoiceType,jdbcType=VARCHAR},
+      AUDIT_STATUS = #{record.auditStatus,jdbcType=VARCHAR},
+      PAY_STATUS = #{record.payStatus,jdbcType=VARCHAR},
+      PAY_TYPE = #{record.payType,jdbcType=VARCHAR},
+      REASON = #{record.reason,jdbcType=VARCHAR},
+      TRAGET_NAME = #{record.tragetName,jdbcType=VARCHAR},
+      TRAGET_PHONE = #{record.tragetPhone,jdbcType=VARCHAR},
+      TRAGET_ADDRESS = #{record.tragetAddress,jdbcType=VARCHAR},
+      IMG_URL = #{record.imgUrl,jdbcType=VARCHAR},
+      OPEN_TYPE = #{record.openType,jdbcType=VARCHAR},
+      TAX_CODE = #{record.taxCode,jdbcType=VARCHAR},
+      COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
+      COMPANY_ADDRESS = #{record.companyAddress,jdbcType=VARCHAR},
+      COMPANY_TELEPHONE = #{record.companyTelephone,jdbcType=VARCHAR},
+      BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+      BANK_BRANCH = #{record.bankBranch,jdbcType=VARCHAR},
+      BANK_NO = #{record.bankNo,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      CUSTOMER_NAME = #{record.customerName,jdbcType=VARCHAR},
+      E_MAIL = #{record.eMail,jdbcType=VARCHAR},
+      RATE = #{record.rate,jdbcType=INTEGER},
+      RATE_AMOUNT = #{record.rateAmount,jdbcType=INTEGER},
+      RATE_COUNT_AMOUNT = #{record.rateCountAmount,jdbcType=INTEGER},
+      EXPRESS_NAME = #{record.expressName,jdbcType=VARCHAR},
+      EXPRESS_CODE = #{record.expressCode,jdbcType=VARCHAR},
+      EXPRESS_AMOUNT = #{record.expressAmount,jdbcType=INTEGER},
+      INVOICE_PAY_NO = #{record.invoicePayNo,jdbcType=VARCHAR},
+      GOODS_TYPE = #{record.goodsType,jdbcType=VARCHAR},
+      customer_nick_name = #{record.customerNickName,jdbcType=VARCHAR},
+      INVOICE_CODE = #{record.invoiceCode,jdbcType=VARCHAR},
+      INVOICE_NUM = #{record.invoiceNum,jdbcType=VARCHAR},
+      INVOICE_URL = #{record.invoiceUrl,jdbcType=VARCHAR},
+      SOURCE = #{record.source,jdbcType=VARCHAR},
+      OIL_NO = #{record.oilNo,jdbcType=VARCHAR},
+      ORDER_INFO = #{record.orderInfo,jdbcType=LONGVARCHAR},
+      ORDER_LIST = #{record.orderList,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update i_invoice_rec
+    set ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      CUSTOMER_ID = #{record.customerId,jdbcType=VARCHAR},
+      GOODS_NAME = #{record.goodsName,jdbcType=VARCHAR},
+      INVOICE_NO = #{record.invoiceNo,jdbcType=VARCHAR},
+      INVOICE_AMOUNT = #{record.invoiceAmount,jdbcType=BIGINT},
+      INVOICE_TYPE = #{record.invoiceType,jdbcType=VARCHAR},
+      AUDIT_STATUS = #{record.auditStatus,jdbcType=VARCHAR},
+      PAY_STATUS = #{record.payStatus,jdbcType=VARCHAR},
+      PAY_TYPE = #{record.payType,jdbcType=VARCHAR},
+      REASON = #{record.reason,jdbcType=VARCHAR},
+      TRAGET_NAME = #{record.tragetName,jdbcType=VARCHAR},
+      TRAGET_PHONE = #{record.tragetPhone,jdbcType=VARCHAR},
+      TRAGET_ADDRESS = #{record.tragetAddress,jdbcType=VARCHAR},
+      IMG_URL = #{record.imgUrl,jdbcType=VARCHAR},
+      OPEN_TYPE = #{record.openType,jdbcType=VARCHAR},
+      TAX_CODE = #{record.taxCode,jdbcType=VARCHAR},
+      COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
+      COMPANY_ADDRESS = #{record.companyAddress,jdbcType=VARCHAR},
+      COMPANY_TELEPHONE = #{record.companyTelephone,jdbcType=VARCHAR},
+      BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+      BANK_BRANCH = #{record.bankBranch,jdbcType=VARCHAR},
+      BANK_NO = #{record.bankNo,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      CUSTOMER_NAME = #{record.customerName,jdbcType=VARCHAR},
+      E_MAIL = #{record.eMail,jdbcType=VARCHAR},
+      RATE = #{record.rate,jdbcType=INTEGER},
+      RATE_AMOUNT = #{record.rateAmount,jdbcType=INTEGER},
+      RATE_COUNT_AMOUNT = #{record.rateCountAmount,jdbcType=INTEGER},
+      EXPRESS_NAME = #{record.expressName,jdbcType=VARCHAR},
+      EXPRESS_CODE = #{record.expressCode,jdbcType=VARCHAR},
+      EXPRESS_AMOUNT = #{record.expressAmount,jdbcType=INTEGER},
+      INVOICE_PAY_NO = #{record.invoicePayNo,jdbcType=VARCHAR},
+      GOODS_TYPE = #{record.goodsType,jdbcType=VARCHAR},
+      customer_nick_name = #{record.customerNickName,jdbcType=VARCHAR},
+      INVOICE_CODE = #{record.invoiceCode,jdbcType=VARCHAR},
+      INVOICE_NUM = #{record.invoiceNum,jdbcType=VARCHAR},
+      INVOICE_URL = #{record.invoiceUrl,jdbcType=VARCHAR},
+      SOURCE = #{record.source,jdbcType=VARCHAR},
+      OIL_NO = #{record.oilNo,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

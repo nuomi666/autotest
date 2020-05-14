@@ -1,0 +1,4 @@
+testId,userName,password,bizNo,depositNo,stationCode,stationName,mobile,carNumber,finishTime,finishTime1,tradePayType,status
+1001,aichelian,123456,1k24uvaoAwg031hge6ux,1k24ua8dx4g031hge6ux,6666,爱车联加油站,13389678497,渝B12345,2020-02-11 00:00:00,2020-02-13 00:00:00,微信,退款成功
+1002,aichelian,123456,1k24uvaoAwg031hge6ux,,,,,,2020-02-11 00:00:00,2020-02-13 00:00:00,,
+1003,aichelian,123456,,1k24ua8dx4g031hge6ux,,,,,2020-02-11 00:00:00,2020-02-13 00:00:00,,

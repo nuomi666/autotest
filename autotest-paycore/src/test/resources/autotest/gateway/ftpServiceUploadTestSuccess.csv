@@ -1,0 +1,2 @@
+testId,status,code,ftpUploadOrder-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,settleChannelId,memo,channelPartnerId,params,mock,userId,imgs,payConfigOrder-->,gid_payConfigOrder,payChannelType,partnerId_payConfigOrder,channelId,channelConfigType
+1001,SUCCESS,,,GID,OID,S0301909041500092052,OID,S0301909041500092052,OID,,上传,,,,S0301909041500092052,,,GID,UPLOAD,S0301909041500092052,yst,MANAGE

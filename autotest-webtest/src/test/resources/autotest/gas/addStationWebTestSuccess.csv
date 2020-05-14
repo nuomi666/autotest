@@ -1,0 +1,3 @@
+testId,userName,password,stationCode,stationName,phoneNo,stationAddress,stationStatus
+1001,sj001,123456,G234235,商家模式油站,13912345678,重庆市互联网产业园,开启
+1002,aichelian,123456,F342424,油站模式油站,13912345600,重庆市渝北区金开大道西段106号,开启

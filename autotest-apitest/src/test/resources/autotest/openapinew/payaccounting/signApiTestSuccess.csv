@@ -1,0 +1,4 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,outUserId
+1001,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,outuseridenterprise00001
+1002,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,~hft00000001111111
+1003,SUCCESS,~C0001,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,~hft00000001111113

@@ -1,0 +1,7 @@
+testId,status,code,gid,actionName,description,promotionWay
+1001,SUCCESS,~comn_00_0000,,赠券,注册赠券,giveCoupon
+1002,SUCCESS,~comn_00_0000,,赠金额,充值赠金额,giveMoney
+1003,SUCCESS,~comn_00_0000,,赠积分,消费赠积分,givePoints
+1004,SUCCESS,~comn_00_0000,,直降,直降,priceReduce
+1005,SUCCESS,~comn_00_0000,,满减,满减,fullReduce
+1006,SUCCESS,~comn_00_0000,,折扣,折扣,rebate

@@ -1,0 +1,5 @@
+testId,status,code,userType,userTypexx,mobileNo,roleType,roleTypexx,roleName,roleNamexx,roleCode,account,password,operatorMobile,order-->,gid,partnerId,platPartnerId,userName,stationIds,account_order,mobileNo_order,password_order,loginErrorLimit,roleId,roleNo,userId
+1001,SUCCESS,~comn_00_0000,DEVICE,BOSS,13325814777,Terminal,Supplier,收银员,时间管理员,2333,aa,123456,18825814722,,GID,S0302001191400092218,S0302001191400092218,测试员,,bb,,123456,,,OID,OID
+1002,SUCCESS,~comn_00_0000,BOSS,UNLOGIN,13325814777,Supplier,Nonoperation,商家管理员,地推员,2333,aa,123456,18825814722,,GID,S0302001191400092218,S0302001191400092218,测试员,,bb,,123456,,,OID,OID
+1003,SUCCESS,~comn_00_0000,BOSS,BOSS,13325814777,Supplier,Station,商家管理员,站长,2333,aa,123456,18825814722,,GID,S0302001191400092218,S0302001191400092218,测试员,,bb,,123456,,,OID,OID
+1004,SUCCESS,~comn_00_0000,BOSS,DEVICE,13325814777,Supplier,Terminal,商家管理员,收银员,2333,aa,123456,18825814722,,GID,S0302001191400092218,S0302001191400092218,测试员,,bb,13369852147,123456,,,OID,OID

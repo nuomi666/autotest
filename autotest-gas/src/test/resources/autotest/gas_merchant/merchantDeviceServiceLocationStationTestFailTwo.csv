@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,userId,stationId,deviceCode,order-->,gid,stationId_order,deviceCode_order,userId_order,longitude,latitude
+1001,FAIL,~comn_00_0000,S0301810081500000065,gas0000000000000yc20141,1jipf178zgg021hge6uv,565b1e6d,,,1jipf178zgg021hge6uv,8a7ffd5b,gas0000000000000yc20141,11.52,10.3254
+1002,FAIL,~comn_00_0000,S0301810081500000065,gas0000000000000yc20141,1jipf178yui021hge6uv,565b1e6d,,,1jipf178zgg021hge6uv,8a7ffd5b,gas0000000000000yc20141,11.52,10.3254
+1003,FAIL,~comn_00_0000,S0301810081500000065,gas0000000000000yc20141,1jipf178zgg021hge6uv,57eb1e5f,,,1jipf178zgg021hge6uv,8a7ffd5b,gas0000000000000yc20141,11.52,10.3254

@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,parentId,roleName,roleType,memo,resourceIds,parentName,resourceId,resourceId1
+1001,SUCCESS,~comn_00_0000,,,,测试员,Supplier,111,,上级角色,,
+1002,SUCCESS,~comn_00_0000,,,,测试员,Nonoperation,112,,上级角色,,
+1003,SUCCESS,~comn_00_0000,,,,测试员,Third,113,,上级角色,,
+1004,SUCCESS,~comn_00_0000,,,,测试员,Station,114,,上级角色,,

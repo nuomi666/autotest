@@ -1,0 +1,3 @@
+testId,status,code,order-->,gid,appCode,appName,versionCode,versionName,storeCode,storeName,upgradeLevel,upgradeContent
+1001,SUCCESS,~comn_00_0000,,GID,com.cq.xyebang.jiahaoyou,加好油,1,,wpos,,RECOMMEND,
+1002,SUCCESS,~comn_00_0000,,GID,com.cq.xyebang.jiahaoyou,加好油,1,1.0.1,tonglian,通联,RECOMMEND,1、新增了一个功能；2、解决了两个BUG；

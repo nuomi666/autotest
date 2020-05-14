@@ -1,0 +1,3 @@
+testId,status,code,stationId,goodsCode,goodsCode1,gunNo,gunNo1,sortNo,sortNo1,order-->,gid,partnerId,platPartnerId,stationId_order,oilGunOrderList
+1001,SUCCESS,~comn_00_0000,OID,95,98,2,3,1,2,,GID,S0301909161100092061,S0301909161100092061,,
+1002,SUCCESS,~comn_00_0000,OID,95,98,2,3,1,2,,GID,S0301909161100092061,S0301909161100092061,,

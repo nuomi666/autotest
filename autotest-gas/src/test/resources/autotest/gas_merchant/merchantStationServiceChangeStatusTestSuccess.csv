@@ -1,0 +1,3 @@
+testId,status,code,partnerId,stationStatus,order-->,gid,id,status_order
+1001,SUCCESS,~comn_00_0000,S0301810232300000119,ABLE,,GID,OID,DISABLE
+1002,SUCCESS,~comn_00_0000,S0301810232300000119,DISABLE,,GID,OID,ABLE

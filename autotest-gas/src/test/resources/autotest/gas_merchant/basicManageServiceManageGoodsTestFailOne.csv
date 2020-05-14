@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,id,goodsType,goodsGroupType,goodsName,goodsCode,orderNo
+1001,FAIL,~comn_00_0000,,GID,,OIL,GASOLINE,98#,98,
+1002,FAIL,~comn_00_0000,,GID,,OIL,GASOLINE,98#,98,
+1003,FAIL,~comn_00_0000,,GID,,OIL,GASOLINE,98#,98,
+1004,FAIL,~comn_00_0000,,GID,,OIL,GASOLINE,98#,98,
+1005,FAIL,~comn_00_0000,,GID,,OIL,GASOLINE,98#,98,

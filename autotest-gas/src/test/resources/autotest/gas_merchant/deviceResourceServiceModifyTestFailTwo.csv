@@ -1,0 +1,3 @@
+testId,status,code,deviceId,deviceType,resourceType,fatherName,childName,fatherCode,childCode,order-->,gid,id,deviceType_order,parentId,name,code_order,url,resourceType_order,orderNo,icon,memo
+1001,FAIL,~comn_00_0000,,BOSS,MENU,油站中心,油站管理,MENU0529,MENU0536,,,1,BOSS,,油价管理,MENU0538,oil/list,MENU,3,我是图标,配置油站员工权限的
+1002,FAIL,~comn_00_0000,,BOSS,MENU,油站中心,油站管理,MENU0529,MENU0536,,,2,BOSS,,油价管理,MENU0538,oil/list,MENU,3,我是图标,配置油站员工权限的

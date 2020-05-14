@@ -1,0 +1,6 @@
+testId,userName,password,platPartnerId,updateType,cumulativeOfDays,useTimeUnit,day,commonScore,silverScore,goldScore,memo
+1001,aichelian,123456,S0301909161100092061,AUTOMATIC,5,每月,1,200,400,900,新增会员等级规则
+1002,aichelian,123456,S0301909161100092061,CYCLE,5,每天,1,200,400,900,新增会员等级规则
+1003,aichelian,123456,S0301909161100092061,CYCLE,5,每周,周日,200,400,900,新增会员等级规则
+1004,aichelian,123456,S0301909161100092061,CYCLE,5,每月,1,200,400,900,新增会员等级规则
+1005,aichelian,123456,S0301909161100092061,CYCLE,5,每年,12-31,200,400,900,新增会员等级规则

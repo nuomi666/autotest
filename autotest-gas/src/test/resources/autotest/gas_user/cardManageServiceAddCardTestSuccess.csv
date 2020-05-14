@@ -1,0 +1,2 @@
+testId,status,code,partnerId,userId,nickName,mobile,registerFrom,order-->,gid,userId_order,cardType,tag,cardNo,internalNo,parentCardAccountNo
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,S0301910251500092112,sorami,13325814733,AUTONOMY_GENERALIZE,,GID,S0301910251500092112,ENTITY,DEFAULT,1,OID,

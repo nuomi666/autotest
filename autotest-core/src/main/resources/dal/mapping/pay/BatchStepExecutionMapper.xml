@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.pay.BatchStepExecutionDAO">
+  <resultMap id="BaseResultMap" type="dal.model.pay.BatchStepExecutionDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="STEP_NAME" jdbcType="VARCHAR" property="stepName" />
+    <result column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="COMMIT_COUNT" jdbcType="BIGINT" property="commitCount" />
+    <result column="READ_COUNT" jdbcType="BIGINT" property="readCount" />
+    <result column="FILTER_COUNT" jdbcType="BIGINT" property="filterCount" />
+    <result column="WRITE_COUNT" jdbcType="BIGINT" property="writeCount" />
+    <result column="READ_SKIP_COUNT" jdbcType="BIGINT" property="readSkipCount" />
+    <result column="WRITE_SKIP_COUNT" jdbcType="BIGINT" property="writeSkipCount" />
+    <result column="PROCESS_SKIP_COUNT" jdbcType="BIGINT" property="processSkipCount" />
+    <result column="ROLLBACK_COUNT" jdbcType="BIGINT" property="rollbackCount" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    STEP_EXECUTION_ID, VERSION, STEP_NAME, JOB_EXECUTION_ID, START_TIME, END_TIME, STATUS, 
+    COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, 
+    PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.pay.BatchStepExecutionDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from batch_step_execution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.pay.BatchStepExecutionDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from batch_step_execution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.pay.BatchStepExecutionDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from batch_step_execution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update batch_step_execution
+    <set>
+      <if test="record.stepExecutionId != null">
+        STEP_EXECUTION_ID = #{record.stepExecutionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.version != null">
+        VERSION = #{record.version,jdbcType=BIGINT},
+      </if>
+      <if test="record.stepName != null">
+        STEP_NAME = #{record.stepName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jobExecutionId != null">
+        JOB_EXECUTION_ID = #{record.jobExecutionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.startTime != null">
+        START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null">
+        END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commitCount != null">
+        COMMIT_COUNT = #{record.commitCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.readCount != null">
+        READ_COUNT = #{record.readCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.filterCount != null">
+        FILTER_COUNT = #{record.filterCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.writeCount != null">
+        WRITE_COUNT = #{record.writeCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.readSkipCount != null">
+        READ_SKIP_COUNT = #{record.readSkipCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.writeSkipCount != null">
+        WRITE_SKIP_COUNT = #{record.writeSkipCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.processSkipCount != null">
+        PROCESS_SKIP_COUNT = #{record.processSkipCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.rollbackCount != null">
+        ROLLBACK_COUNT = #{record.rollbackCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.exitCode != null">
+        EXIT_CODE = #{record.exitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exitMessage != null">
+        EXIT_MESSAGE = #{record.exitMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastUpdated != null">
+        LAST_UPDATED = #{record.lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update batch_step_execution
+    set STEP_EXECUTION_ID = #{record.stepExecutionId,jdbcType=BIGINT},
+      VERSION = #{record.version,jdbcType=BIGINT},
+      STEP_NAME = #{record.stepName,jdbcType=VARCHAR},
+      JOB_EXECUTION_ID = #{record.jobExecutionId,jdbcType=BIGINT},
+      START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      COMMIT_COUNT = #{record.commitCount,jdbcType=BIGINT},
+      READ_COUNT = #{record.readCount,jdbcType=BIGINT},
+      FILTER_COUNT = #{record.filterCount,jdbcType=BIGINT},
+      WRITE_COUNT = #{record.writeCount,jdbcType=BIGINT},
+      READ_SKIP_COUNT = #{record.readSkipCount,jdbcType=BIGINT},
+      WRITE_SKIP_COUNT = #{record.writeSkipCount,jdbcType=BIGINT},
+      PROCESS_SKIP_COUNT = #{record.processSkipCount,jdbcType=BIGINT},
+      ROLLBACK_COUNT = #{record.rollbackCount,jdbcType=BIGINT},
+      EXIT_CODE = #{record.exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{record.exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{record.lastUpdated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

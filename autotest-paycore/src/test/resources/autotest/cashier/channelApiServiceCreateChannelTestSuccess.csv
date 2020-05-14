@@ -1,0 +1,5 @@
+testId,status,code,channelId,channelName,state,channelType,markDelete
+1001,SUCCESS,comn_00_0000,noodleschannelid001,noodleschannelName1,,ALI,N
+1001,SUCCESS,comn_00_0000,noodleschannelid002,noodleschannelName2,N,WECHAT,N
+1001,SUCCESS,comn_00_0000,noodleschannelid003,noodleschannelName3,Y,BANK,N
+1001,SUCCESS,comn_00_0000,noodleschannelid004,noodleschannelName4,N,THIRD,N

@@ -1,0 +1,4 @@
+testId,status,code,broadcastType,order-->,gid,broadcastType_order,fieldOrders,fieldOrder-->,fieldCode,fieldName,preValue,defaultValue,suffixValue,required,fieldOrder1-->,fieldCode1,fieldName1,preValue1,defaultValue1,suffixValue1,required1
+1001,SUCCESS,~comn_00_0000,Cashier,,GID,Cashier,,,oilName,油号,,92号汽油,,NO,,oilAmount,油品金额,,80,元,NO
+1002,SUCCESS,~comn_00_0000,Cashier,,GID,Cashier,,,oilName,油号,,92号汽油,,NO,,oilAmount,油品金额,,80,元,NO
+1003,SUCCESS,~comn_00_0000,Cashier,,GID,Cashier,,,oilName,油号,,92号汽油,,NO,,oilAmount,油品金额,,80,元,NO

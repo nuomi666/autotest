@@ -1,0 +1,2 @@
+testId,status,code,platPartnerId,stationId,goodsName,goodsCode,goodsName1,goodsCode1,order-->,gid,stationId_order
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,OID,95#汽油,95,98#汽油,98,,GID,

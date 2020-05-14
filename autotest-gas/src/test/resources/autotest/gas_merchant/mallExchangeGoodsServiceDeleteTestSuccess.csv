@@ -1,0 +1,3 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,id,goodsId,goodsName,exchangeType,gainStyle,station
+1001,SUCCESS,~comn_00_0000,,,S0301909161100092061,S0301909161100092061,,1jiqy1zdt4g021hge6uv,5折汽油券,COUPON,AUTO,1jipf178zgg021hge6uv
+1002,SUCCESS,~comn_00_0000,,,S0301909161100092061,S0301909161100092061,,1jmswx4ij4g021hge6uv,充气娃娃,ENTITY,SELF,1jipf178zgg021hge6uv

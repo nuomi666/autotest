@@ -1,0 +1,5 @@
+testId,status,code,platPartnerId,platPartnerId1,productId,productId1,productName,productName1,productName2,permissionId,permissionName,permissionName1,permissionCode,permissionCode1,resourceType,type,category,order-->,gid,productId_order,status_order,productName_order,productType,productCategory,permissionList,memo
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,S0302001191400092218,OID,OID,营销中心,会员设置,统计报表,OID,精准投放,会员分组管理,accurate_delivery,user_group,MENU,BOSS,MERCHANT,,GID,,ABLE,营销中心XX,BOSS,MERCHANT,,产品修改
+1002,SUCCESS,~comn_00_0000,S0301909161100092061,S0302001191400092218,OID,OID,营销中心,会员设置,统计报表,OID,精准投放,会员分组管理,accurate_delivery,user_group,MENU,BOSS,MERCHANT,,GID,,ABLE,营销中心XX,BOSS,MERCHANT,,产品修改
+1003,SUCCESS,~comn_00_0000,S0301909161100092061,S0302001191400092218,OID,OID,营销中心,会员设置,统计报表,OID,精准投放,会员分组管理,accurate_delivery,user_group,MENU,BOSS,MERCHANT,,GID,,ABLE,员工统计报表,BOSS,STATION,,产品修改
+1004,SUCCESS,~comn_00_0000,S0301909161100092061,S0302001191400092218,OID,OID,营销中心,会员设置,统计报表,OID,精准投放,会员分组管理,accurate_delivery,user_group,MENU,BOSS,MERCHANT,,GID,,ABLE,结算报表,BOSS,COMMON,,产品修改

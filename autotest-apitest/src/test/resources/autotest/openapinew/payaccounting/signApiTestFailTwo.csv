@@ -1,0 +1,5 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,outUserId
+1001,FAIL,S03_04_0015,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,outuseridenterprise00001
+1002,FAIL,S03_04_0015,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,hft00000001111111
+1003,FAIL,mcht_01_0001,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,outuseridenterprise0000x
+1004,FAIL,S03_04_0006,,~1.0.0,,,MD5,,context,https://www.tmall.com,http://192.168.2.100:9006/api/sign ,outuseridenterprise00003

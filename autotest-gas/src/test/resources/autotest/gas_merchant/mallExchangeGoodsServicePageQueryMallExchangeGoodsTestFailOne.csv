@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,pageNo,pageSize,partnerId,platPartnerId,goodsName,userId,userPoint,goodsType,onlyForSale,sortField,sortType
+1001,FAIL,~comn_00_0000,,GID,,,,S0301810232300000119,,OID,,COUPON,,CRATE_TIME,ASC
+1002,FAIL,~comn_00_0000,,GID,,,,S0301810232300000119,,OID,,COUPON,,CRATE_TIME,ASC
+1003,FAIL,~comn_00_0000,,GID,,,,S0301810232300000119,,OID,,COUPON,,CRATE_TIME,ASC

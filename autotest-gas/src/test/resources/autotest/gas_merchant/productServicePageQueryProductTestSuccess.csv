@@ -1,0 +1,6 @@
+testId,status,code,productId,productId1,productId2,productName,productName1,productName2,type,type1,type2,category,category1,category2,order-->,gid,pageNo,pageSize,productName_order,productType,productCategory,status_order
+1001,SUCCESS,~comn_00_0000,OID,OID,OID,会员中心,营销中心,会员设置,BOSS,H5,POS,COMMON,MERCHANT,STATION,,GID,1,10,,,,
+1002,SUCCESS,~comn_00_0000,OID,OID,OID,会员中心,营销中心,会员设置,BOSS,H5,POS,COMMON,MERCHANT,STATION,,GID,2,2,,,,
+1003,SUCCESS,~comn_00_0000,OID,OID,OID,会员中心,营销中心,会员设置,BOSS,H5,POS,COMMON,MERCHANT,STATION,,GID,1,10,会员中心,,,
+1004,SUCCESS,~comn_00_0000,OID,OID,OID,会员中心,营销中心,会员设置,BOSS,H5,POS,COMMON,COMMON,STATION,,GID,1,10,,BOSS,COMMON,
+1005,SUCCESS,~comn_00_0000,OID,OID,OID,会员中心,营销中心,会员设置,BOSS,BOSS,POS,COMMON,MERCHANT,STATION,,GID,1,10,,BOSS,COMMON,

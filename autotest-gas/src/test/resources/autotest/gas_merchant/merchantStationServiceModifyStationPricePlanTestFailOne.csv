@@ -1,0 +1,7 @@
+testId,status,code,goodsNamexx,goodsCodexx,pricexx,listedPricexx,order-->,gid,planId,effectTime,priceName,goodsPriceOrders,operatorId,operatorName
+1001,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc
+1002,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc
+1003,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc
+1004,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc
+1005,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc
+1006,FAIL,~comn_00_0000,95#汽油,95,7.4,8.1,,GID,OID,,修改之后的油价,,OID,acc

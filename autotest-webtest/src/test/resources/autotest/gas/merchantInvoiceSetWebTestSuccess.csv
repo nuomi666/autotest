@@ -1,0 +1,2 @@
+testId,userName,password,platPartnerId,goodsCode,goodsCode1,tradeType,tradeType1,expireTime,minInvoiceAmount,remark
+1001,aichelian,123456,S0301909161100092061,92,95,CASH,WECHAT,15,0.5,开票设置啊啊啊啊

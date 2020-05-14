@@ -1,0 +1,2 @@
+testId,userName,password,platPartnerId,stationName,taxCompany,taxCode,taxAddress,taxMobile,taxDrawer,taxAppId,taxKey,taxCertPwd,fileName,taxBankNo,taxReviewer,taxPayee
+1001,test233,123456,S0302003241600092423,页面测试油站111,百旺电子测试1,110109500321654,重庆市北部新区,02312345678,张珊,a03d52eb9685c04464492d59918b6f41c988d8628d57c20b61da502f4a441702,7681C0B09F661A19,123456,110109500321654.pfx,招商银行 621234567890123456,张三,李四

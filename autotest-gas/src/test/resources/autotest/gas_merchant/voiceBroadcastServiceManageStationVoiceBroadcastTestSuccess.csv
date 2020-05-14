@@ -1,0 +1,6 @@
+testId,status,code,broadcastType,broadcastType1,order-->,gid,stationId,broadcastOrders
+1001,SUCCESS,~comn_00_0000,Cashier,CashierRefund,,GID,OID,
+1002,SUCCESS,~comn_00_0000,Cashier,CashierRefund,,GID,OID,
+1003,SUCCESS,~comn_00_0000,Recharge,RechargeRefund,,GID,OID,
+1004,SUCCESS,~comn_00_0000,Recharge,RechargeRefund,,GID,OID,
+1005,SUCCESS,~comn_00_0000,Recharge,RechargeRefund,,GID,OID,

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.trade.TraTradeDAO">
+  <resultMap id="BaseResultMap" type="dal.model.trade.TraTradeDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="buyer_account_no" jdbcType="VARCHAR" property="buyerAccountNo" />
+    <result column="buyer_merch_user_id" jdbcType="VARCHAR" property="buyerMerchUserId" />
+    <result column="buyer_user_id" jdbcType="VARCHAR" property="buyerUserId" />
+    <result column="close_time" jdbcType="TIMESTAMP" property="closeTime" />
+    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="gid" jdbcType="VARCHAR" property="gid" />
+    <result column="is_notify" jdbcType="VARCHAR" property="isNotify" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="merch_order_no" jdbcType="VARCHAR" property="merchOrderNo" />
+    <result column="notify_num" jdbcType="INTEGER" property="notifyNum" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="payee_account_no" jdbcType="VARCHAR" property="payeeAccountNo" />
+    <result column="payee_merch_user_id" jdbcType="VARCHAR" property="payeeMerchUserId" />
+    <result column="payee_user_id" jdbcType="VARCHAR" property="payeeUserId" />
+    <result column="payer_account_no" jdbcType="VARCHAR" property="payerAccountNo" />
+    <result column="payer_identity_card" jdbcType="VARCHAR" property="payerIdentityCard" />
+    <result column="payer_merch_user_id" jdbcType="VARCHAR" property="payerMerchUserId" />
+    <result column="payer_mobile_no" jdbcType="VARCHAR" property="payerMobileNo" />
+    <result column="payer_real_name" jdbcType="VARCHAR" property="payerRealName" />
+    <result column="payer_user_id" jdbcType="VARCHAR" property="payerUserId" />
+    <result column="profit_amount" jdbcType="DECIMAL" property="profitAmount" />
+    <result column="profit_status" jdbcType="VARCHAR" property="profitStatus" />
+    <result column="profit_type" jdbcType="VARCHAR" property="profitType" />
+    <result column="recon_status" jdbcType="VARCHAR" property="reconStatus" />
+    <result column="seller_account_no" jdbcType="VARCHAR" property="sellerAccountNo" />
+    <result column="seller_merch_user_id" jdbcType="VARCHAR" property="sellerMerchUserId" />
+    <result column="seller_user_id" jdbcType="VARCHAR" property="sellerUserId" />
+    <result column="share_profit_amount" jdbcType="DECIMAL" property="shareProfitAmount" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="sub_status" jdbcType="VARCHAR" property="subStatus" />
+    <result column="success_biz_order_no" jdbcType="VARCHAR" property="successBizOrderNo" />
+    <result column="trade_memo" jdbcType="VARCHAR" property="tradeMemo" />
+    <result column="trade_name" jdbcType="VARCHAR" property="tradeName" />
+    <result column="trade_no" jdbcType="VARCHAR" property="tradeNo" />
+    <result column="trade_scene" jdbcType="VARCHAR" property="tradeScene" />
+    <result column="trade_time" jdbcType="TIMESTAMP" property="tradeTime" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="user_ip" jdbcType="VARCHAR" property="userIp" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, create_time, update_time, amount, buyer_account_no, buyer_merch_user_id, buyer_user_id, 
+    close_time, finish_time, gid, is_notify, memo, merch_order_no, notify_num, partner_id, 
+    payee_account_no, payee_merch_user_id, payee_user_id, payer_account_no, payer_identity_card, 
+    payer_merch_user_id, payer_mobile_no, payer_real_name, payer_user_id, profit_amount, 
+    profit_status, profit_type, recon_status, seller_account_no, seller_merch_user_id, 
+    seller_user_id, share_profit_amount, status, sub_status, success_biz_order_no, trade_memo, 
+    trade_name, trade_no, trade_scene, trade_time, type, user_ip
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.trade.TraTradeDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tra_trade
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.trade.TraTradeDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from tra_trade
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.trade.TraTradeDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from tra_trade
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update tra_trade
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.buyerAccountNo != null">
+        buyer_account_no = #{record.buyerAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyerMerchUserId != null">
+        buyer_merch_user_id = #{record.buyerMerchUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyerUserId != null">
+        buyer_user_id = #{record.buyerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.closeTime != null">
+        close_time = #{record.closeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.finishTime != null">
+        finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gid != null">
+        gid = #{record.gid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isNotify != null">
+        is_notify = #{record.isNotify,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memo != null">
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchOrderNo != null">
+        merch_order_no = #{record.merchOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notifyNum != null">
+        notify_num = #{record.notifyNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeAccountNo != null">
+        payee_account_no = #{record.payeeAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeMerchUserId != null">
+        payee_merch_user_id = #{record.payeeMerchUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payeeUserId != null">
+        payee_user_id = #{record.payeeUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerAccountNo != null">
+        payer_account_no = #{record.payerAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerIdentityCard != null">
+        payer_identity_card = #{record.payerIdentityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerMerchUserId != null">
+        payer_merch_user_id = #{record.payerMerchUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerMobileNo != null">
+        payer_mobile_no = #{record.payerMobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerRealName != null">
+        payer_real_name = #{record.payerRealName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payerUserId != null">
+        payer_user_id = #{record.payerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profitAmount != null">
+        profit_amount = #{record.profitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.profitStatus != null">
+        profit_status = #{record.profitStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profitType != null">
+        profit_type = #{record.profitType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reconStatus != null">
+        recon_status = #{record.reconStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerAccountNo != null">
+        seller_account_no = #{record.sellerAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerMerchUserId != null">
+        seller_merch_user_id = #{record.sellerMerchUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerUserId != null">
+        seller_user_id = #{record.sellerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shareProfitAmount != null">
+        share_profit_amount = #{record.shareProfitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subStatus != null">
+        sub_status = #{record.subStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.successBizOrderNo != null">
+        success_biz_order_no = #{record.successBizOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeMemo != null">
+        trade_memo = #{record.tradeMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeName != null">
+        trade_name = #{record.tradeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeNo != null">
+        trade_no = #{record.tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeScene != null">
+        trade_scene = #{record.tradeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeTime != null">
+        trade_time = #{record.tradeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userIp != null">
+        user_ip = #{record.userIp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update tra_trade
+    set id = #{record.id,jdbcType=BIGINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      amount = #{record.amount,jdbcType=DECIMAL},
+      buyer_account_no = #{record.buyerAccountNo,jdbcType=VARCHAR},
+      buyer_merch_user_id = #{record.buyerMerchUserId,jdbcType=VARCHAR},
+      buyer_user_id = #{record.buyerUserId,jdbcType=VARCHAR},
+      close_time = #{record.closeTime,jdbcType=TIMESTAMP},
+      finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+      gid = #{record.gid,jdbcType=VARCHAR},
+      is_notify = #{record.isNotify,jdbcType=VARCHAR},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      merch_order_no = #{record.merchOrderNo,jdbcType=VARCHAR},
+      notify_num = #{record.notifyNum,jdbcType=INTEGER},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      payee_account_no = #{record.payeeAccountNo,jdbcType=VARCHAR},
+      payee_merch_user_id = #{record.payeeMerchUserId,jdbcType=VARCHAR},
+      payee_user_id = #{record.payeeUserId,jdbcType=VARCHAR},
+      payer_account_no = #{record.payerAccountNo,jdbcType=VARCHAR},
+      payer_identity_card = #{record.payerIdentityCard,jdbcType=VARCHAR},
+      payer_merch_user_id = #{record.payerMerchUserId,jdbcType=VARCHAR},
+      payer_mobile_no = #{record.payerMobileNo,jdbcType=VARCHAR},
+      payer_real_name = #{record.payerRealName,jdbcType=VARCHAR},
+      payer_user_id = #{record.payerUserId,jdbcType=VARCHAR},
+      profit_amount = #{record.profitAmount,jdbcType=DECIMAL},
+      profit_status = #{record.profitStatus,jdbcType=VARCHAR},
+      profit_type = #{record.profitType,jdbcType=VARCHAR},
+      recon_status = #{record.reconStatus,jdbcType=VARCHAR},
+      seller_account_no = #{record.sellerAccountNo,jdbcType=VARCHAR},
+      seller_merch_user_id = #{record.sellerMerchUserId,jdbcType=VARCHAR},
+      seller_user_id = #{record.sellerUserId,jdbcType=VARCHAR},
+      share_profit_amount = #{record.shareProfitAmount,jdbcType=DECIMAL},
+      status = #{record.status,jdbcType=VARCHAR},
+      sub_status = #{record.subStatus,jdbcType=VARCHAR},
+      success_biz_order_no = #{record.successBizOrderNo,jdbcType=VARCHAR},
+      trade_memo = #{record.tradeMemo,jdbcType=VARCHAR},
+      trade_name = #{record.tradeName,jdbcType=VARCHAR},
+      trade_no = #{record.tradeNo,jdbcType=VARCHAR},
+      trade_scene = #{record.tradeScene,jdbcType=VARCHAR},
+      trade_time = #{record.tradeTime,jdbcType=TIMESTAMP},
+      type = #{record.type,jdbcType=VARCHAR},
+      user_ip = #{record.userIp,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

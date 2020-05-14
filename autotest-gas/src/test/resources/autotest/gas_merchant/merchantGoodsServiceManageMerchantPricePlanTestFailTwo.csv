@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,stationId,stationId1,stationCode,stationCode1,stationName,stationName1,goodsCode,goodsCode1,goodsName,goodsName1,stationPlanId,stationPlanId1,order-->,gid,partnerId,platPartnerId_order,planId,priceName,effectTime,operatorId,operatorName,goodsPriceOrders,stationIds
+1001,FAIL,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,,GID,,S0301910241700092111,,修改油价名,,OID,操作员233,,
+1002,FAIL,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,,GID,,S0301910241700092111,,修改油价名,,OID,操作员233,,
+1003,FAIL,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,,GID,,S0301910241700092111,OID,修改油价名,,OID,操作员233,,

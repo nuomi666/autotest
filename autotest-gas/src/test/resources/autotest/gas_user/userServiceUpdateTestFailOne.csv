@@ -1,0 +1,4 @@
+testId,status,code,order-->,gid,userId,realName,birthday,carNumber,nickName,headImgUrl,sex,grade
+1001,FAIL,~comn_00_0000,,GID,S0301909161100092009,,,,,,,
+1002,FAIL,~comn_00_0000,,GID,S0301909161100092009,,,,,,,
+1003,FAIL,~comn_00_0000,,GID,S0301909161100092009,,,,,,,

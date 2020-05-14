@@ -1,0 +1,8 @@
+testId,status,code,gid,partnerId,name,description,lifeCycle,startTime,endTime,useTimeUnit,days,timeSlot,eventRoutes,stationIds,campaignRules,integer,leftValue,comparator,rightValue,triggerName,eventRoute,triggerRules,actionName,promotionWay,discountParams
+1001,SUCCESS,~comn_00_0000,,S0301808271500000065,日常活动,日常活动,FOREVER,,,,,,,,,,transAmount,GREATER_EQUAL,100,消费金额大于等于100,PAYMENT,,赠送,giveCoupon,
+1002,SUCCESS,~comn_00_0000,,S0301808271500000065,消费活动,消费活动,TIME_SLOT,2018-10-15 00:00:00,2019-11-30 23:59:59,,,,,,,,transAmount,GREATER_EQUAL,100,消费金额大于等于100,PAYMENT,,赠送,giveCoupon,
+1003,SUCCESS,~comn_00_0000,,S0301808271500000065,充值活动,充值活动,TIME_SLOT,2018-10-15 00:00:00,2019-11-30 23:59:59,,,,,,,,,,,注册送券,DEPOSIT,,赠送,giveCoupon,
+1004,SUCCESS,~comn_00_0000,,S0301811011400000108,充值送金额,充值送金额活动,FOREVER,,,,,,,,,,transAmount,GREATER_EQUAL,100,充值金额大于等于100,DEPOSIT,,赠送,giveMoney,
+1005,SUCCESS,~comn_00_0000,,S0301811271400000001,注册送分活动,注册送分活动,FOREVER,,,,,,,,,,transAmount,GREATER_EQUAL,100,消费金额大于等于100,PAYMENT,,赠送,giveCoupon,
+1006,SUCCESS,~comn_00_0000,,S0301811261400000001,注册活动,注册活动,FOREVER,,,,,,,,,,transAmount,GREATER_EQUAL,100,消费金额大于等于100,PAYMENT,,赠送,giveCoupon,
+1007,SUCCESS,~comn_00_0000,,S0301808271500000065,实付活动,实付活动,FOREVER,,,,,,,,,,payAmount,GREATER_EQUAL,100,实付金额大于等于100,PAYMENT,,赠送,giveCoupon,

@@ -1,0 +1,4 @@
+testId,status,code,description,message,userLoginOrder-->,gid,partnerId,openId
+1001,FAIL,comn_06_0001,,单据错误:openId:不能为空,,GID,,
+1002,FAIL,comn_06_0001,,单据错误:partnerId:不能为空,,GID,,
+1003,FAIL,comn_06_0001,,InvokeService(serviceName=com.xyb.yc.shell.user.biz.invoke.UserLoginInvoke)请求Order不可为空!,,GID,,

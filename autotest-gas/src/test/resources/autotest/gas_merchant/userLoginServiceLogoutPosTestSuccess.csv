@@ -1,0 +1,2 @@
+testId,status,code,partnerId,mobile,sourceKey,model,merchantStatus,account,password,operatorMobile,goodsCode,goodsName,goodsCode1,goodsName1,depositBizNo,depositBizNo1,depositBizNo2,backBizNo,tradeNo,tradeNo1,tradeNo2,bizNo,order-->,gid,userId,deviceCode
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e8,Merchant,ABLE,caibi,123456,18825814777,95,95#汽油,98,98#汽油,OID,OID,OID,OID,OID,OID,OID,OID,,GID,,E73672025

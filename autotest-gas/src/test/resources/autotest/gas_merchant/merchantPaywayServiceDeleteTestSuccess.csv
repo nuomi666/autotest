@@ -1,0 +1,2 @@
+testId,status,code,platPartnerId,platPartnerId1,payWayCode,payWayName,payWayType,channelCode,barCode,applyGoodsType,paywayTerminalType,paywayModelType,paywayActionType,payWayStatus,print,order-->,gid,partnerId,platPartnerId_order,paywayCode
+1001,SUCCESS,~comn_00_0000,S0301810232300000119,S0301810232300000206,ALI,支付宝,CHANNEL,ALI,2,ALL,ALI_H5,PUBLIC,PAYMENT,ABLE,true,,GID,S0301810232300000119,,ALI

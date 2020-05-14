@@ -1,0 +1,2 @@
+testId,status,code,partnerId,platPartnerId,stationId,stationId1,type,dec,decxx,order-->,gid,partnerId_order,platPartnerId_order,stationId_order,type_order
+1001,SUCCESS,~comn_00_0000,S0301910301100092115,S0301909161100092061,OID,OID,Description,油价描述1,油价描述2,,GID,S0301910301100092116,S0301909161100092061,,Description

@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,stationCode,carNumber,orderType,favourAmount,feeAmount,channelFavourAmount,openId,finishTime,tradeOilOrder,goodsOrders,tradeOilOrder-->,code_tradeOilOrder,oilGun,amount,tradeGoodsOrder-->,code_tradeGoodsOrder,amount_tradeGoodsOrder
+1001,SUCCESS,~comn_00_0000,,,,,,,,,,,,,,,,,,,,,,

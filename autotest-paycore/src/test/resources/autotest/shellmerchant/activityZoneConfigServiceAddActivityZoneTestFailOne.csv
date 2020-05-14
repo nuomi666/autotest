@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,partnerId,activityZoneName,memo,activityImgUrl,activityShowState,activityContentUrl
+1001,FAIL,~comn_00_0000,,,S0301901221100000918,测试活动1,测试活动11111,http://static.xinyebang.xyz:81/jhy/img/20190226b39e6d962d584bbd9328e1114a079d23.png,false,http://www.baidu.com
+1002,FAIL,~comn_00_0000,,,S0301901221100000918,测试活动1,测试活动11111,http://static.xinyebang.xyz:81/jhy/img/20190226b39e6d962d584bbd9328e1114a079d23.png,true,http://www.baidu.com
+1003,FAIL,~comn_00_0000,,,S0301901221100000918,测试活动1,测试活动11111,http://static.xinyebang.xyz:81/jhy/img/20190226b39e6d962d584bbd9328e1114a079d23.png,false,http://www.baidu.com
+1004,FAIL,~comn_00_0000,,,S0301901221100000918,测试活动1,测试活动11111,http://static.xinyebang.xyz:81/jhy/img/20190226b39e6d962d584bbd9328e1114a079d23.png,false,http://www.baidu.com
+1005,FAIL,~comn_00_0000,,,S0301901221100000918,测试活动1,测试活动11111,http://static.xinyebang.xyz:81/jhy/img/20190226b39e6d962d584bbd9328e1114a079d23.png,false,http://www.baidu.com

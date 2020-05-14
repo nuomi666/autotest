@@ -1,0 +1,2 @@
+testId,status,code,partnerId,mobile,sourceKey,stationCode,stationName,userId1,userId2,userType,roleName,roleName1,roleName2,deviceType,sourceName,account,password,operatorMobile,order-->,gid,pageNo,pageSize,keywords,partnerId_order,platPartnerId,stationId,roleId,roleTypes,userStatus,userType_order
+1001,FAIL,~comn_00_0000,S0301909161100092061,13325814711,wxa2557eabb23b47e5,test221,糯米测试油站,OID,OID,BOSS,商家管理员,收银员,地推员,BOSS,商家管理,nuomi,123456,18825814722,,GID,1,10,,S0301909161100092061,S0301909161100092061,,233,,,

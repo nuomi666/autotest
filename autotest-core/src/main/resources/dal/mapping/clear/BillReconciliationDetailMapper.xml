@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.clear.BillReconciliationDetailDAO">
+  <resultMap id="BaseResultMap" type="dal.model.clear.BillReconciliationDetailDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="batch_no" jdbcType="VARCHAR" property="batchNo" />
+    <result column="bill_date" jdbcType="VARCHAR" property="billDate" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="order_key" jdbcType="VARCHAR" property="orderKey" />
+    <result column="trade_type" jdbcType="VARCHAR" property="tradeType" />
+    <result column="trade_resource" jdbcType="VARCHAR" property="tradeResource" />
+    <result column="bill_status" jdbcType="VARCHAR" property="billStatus" />
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId" />
+    <result column="channel_order_no" jdbcType="VARCHAR" property="channelOrderNo" />
+    <result column="channel_trade_no" jdbcType="VARCHAR" property="channelTradeNo" />
+    <result column="channel_transaction_no" jdbcType="VARCHAR" property="channelTransactionNo" />
+    <result column="channel_refund_no" jdbcType="VARCHAR" property="channelRefundNo" />
+    <result column="channel_order_amount" jdbcType="BIGINT" property="channelOrderAmount" />
+    <result column="channel_amount" jdbcType="BIGINT" property="channelAmount" />
+    <result column="channel_fee_amount" jdbcType="DECIMAL" property="channelFeeAmount" />
+    <result column="channel_fee" jdbcType="DECIMAL" property="channelFee" />
+    <result column="channel_trade_time" jdbcType="TIMESTAMP" property="channelTradeTime" />
+    <result column="channel_partner_id" jdbcType="VARCHAR" property="channelPartnerId" />
+    <result column="channel_third_partner_id" jdbcType="VARCHAR" property="channelThirdPartnerId" />
+    <result column="channel_third_user_id" jdbcType="VARCHAR" property="channelThirdUserId" />
+    <result column="channel_trade_memo" jdbcType="VARCHAR" property="channelTradeMemo" />
+    <result column="merchant_order_no" jdbcType="VARCHAR" property="merchantOrderNo" />
+    <result column="plat_merchant_order_no" jdbcType="VARCHAR" property="platMerchantOrderNo" />
+    <result column="merchant_trade_no" jdbcType="VARCHAR" property="merchantTradeNo" />
+    <result column="merchant_refund_no" jdbcType="VARCHAR" property="merchantRefundNo" />
+    <result column="merchant_order_amount" jdbcType="BIGINT" property="merchantOrderAmount" />
+    <result column="merchant_amount" jdbcType="BIGINT" property="merchantAmount" />
+    <result column="merchant_fee_amount" jdbcType="DECIMAL" property="merchantFeeAmount" />
+    <result column="merchant_fee" jdbcType="DECIMAL" property="merchantFee" />
+    <result column="merchant_trade_time" jdbcType="TIMESTAMP" property="merchantTradeTime" />
+    <result column="merchant_channel_fee_amount" jdbcType="DECIMAL" property="merchantChannelFeeAmount" />
+    <result column="merchant_channel_fee" jdbcType="DECIMAL" property="merchantChannelFee" />
+    <result column="merchant_mode" jdbcType="VARCHAR" property="merchantMode" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, batch_no, bill_date, partner_id, plat_partner_id, order_key, trade_type, trade_resource, 
+    bill_status, channel_id, channel_order_no, channel_trade_no, channel_transaction_no, 
+    channel_refund_no, channel_order_amount, channel_amount, channel_fee_amount, channel_fee, 
+    channel_trade_time, channel_partner_id, channel_third_partner_id, channel_third_user_id, 
+    channel_trade_memo, merchant_order_no, plat_merchant_order_no, merchant_trade_no, 
+    merchant_refund_no, merchant_order_amount, merchant_amount, merchant_fee_amount, 
+    merchant_fee, merchant_trade_time, merchant_channel_fee_amount, merchant_channel_fee, 
+    merchant_mode, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.clear.BillReconciliationDetailDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bill_reconciliation_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.clear.BillReconciliationDetailDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from bill_reconciliation_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.clear.BillReconciliationDetailDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from bill_reconciliation_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update bill_reconciliation_detail
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.batchNo != null">
+        batch_no = #{record.batchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billDate != null">
+        bill_date = #{record.billDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderKey != null">
+        order_key = #{record.orderKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeType != null">
+        trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeResource != null">
+        trade_resource = #{record.tradeResource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billStatus != null">
+        bill_status = #{record.billStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelId != null">
+        channel_id = #{record.channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelOrderNo != null">
+        channel_order_no = #{record.channelOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelTradeNo != null">
+        channel_trade_no = #{record.channelTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelTransactionNo != null">
+        channel_transaction_no = #{record.channelTransactionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelRefundNo != null">
+        channel_refund_no = #{record.channelRefundNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelOrderAmount != null">
+        channel_order_amount = #{record.channelOrderAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.channelAmount != null">
+        channel_amount = #{record.channelAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.channelFeeAmount != null">
+        channel_fee_amount = #{record.channelFeeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelFee != null">
+        channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelTradeTime != null">
+        channel_trade_time = #{record.channelTradeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.channelPartnerId != null">
+        channel_partner_id = #{record.channelPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelThirdPartnerId != null">
+        channel_third_partner_id = #{record.channelThirdPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelThirdUserId != null">
+        channel_third_user_id = #{record.channelThirdUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelTradeMemo != null">
+        channel_trade_memo = #{record.channelTradeMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantOrderNo != null">
+        merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platMerchantOrderNo != null">
+        plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantTradeNo != null">
+        merchant_trade_no = #{record.merchantTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantRefundNo != null">
+        merchant_refund_no = #{record.merchantRefundNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantOrderAmount != null">
+        merchant_order_amount = #{record.merchantOrderAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.merchantAmount != null">
+        merchant_amount = #{record.merchantAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.merchantFeeAmount != null">
+        merchant_fee_amount = #{record.merchantFeeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merchantFee != null">
+        merchant_fee = #{record.merchantFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merchantTradeTime != null">
+        merchant_trade_time = #{record.merchantTradeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.merchantChannelFeeAmount != null">
+        merchant_channel_fee_amount = #{record.merchantChannelFeeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merchantChannelFee != null">
+        merchant_channel_fee = #{record.merchantChannelFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merchantMode != null">
+        merchant_mode = #{record.merchantMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update bill_reconciliation_detail
+    set id = #{record.id,jdbcType=BIGINT},
+      batch_no = #{record.batchNo,jdbcType=VARCHAR},
+      bill_date = #{record.billDate,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      order_key = #{record.orderKey,jdbcType=VARCHAR},
+      trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      trade_resource = #{record.tradeResource,jdbcType=VARCHAR},
+      bill_status = #{record.billStatus,jdbcType=VARCHAR},
+      channel_id = #{record.channelId,jdbcType=VARCHAR},
+      channel_order_no = #{record.channelOrderNo,jdbcType=VARCHAR},
+      channel_trade_no = #{record.channelTradeNo,jdbcType=VARCHAR},
+      channel_transaction_no = #{record.channelTransactionNo,jdbcType=VARCHAR},
+      channel_refund_no = #{record.channelRefundNo,jdbcType=VARCHAR},
+      channel_order_amount = #{record.channelOrderAmount,jdbcType=BIGINT},
+      channel_amount = #{record.channelAmount,jdbcType=BIGINT},
+      channel_fee_amount = #{record.channelFeeAmount,jdbcType=DECIMAL},
+      channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      channel_trade_time = #{record.channelTradeTime,jdbcType=TIMESTAMP},
+      channel_partner_id = #{record.channelPartnerId,jdbcType=VARCHAR},
+      channel_third_partner_id = #{record.channelThirdPartnerId,jdbcType=VARCHAR},
+      channel_third_user_id = #{record.channelThirdUserId,jdbcType=VARCHAR},
+      channel_trade_memo = #{record.channelTradeMemo,jdbcType=VARCHAR},
+      merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      merchant_trade_no = #{record.merchantTradeNo,jdbcType=VARCHAR},
+      merchant_refund_no = #{record.merchantRefundNo,jdbcType=VARCHAR},
+      merchant_order_amount = #{record.merchantOrderAmount,jdbcType=BIGINT},
+      merchant_amount = #{record.merchantAmount,jdbcType=BIGINT},
+      merchant_fee_amount = #{record.merchantFeeAmount,jdbcType=DECIMAL},
+      merchant_fee = #{record.merchantFee,jdbcType=DECIMAL},
+      merchant_trade_time = #{record.merchantTradeTime,jdbcType=TIMESTAMP},
+      merchant_channel_fee_amount = #{record.merchantChannelFeeAmount,jdbcType=DECIMAL},
+      merchant_channel_fee = #{record.merchantChannelFee,jdbcType=DECIMAL},
+      merchant_mode = #{record.merchantMode,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

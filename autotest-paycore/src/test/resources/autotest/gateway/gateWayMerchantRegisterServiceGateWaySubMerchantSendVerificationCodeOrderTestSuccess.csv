@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,settleChannelId,memo,channelPartnerId,params,mock,subMerchantId,bankCardNo,subMerchantAccount,identityNo,identityType,bankName,bankId,identityFrontUrl,identityBackUrl,verificationCode,realName,bankNumber,phone,subMerchantId_order,phone_order,subMerchantBingType
+1001,SUCCESS,~comn_00_0000,,,,,,,,,,,,,,,,,,,,,,,,,,,,

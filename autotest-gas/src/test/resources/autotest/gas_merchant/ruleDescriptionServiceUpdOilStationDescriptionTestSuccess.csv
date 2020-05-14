@@ -1,0 +1,3 @@
+testId,status,code,platPartnerId,partnerId,partnerId1,stationId,stationId1,stationName,stationName1,stationCode,stationCode1,stationStatus,stationStatus1,dec,order-->,gid,partnerId_order,platPartnerId_order,description,stationId_order,type
+1001,SUCCESS,~comn_00_0000,S0301909161100092061,S0301910301100092115,S0301910301100092116,OID,OID,测试油站1,测试油站2,test001,test002,ABLE,ABLE,更改之前的油价,,GID,,S0301909161100092061,更改之后的油价,,Description
+1002,SUCCESS,~comn_00_0000,S0301909161100092061,S0301910301100092115,S0301910301100092116,OID,OID,测试油站1,测试油站2,test001,test002,ABLE,ABLE,更改之前的油价,,GID,S0301910301100092115,S0301909161100092061,更改之后的油价,,Description

@@ -1,0 +1,5 @@
+testId,status,code,order-->,gid,id,parentId,roleName,memo
+1001,FAIL,~comn_00_0000,,GID,22,233,修改后的角色名,修改后的备注
+1002,FAIL,~comn_00_0000,,GID,22,233,修改后的角色名,修改后的备注
+1003,FAIL,~comn_00_0000,,GID,22,233,修改后的角色名,修改后的备注
+1004,FAIL,~comn_00_0000,,GID,22,233,修改后的角色名,修改后的备注

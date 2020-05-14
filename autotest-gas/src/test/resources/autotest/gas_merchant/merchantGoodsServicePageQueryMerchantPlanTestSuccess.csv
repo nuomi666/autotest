@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,stationId,stationId1,stationCode,stationCode1,stationName,stationName1,goodsCode,goodsCode1,goodsName,goodsName1,stationPlanId,stationPlanId1,stationPlanId2,stationPlanId3,merchantPlanId,merchantPlanId1,merchantPlanId2,operatorId,operatorId1,operatorId2,operatorName,operatorName1,operatorName2,order-->,gid,pageNo,pageSize,partnerId,platPartnerId_order,priceName,startTime,endTime
+1001,SUCCESS,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,OID,OID,OID,OID,OID,OID,OID,OID,aa,bb,cc,,GID,,,,S0301910241700092111,,,
+1002,SUCCESS,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,OID,OID,OID,OID,OID,OID,OID,OID,aa,bb,cc,,GID,,,,S0301910241700092111,,,
+1003,SUCCESS,~comn_00_0000,S0301910241700092111,OID,OID,iuo5858,mjy7865,油站1,油站2,95,-20,95#汽油,-20#柴油,OID,OID,OID,OID,OID,OID,OID,OID,OID,OID,aa,bb,cc,,GID,,,,S0301910241700092111,,,

@@ -1,0 +1,4 @@
+testId,status,code,platPartnerId,goodsId,goodsName,goodsDec,goodsImg,exchangePoint,storeNum,freezeStoreNum,oneExchangeTimes,gainStyle,station,exchangedCount,exchangCount,userId,exchangeType,order-->,gid,exchangeOrderNo,status_order
+1001,FAIL,~comn_00_0000,S0301909161100092061,OID,打工仔,不可描述,http://static.xinyebang.xyz:81/jhy/img/20190926d624e486180d4c4b98b3cced2a623253.png,100,5,10,2,SELF,OID,20,2,OID,ENTITY,,GID,OID,SUCCESS
+1002,FAIL,~comn_00_0000,S0301909161100092061,OID,打工仔,不可描述,http://static.xinyebang.xyz:81/jhy/img/20190926d624e486180d4c4b98b3cced2a623253.png,100,5,10,2,AUTO,OID,20,2,OID,ENTITY,,GID,OID,SUCCESS
+1003,FAIL,~comn_00_0000,S0301909161100092061,OID,打工仔,不可描述,http://static.xinyebang.xyz:81/jhy/img/20190926d624e486180d4c4b98b3cced2a623253.png,100,5,10,2,AUTO,OID,20,2,OID,ENTITY,,GID,OID,FAIL

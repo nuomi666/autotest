@@ -1,0 +1,3 @@
+testId,deliveryName,deliveryStartTime,deliveryDescription,conditionType,startBirth,endBirth,sex,minBalance,maxBalance,minPoints,maxPoints,mobile,mobile1,stationName,goodsCode,goodsCode1,minUnConsumDays,maxUnConsumDays,minTotalConsumAmount, maxTotalConsumAmount,minPrice,maxPrice,goodsType,minLiters,maxLiters,minOilCount,maxOilCount,minHinghLiters,maxHinghLiters,basicDiscount,points
+1001,精准投放666,2021-02-23 00:00:00,精准投放备注,基础条件筛选,03-01,03-31,男,100,999999,200,99999,13325814722,13325814711,页面测试油站111,92,95,1,30,500,99999,6.5,9.5,汽油,50,100,3,10,20,99999,赠送积分,100
+1002,精准投放666,2021-02-23 00:00:00,精准投放备注,统计条件筛选,03-01,03-31,男,100,999999,200,99999,13325814722,13325814711,页面测试油站111,92,95,1,30,500,99999,6.5,9.5,汽油,50,100,3,10,20,99999,赠送积分,100

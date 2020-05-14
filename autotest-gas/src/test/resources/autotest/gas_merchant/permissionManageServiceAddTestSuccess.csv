@@ -1,0 +1,4 @@
+testId,status,code,deviceType,permissionId,name,permissionCode,url,category,resourceType,orderNo,order-->,gid,deviceType_order,parentId,name_order,code_order,url_order,resourceType_order,permissionCategory,orderNo_order,icon,memo
+1001,SUCCESS,~comn_00_0000,BOSS,OID,统计报表,MENU0482,#,COMMON,MENU,1,,GID,POS,,现金支付方式,cashPay,01,MENU,COMMON,1,,
+1002,SUCCESS,~comn_00_0000,BOSS,OID,统计报表,MENU0482,#,COMMON,MENU,1,,GID,BOSS,,财务报表,MENU0483,finance/list,MENU,COMMON,3,,
+1003,SUCCESS,~comn_00_0000,BOSS,OID,统计报表,MENU0482,#,COMMON,MENU,1,,GID,H5,,电子发票主页,MENU_APPLYFORTICKET,/applyForTicket,MENU,COMMON,1,,

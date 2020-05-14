@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,bankCardNo
+1001,SUCCESS,~comn_00_0000,,GID,OID,～20180615001234567895,OID,～20180615001234567800,OID,～6226660901612888

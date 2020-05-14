@@ -1,0 +1,6 @@
+testId,status,code,gid,id,eventName,eventRoute,eventScope,eventStatus,eventDescription,dataOrders,keyName,keyCode,dataSource,moduleName,eventRoute_triggerEventDataOrder,keyType,enumClass
+1001,SUCCESS,~comn_00_0000,,,注册,userRegister,OTHER,TO_TAKE_EFFECT,注册事件,,性别,sex,EVENT,,userRegister,ENUM,
+1002,SUCCESS,~comn_00_0000,,,完善资料,userUpdate,OTHER,TO_TAKE_EFFECT,完善资料事件,,性别,sex,EVENT,,userUpdate,ENUM,
+1003,SUCCESS,~comn_00_0000,,,充值,DEPOSIT,OTHER,TO_TAKE_EFFECT,充值事件,,充值金额,transAmount,EVENT,,DEPOSIT,MONEY,
+1004,SUCCESS,~comn_00_0000,,,付款,PAYMENT,CONSUME,TO_TAKE_EFFECT,付款事件,,付款金额,transAmount,EVENT,,PAYMENT,MONEY,
+1005,SUCCESS,~comn_00_0000,,,生日,USER_BIRTHDAY,OTHER,TO_TAKE_EFFECT,生日事件,,付款金额,transAmount,EVENT,,USER_BIRTHDAY,MONEY,

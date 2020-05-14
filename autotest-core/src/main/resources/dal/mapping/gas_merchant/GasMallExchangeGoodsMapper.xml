@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.gas_merchant.GasMallExchangeGoodsDAO">
+  <resultMap id="BaseResultMap" type="dal.model.gas_merchant.GasMallExchangeGoodsDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_id" jdbcType="VARCHAR" property="goodsId" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="goods_type" jdbcType="VARCHAR" property="goodsType" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_description" jdbcType="VARCHAR" property="goodsDescription" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+    <result column="for_sale_time" jdbcType="TIMESTAMP" property="forSaleTime" />
+    <result column="invalid_time" jdbcType="TIMESTAMP" property="invalidTime" />
+    <result column="exchange_point" jdbcType="INTEGER" property="exchangePoint" />
+    <result column="store_num" jdbcType="INTEGER" property="storeNum" />
+    <result column="freeze_store_num" jdbcType="INTEGER" property="freezeStoreNum" />
+    <result column="one_exchange_times" jdbcType="INTEGER" property="oneExchangeTimes" />
+    <result column="gain_style" jdbcType="VARCHAR" property="gainStyle" />
+    <result column="gain_station" jdbcType="VARCHAR" property="gainStation" />
+    <result column="exchanged_count" jdbcType="INTEGER" property="exchangedCount" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, goods_id, partner_id, plat_partner_id, goods_type, goods_name, goods_description, 
+    goods_img, for_sale_time, invalid_time, exchange_point, store_num, freeze_store_num, 
+    one_exchange_times, gain_style, gain_station, exchanged_count, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.gas_merchant.GasMallExchangeGoodsDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gas_mall_exchange_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.gas_merchant.GasMallExchangeGoodsDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from gas_mall_exchange_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.gas_merchant.GasMallExchangeGoodsDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from gas_mall_exchange_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_mall_exchange_goods
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsType != null">
+        goods_type = #{record.goodsType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsDescription != null">
+        goods_description = #{record.goodsDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsImg != null">
+        goods_img = #{record.goodsImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.forSaleTime != null">
+        for_sale_time = #{record.forSaleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.invalidTime != null">
+        invalid_time = #{record.invalidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.exchangePoint != null">
+        exchange_point = #{record.exchangePoint,jdbcType=INTEGER},
+      </if>
+      <if test="record.storeNum != null">
+        store_num = #{record.storeNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.freezeStoreNum != null">
+        freeze_store_num = #{record.freezeStoreNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.oneExchangeTimes != null">
+        one_exchange_times = #{record.oneExchangeTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.gainStyle != null">
+        gain_style = #{record.gainStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gainStation != null">
+        gain_station = #{record.gainStation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exchangedCount != null">
+        exchanged_count = #{record.exchangedCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update gas_mall_exchange_goods
+    set id = #{record.id,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      goods_type = #{record.goodsType,jdbcType=VARCHAR},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_description = #{record.goodsDescription,jdbcType=VARCHAR},
+      goods_img = #{record.goodsImg,jdbcType=VARCHAR},
+      for_sale_time = #{record.forSaleTime,jdbcType=TIMESTAMP},
+      invalid_time = #{record.invalidTime,jdbcType=TIMESTAMP},
+      exchange_point = #{record.exchangePoint,jdbcType=INTEGER},
+      store_num = #{record.storeNum,jdbcType=INTEGER},
+      freeze_store_num = #{record.freezeStoreNum,jdbcType=INTEGER},
+      one_exchange_times = #{record.oneExchangeTimes,jdbcType=INTEGER},
+      gain_style = #{record.gainStyle,jdbcType=VARCHAR},
+      gain_station = #{record.gainStation,jdbcType=VARCHAR},
+      exchanged_count = #{record.exchangedCount,jdbcType=INTEGER},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

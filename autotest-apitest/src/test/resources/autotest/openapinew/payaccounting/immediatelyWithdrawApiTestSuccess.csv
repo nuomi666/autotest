@@ -1,0 +1,4 @@
+testId,status,code,service,version,partnerId,securityCheckCode,signType,merchantOrderNo,context,returnUrl,notifyUrl,amount,bankCardNo,payeeOutUserId
+1001,SUCCESS,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~1203285309000036369,~outuseridenterprise00001
+1002,SUCCESS,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567898346 ,~outuseridenterprise00001
+1003,SUCCESS,~C0003,,~1.0.0,,,MD5,,context,,http://192.168.2.100:9006/api/withDraw,0.01,~6228481234567898346 ,~hft00000001111111

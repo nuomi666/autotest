@@ -1,0 +1,5 @@
+testId,status,code,partnerId,partnerId1,partnerName,partnerName1,account,account1,memo,memo1,order-->,gid,pageNo,pageSize,keywords
+1001,SUCCESS,~comn_00_0000,S0301908151500091836,S0301908201000091930,加好油测试商家,糯米测试商家,001iq3qsvu6gg025eh00,8a9b858a5e9578ca015ea8e204790023,加好油,糯米,,,1,10,加好油测试商家
+1002,SUCCESS,~comn_00_0000,S0301908151500091836,S0301908201000091930,加好油测试商家,糯米测试商家,001iq3qsvu6gg025eh00,8a9b858a5e9578ca015ea8e204790023,加好油,糯米,,,1,2,测试商家
+1003,SUCCESS,~comn_00_0000,S0301908151500091836,S0301908201000091930,加好油测试商家,糯米测试商家,001iq3qsvu6gg025eh00,8a9b858a5e9578ca015ea8e204790023,加好油,糯米,,,2,2,测试商家
+1004,SUCCESS,~comn_00_0000,S0301908151500091836,S0301908201000091930,加好油测试商家,糯米测试商家,001iq3qsvu6gg025eh00,8a9b858a5e9578ca015ea8e204790023,加好油,糯米,,,1,10,测试商家

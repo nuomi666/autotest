@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.cashier.ChannelDAO">
+  <resultMap id="BaseResultMap" type="dal.model.cashier.ChannelDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId" />
+    <result column="channel_name" jdbcType="VARCHAR" property="channelName" />
+    <result column="channel_config" jdbcType="VARCHAR" property="channelConfig" />
+    <result column="state" jdbcType="CHAR" property="state" />
+    <result column="channel_type" jdbcType="VARCHAR" property="channelType" />
+    <result column="merchant_rate_type" jdbcType="VARCHAR" property="merchantRateType" />
+    <result column="merchant_rate_rule" jdbcType="VARCHAR" property="merchantRateRule" />
+    <result column="merchant_rate_decimal" jdbcType="INTEGER" property="merchantRateDecimal" />
+    <result column="channel_rate_type" jdbcType="VARCHAR" property="channelRateType" />
+    <result column="channel_rate_rule" jdbcType="VARCHAR" property="channelRateRule" />
+    <result column="channel_rate_decimal" jdbcType="INTEGER" property="channelRateDecimal" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+    <result column="mark_delete" jdbcType="CHAR" property="markDelete" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, channel_id, channel_name, channel_config, state, channel_type, merchant_rate_type, 
+    merchant_rate_rule, merchant_rate_decimal, channel_rate_type, channel_rate_rule, 
+    channel_rate_decimal, raw_add_time, raw_update_time, mark_delete
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.cashier.ChannelDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from channel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.cashier.ChannelDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from channel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.cashier.ChannelDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from channel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update channel
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.channelId != null">
+        channel_id = #{record.channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelName != null">
+        channel_name = #{record.channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelConfig != null">
+        channel_config = #{record.channelConfig,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=CHAR},
+      </if>
+      <if test="record.channelType != null">
+        channel_type = #{record.channelType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantRateType != null">
+        merchant_rate_type = #{record.merchantRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantRateRule != null">
+        merchant_rate_rule = #{record.merchantRateRule,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantRateDecimal != null">
+        merchant_rate_decimal = #{record.merchantRateDecimal,jdbcType=INTEGER},
+      </if>
+      <if test="record.channelRateType != null">
+        channel_rate_type = #{record.channelRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelRateRule != null">
+        channel_rate_rule = #{record.channelRateRule,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelRateDecimal != null">
+        channel_rate_decimal = #{record.channelRateDecimal,jdbcType=INTEGER},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.markDelete != null">
+        mark_delete = #{record.markDelete,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update channel
+    set id = #{record.id,jdbcType=BIGINT},
+      channel_id = #{record.channelId,jdbcType=VARCHAR},
+      channel_name = #{record.channelName,jdbcType=VARCHAR},
+      channel_config = #{record.channelConfig,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=CHAR},
+      channel_type = #{record.channelType,jdbcType=VARCHAR},
+      merchant_rate_type = #{record.merchantRateType,jdbcType=VARCHAR},
+      merchant_rate_rule = #{record.merchantRateRule,jdbcType=VARCHAR},
+      merchant_rate_decimal = #{record.merchantRateDecimal,jdbcType=INTEGER},
+      channel_rate_type = #{record.channelRateType,jdbcType=VARCHAR},
+      channel_rate_rule = #{record.channelRateRule,jdbcType=VARCHAR},
+      channel_rate_decimal = #{record.channelRateDecimal,jdbcType=INTEGER},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      mark_delete = #{record.markDelete,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

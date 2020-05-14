@@ -1,0 +1,5 @@
+testId,status,code,payOrder-->,gid,reqId,partnerId,merchantOrderNo,stationCode,carNumber,orderType,favourAmount,feeAmount,openId,finishTime,tradeOilOrder,goodsOrders,tradeOilOrder-->,code_tradeOilOrder,oilGun,amount,tradeGoodsOrder-->,code_tradeGoodsOrder,amount_tradeGoodsOrder,order-->,gid_order,reqId_order,partnerId_order,merchantOrderNo_order,tradeNo,finishTime_order
+1001,SUCCESS,~comn_00_0000,,,,S0301902121500001028,,1111,渝A12345,OIL,0,1,oK9SG1a23X84XRvphnsQAPqyzgWU,2019-07-17 15:31:57,,,,92,2,300,,default,6,,,,S0301902121500001028,,,2019-07-18 15:31:57
+1002,SUCCESS,~comn_00_0000,,,,S0301902181600001085,,1111,渝A12345,OIL,1,0,oK9SG1a23X84XRvphnsQAPqyzgWU,2019-07-17 15:31:57,,,,92,2,300,,default,6,,,,S0301902181600001085,,,2019-07-18 15:31:57
+1003,SUCCESS,~comn_00_0000,,,,S0301907031400091521,,1111,渝A12345,OIL,1,1,oK9SG1a23X84XRvphnsQAPqyzgWU,2019-07-17 15:31:57,,,,92,2,300,,default,6,,,,S0301907031400091521,,,2019-07-18 15:31:57
+1004,SUCCESS,~comn_00_0000,,,,S0301907031400091522,,1111,渝A12345,OIL,0,0,oK9SG1a23X84XRvphnsQAPqyzgWU,2019-07-17 15:31:57,,,,92,2,300,,default,6,,,,S0301907031400091522,,,2019-07-18 15:31:57

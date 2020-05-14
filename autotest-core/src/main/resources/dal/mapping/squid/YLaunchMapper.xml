@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.squid.YLaunchDAO">
+  <resultMap id="BaseResultMap" type="dal.model.squid.YLaunchDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="entity_id" jdbcType="VARCHAR" property="entityId" />
+    <result column="supplier_id" jdbcType="DECIMAL" property="supplierId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="put_url" jdbcType="VARCHAR" property="putUrl" />
+    <result column="launch_type" jdbcType="VARCHAR" property="launchType" />
+    <result column="coupon_id" jdbcType="BIGINT" property="couponId" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="case_name" jdbcType="VARCHAR" property="caseName" />
+    <result column="launch_type_group" jdbcType="VARCHAR" property="launchTypeGroup" />
+    <result column="assignUsers" jdbcType="VARCHAR" property="assignusers" />
+    <result column="userGroupId" jdbcType="BIGINT" property="usergroupid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.squid.YLaunchDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="launch_condition" jdbcType="LONGVARCHAR" property="launchCondition" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    entity_id, supplier_id, name, begin_date, end_date, title, img_url, put_url, launch_type, 
+    coupon_id, state, CREATED_USER, CREATED_DATE, UPDATED_USER, MODIFIED_DATE, MARK_DELETE, 
+    VERSION_ID, case_name, launch_type_group, assignUsers, userGroupId
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    launch_condition
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.squid.YLaunchDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from y_launch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.squid.YLaunchDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from y_launch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.squid.YLaunchDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from y_launch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.squid.YLaunchDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from y_launch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_launch
+    <set>
+      <if test="record.entityId != null">
+        entity_id = #{record.entityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierId != null">
+        supplier_id = #{record.supplierId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.beginDate != null">
+        begin_date = #{record.beginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endDate != null">
+        end_date = #{record.endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imgUrl != null">
+        img_url = #{record.imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.putUrl != null">
+        put_url = #{record.putUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.launchType != null">
+        launch_type = #{record.launchType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.couponId != null">
+        coupon_id = #{record.couponId,jdbcType=BIGINT},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.caseName != null">
+        case_name = #{record.caseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.launchTypeGroup != null">
+        launch_type_group = #{record.launchTypeGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="record.assignusers != null">
+        assignUsers = #{record.assignusers,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usergroupid != null">
+        userGroupId = #{record.usergroupid,jdbcType=BIGINT},
+      </if>
+      <if test="record.launchCondition != null">
+        launch_condition = #{record.launchCondition,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_launch
+    set entity_id = #{record.entityId,jdbcType=VARCHAR},
+      supplier_id = #{record.supplierId,jdbcType=DECIMAL},
+      name = #{record.name,jdbcType=VARCHAR},
+      begin_date = #{record.beginDate,jdbcType=TIMESTAMP},
+      end_date = #{record.endDate,jdbcType=TIMESTAMP},
+      title = #{record.title,jdbcType=VARCHAR},
+      img_url = #{record.imgUrl,jdbcType=VARCHAR},
+      put_url = #{record.putUrl,jdbcType=VARCHAR},
+      launch_type = #{record.launchType,jdbcType=VARCHAR},
+      coupon_id = #{record.couponId,jdbcType=BIGINT},
+      state = #{record.state,jdbcType=VARCHAR},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      case_name = #{record.caseName,jdbcType=VARCHAR},
+      launch_type_group = #{record.launchTypeGroup,jdbcType=VARCHAR},
+      assignUsers = #{record.assignusers,jdbcType=VARCHAR},
+      userGroupId = #{record.usergroupid,jdbcType=BIGINT},
+      launch_condition = #{record.launchCondition,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update y_launch
+    set entity_id = #{record.entityId,jdbcType=VARCHAR},
+      supplier_id = #{record.supplierId,jdbcType=DECIMAL},
+      name = #{record.name,jdbcType=VARCHAR},
+      begin_date = #{record.beginDate,jdbcType=TIMESTAMP},
+      end_date = #{record.endDate,jdbcType=TIMESTAMP},
+      title = #{record.title,jdbcType=VARCHAR},
+      img_url = #{record.imgUrl,jdbcType=VARCHAR},
+      put_url = #{record.putUrl,jdbcType=VARCHAR},
+      launch_type = #{record.launchType,jdbcType=VARCHAR},
+      coupon_id = #{record.couponId,jdbcType=BIGINT},
+      state = #{record.state,jdbcType=VARCHAR},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      case_name = #{record.caseName,jdbcType=VARCHAR},
+      launch_type_group = #{record.launchTypeGroup,jdbcType=VARCHAR},
+      assignUsers = #{record.assignusers,jdbcType=VARCHAR},
+      userGroupId = #{record.usergroupid,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

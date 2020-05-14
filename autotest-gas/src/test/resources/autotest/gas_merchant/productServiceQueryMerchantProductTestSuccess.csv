@@ -1,0 +1,7 @@
+testId,status,code,deviceType1,parentId,permissionId,permissionId1,parentName,name,name1,parentCode,permissionCode,permissionCode1,url,url1,url2,category,category1,resourceType,resourceType1,orderNo,orderNo1,productId,productId1,productName,productName1,order-->,gid,platPartnerId,productName_order,deviceType,productCategoryList,status_order
+1001,SUCCESS,~comn_00_0000,BOSS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,COMMON,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,,BOSS,,
+1002,SUCCESS,~comn_00_0000,BOSS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,MERCHANT,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,,BOSS,,
+1003,SUCCESS,~comn_00_0000,BOSS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,MERCHANT,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,,BOSS,,
+1004,SUCCESS,~comn_00_0000,POS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,MERCHANT,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,,BOSS,,
+1005,SUCCESS,~comn_00_0000,BOSS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,MERCHANT,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,,BOSS,,
+1006,SUCCESS,~comn_00_0000,BOSS,OID,OID,OID,站长管理,油站管理,充值订单,operators,stations,deposit,2,3,4,COMMON,COMMON,MENU,MENU,1,2,OID,OID,油站中心,订单中心,,GID,S0301910311800092118,油站中心,BOSS,,

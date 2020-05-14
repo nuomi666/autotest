@@ -1,0 +1,6 @@
+testId,status,code,order-->,gid,stationId,deviceCode,userId,open
+1001,FAIL,~comn_00_0000,,GID,001if9yazl84g025eh00,d01254,001if9yav9ikg025eh00,1
+1002,FAIL,~comn_00_0000,,GID,001if9yazl84g025eh00,d01254,001if9yav9ikg025eh00,1
+1003,FAIL,~comn_00_0000,,GID,001if9yazl84g025eh00,d01254,001if9yav9ikg025eh00,1
+1004,FAIL,~comn_00_0000,,GID,001if9yazl84g025eh00,d01254,001if9yav9ikg025eh00,1
+1005,FAIL,~comn_00_0000,,GID,001if9yazl84g025eh00,d01254,001if9yav9ikg025eh00,1

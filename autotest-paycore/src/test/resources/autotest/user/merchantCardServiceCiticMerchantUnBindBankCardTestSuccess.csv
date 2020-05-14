@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,reqId,userId,bankCardNo,bankCardName,bankAccountType,bankCode,bankKey
+1001,SUCCESS,~comn_00_0000,,,,~20180615001234567890,~6229980700041788,赫溺辟,SAME_BANK_PERSONAL_ACCOUNT,CITIC,~302653042331

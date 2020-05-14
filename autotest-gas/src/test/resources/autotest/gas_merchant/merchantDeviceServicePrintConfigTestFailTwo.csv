@@ -1,0 +1,2 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,printId,stationId,deviceType,printType,printTitle,printSleep
+1001,FAIL,~comn_00_0000,,,S0301810081500000065,S0301810081500000065,001iq5yc9bfzG0200100,001if9wutl84g025eh00,POS,Recharge,充值小票,5

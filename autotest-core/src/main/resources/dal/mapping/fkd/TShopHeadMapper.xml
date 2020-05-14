@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.fkd.TShopHeadDAO">
+  <resultMap id="BaseResultMap" type="dal.model.fkd.TShopHeadDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="BIGINT" property="entityId" />
+    <result column="SUPPLIER_HEAD_ID" jdbcType="DECIMAL" property="supplierHeadId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="HEAD_TYPE" jdbcType="VARCHAR" property="headType" />
+    <result column="ADDRESS_HEAD_ID" jdbcType="DECIMAL" property="addressHeadId" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="AREA" jdbcType="VARCHAR" property="area" />
+    <result column="INDEX_IMG" jdbcType="VARCHAR" property="indexImg" />
+    <result column="BUSINESS_HOURS" jdbcType="VARCHAR" property="businessHours" />
+    <result column="COLLECTION" jdbcType="DECIMAL" property="collection" />
+    <result column="CONTACTS" jdbcType="VARCHAR" property="contacts" />
+    <result column="CONTACTS_PHONE" jdbcType="VARCHAR" property="contactsPhone" />
+    <result column="CONTACTS_FIX_PHONE" jdbcType="VARCHAR" property="contactsFixPhone" />
+    <result column="CONTACTS_EMAIL" jdbcType="VARCHAR" property="contactsEmail" />
+    <result column="FICO" jdbcType="VARCHAR" property="fico" />
+    <result column="LOGO" jdbcType="VARCHAR" property="logo" />
+    <result column="QRCODE" jdbcType="VARCHAR" property="qrcode" />
+    <result column="CLEAR_TYPE" jdbcType="VARCHAR" property="clearType" />
+    <result column="CLEAR_ACCOUNT" jdbcType="VARCHAR" property="clearAccount" />
+    <result column="CLEAR_ID" jdbcType="VARCHAR" property="clearId" />
+    <result column="CLEAR_NAME" jdbcType="VARCHAR" property="clearName" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="VERSION_ID" jdbcType="INTEGER" property="versionId" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="SHOP_STATUS" jdbcType="VARCHAR" property="shopStatus" />
+    <result column="SHOP_COMPANY_ID" jdbcType="DECIMAL" property="shopCompanyId" />
+    <result column="WAREHOUSE_ADDRESS" jdbcType="VARCHAR" property="warehouseAddress" />
+    <result column="PROFIT_RATIO" jdbcType="DECIMAL" property="profitRatio" />
+    <result column="RATE" jdbcType="DECIMAL" property="rate" />
+    <result column="SERVICE_CLASS" jdbcType="VARCHAR" property="serviceClass" />
+    <result column="CONTACTS_QQ" jdbcType="VARCHAR" property="contactsQq" />
+    <result column="CUSTOMS_RECORD" jdbcType="CHAR" property="customsRecord" />
+    <result column="INSPECTION_RECORD" jdbcType="CHAR" property="inspectionRecord" />
+    <result column="RECOMMEND" jdbcType="CHAR" property="recommend" />
+    <result column="pay_business_no" jdbcType="VARCHAR" property="payBusinessNo" />
+    <result column="PAY_PRIVATE_KEY" jdbcType="VARCHAR" property="payPrivateKey" />
+    <result column="CITY_ID" jdbcType="VARCHAR" property="cityId" />
+    <result column="DISTRICT_ID" jdbcType="VARCHAR" property="districtId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="dal.model.fkd.TShopHeadDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="INTRODUCTION" jdbcType="LONGVARCHAR" property="introduction" />
+    <result column="SHOP_DETAIL" jdbcType="LONGVARCHAR" property="shopDetail" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, SUPPLIER_HEAD_ID, NAME, CODE, HEAD_TYPE, ADDRESS_HEAD_ID, ADDRESS, AREA, 
+    INDEX_IMG, BUSINESS_HOURS, COLLECTION, CONTACTS, CONTACTS_PHONE, CONTACTS_FIX_PHONE, 
+    CONTACTS_EMAIL, FICO, LOGO, QRCODE, CLEAR_TYPE, CLEAR_ACCOUNT, CLEAR_ID, CLEAR_NAME, 
+    CREATED_DATE, MODIFIED_DATE, CREATED_USER, UPDATED_USER, VERSION_ID, MARK_DELETE, 
+    SHOP_STATUS, SHOP_COMPANY_ID, WAREHOUSE_ADDRESS, PROFIT_RATIO, RATE, SERVICE_CLASS, 
+    CONTACTS_QQ, CUSTOMS_RECORD, INSPECTION_RECORD, RECOMMEND, pay_business_no, PAY_PRIVATE_KEY, 
+    CITY_ID, DISTRICT_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    INTRODUCTION, SHOP_DETAIL
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="dal.model.fkd.TShopHeadDOExample" resultMap="ResultMapWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_shop_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="dal.model.fkd.TShopHeadDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_shop_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.fkd.TShopHeadDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from t_shop_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.fkd.TShopHeadDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from t_shop_head
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_shop_head
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.supplierHeadId != null">
+        SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.name != null">
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null">
+        CODE = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headType != null">
+        HEAD_TYPE = #{record.headType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addressHeadId != null">
+        ADDRESS_HEAD_ID = #{record.addressHeadId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.address != null">
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.area != null">
+        AREA = #{record.area,jdbcType=VARCHAR},
+      </if>
+      <if test="record.indexImg != null">
+        INDEX_IMG = #{record.indexImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessHours != null">
+        BUSINESS_HOURS = #{record.businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="record.collection != null">
+        COLLECTION = #{record.collection,jdbcType=DECIMAL},
+      </if>
+      <if test="record.contacts != null">
+        CONTACTS = #{record.contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsPhone != null">
+        CONTACTS_PHONE = #{record.contactsPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsFixPhone != null">
+        CONTACTS_FIX_PHONE = #{record.contactsFixPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsEmail != null">
+        CONTACTS_EMAIL = #{record.contactsEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fico != null">
+        FICO = #{record.fico,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logo != null">
+        LOGO = #{record.logo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qrcode != null">
+        QRCODE = #{record.qrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearType != null">
+        CLEAR_TYPE = #{record.clearType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearAccount != null">
+        CLEAR_ACCOUNT = #{record.clearAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearId != null">
+        CLEAR_ID = #{record.clearId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearName != null">
+        CLEAR_NAME = #{record.clearName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.shopStatus != null">
+        SHOP_STATUS = #{record.shopStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopCompanyId != null">
+        SHOP_COMPANY_ID = #{record.shopCompanyId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.warehouseAddress != null">
+        WAREHOUSE_ADDRESS = #{record.warehouseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profitRatio != null">
+        PROFIT_RATIO = #{record.profitRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="record.rate != null">
+        RATE = #{record.rate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.serviceClass != null">
+        SERVICE_CLASS = #{record.serviceClass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsQq != null">
+        CONTACTS_QQ = #{record.contactsQq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customsRecord != null">
+        CUSTOMS_RECORD = #{record.customsRecord,jdbcType=CHAR},
+      </if>
+      <if test="record.inspectionRecord != null">
+        INSPECTION_RECORD = #{record.inspectionRecord,jdbcType=CHAR},
+      </if>
+      <if test="record.recommend != null">
+        RECOMMEND = #{record.recommend,jdbcType=CHAR},
+      </if>
+      <if test="record.payBusinessNo != null">
+        pay_business_no = #{record.payBusinessNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payPrivateKey != null">
+        PAY_PRIVATE_KEY = #{record.payPrivateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityId != null">
+        CITY_ID = #{record.cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.districtId != null">
+        DISTRICT_ID = #{record.districtId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduction != null">
+        INTRODUCTION = #{record.introduction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.shopDetail != null">
+        SHOP_DETAIL = #{record.shopDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_shop_head
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CODE = #{record.code,jdbcType=VARCHAR},
+      HEAD_TYPE = #{record.headType,jdbcType=VARCHAR},
+      ADDRESS_HEAD_ID = #{record.addressHeadId,jdbcType=DECIMAL},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      AREA = #{record.area,jdbcType=VARCHAR},
+      INDEX_IMG = #{record.indexImg,jdbcType=VARCHAR},
+      BUSINESS_HOURS = #{record.businessHours,jdbcType=VARCHAR},
+      COLLECTION = #{record.collection,jdbcType=DECIMAL},
+      CONTACTS = #{record.contacts,jdbcType=VARCHAR},
+      CONTACTS_PHONE = #{record.contactsPhone,jdbcType=VARCHAR},
+      CONTACTS_FIX_PHONE = #{record.contactsFixPhone,jdbcType=VARCHAR},
+      CONTACTS_EMAIL = #{record.contactsEmail,jdbcType=VARCHAR},
+      FICO = #{record.fico,jdbcType=VARCHAR},
+      LOGO = #{record.logo,jdbcType=VARCHAR},
+      QRCODE = #{record.qrcode,jdbcType=VARCHAR},
+      CLEAR_TYPE = #{record.clearType,jdbcType=VARCHAR},
+      CLEAR_ACCOUNT = #{record.clearAccount,jdbcType=VARCHAR},
+      CLEAR_ID = #{record.clearId,jdbcType=VARCHAR},
+      CLEAR_NAME = #{record.clearName,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      SHOP_STATUS = #{record.shopStatus,jdbcType=VARCHAR},
+      SHOP_COMPANY_ID = #{record.shopCompanyId,jdbcType=DECIMAL},
+      WAREHOUSE_ADDRESS = #{record.warehouseAddress,jdbcType=VARCHAR},
+      PROFIT_RATIO = #{record.profitRatio,jdbcType=DECIMAL},
+      RATE = #{record.rate,jdbcType=DECIMAL},
+      SERVICE_CLASS = #{record.serviceClass,jdbcType=VARCHAR},
+      CONTACTS_QQ = #{record.contactsQq,jdbcType=VARCHAR},
+      CUSTOMS_RECORD = #{record.customsRecord,jdbcType=CHAR},
+      INSPECTION_RECORD = #{record.inspectionRecord,jdbcType=CHAR},
+      RECOMMEND = #{record.recommend,jdbcType=CHAR},
+      pay_business_no = #{record.payBusinessNo,jdbcType=VARCHAR},
+      PAY_PRIVATE_KEY = #{record.payPrivateKey,jdbcType=VARCHAR},
+      CITY_ID = #{record.cityId,jdbcType=VARCHAR},
+      DISTRICT_ID = #{record.districtId,jdbcType=VARCHAR},
+      INTRODUCTION = #{record.introduction,jdbcType=LONGVARCHAR},
+      SHOP_DETAIL = #{record.shopDetail,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update t_shop_head
+    set ENTITY_ID = #{record.entityId,jdbcType=BIGINT},
+      SUPPLIER_HEAD_ID = #{record.supplierHeadId,jdbcType=DECIMAL},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CODE = #{record.code,jdbcType=VARCHAR},
+      HEAD_TYPE = #{record.headType,jdbcType=VARCHAR},
+      ADDRESS_HEAD_ID = #{record.addressHeadId,jdbcType=DECIMAL},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      AREA = #{record.area,jdbcType=VARCHAR},
+      INDEX_IMG = #{record.indexImg,jdbcType=VARCHAR},
+      BUSINESS_HOURS = #{record.businessHours,jdbcType=VARCHAR},
+      COLLECTION = #{record.collection,jdbcType=DECIMAL},
+      CONTACTS = #{record.contacts,jdbcType=VARCHAR},
+      CONTACTS_PHONE = #{record.contactsPhone,jdbcType=VARCHAR},
+      CONTACTS_FIX_PHONE = #{record.contactsFixPhone,jdbcType=VARCHAR},
+      CONTACTS_EMAIL = #{record.contactsEmail,jdbcType=VARCHAR},
+      FICO = #{record.fico,jdbcType=VARCHAR},
+      LOGO = #{record.logo,jdbcType=VARCHAR},
+      QRCODE = #{record.qrcode,jdbcType=VARCHAR},
+      CLEAR_TYPE = #{record.clearType,jdbcType=VARCHAR},
+      CLEAR_ACCOUNT = #{record.clearAccount,jdbcType=VARCHAR},
+      CLEAR_ID = #{record.clearId,jdbcType=VARCHAR},
+      CLEAR_NAME = #{record.clearName,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      VERSION_ID = #{record.versionId,jdbcType=INTEGER},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      SHOP_STATUS = #{record.shopStatus,jdbcType=VARCHAR},
+      SHOP_COMPANY_ID = #{record.shopCompanyId,jdbcType=DECIMAL},
+      WAREHOUSE_ADDRESS = #{record.warehouseAddress,jdbcType=VARCHAR},
+      PROFIT_RATIO = #{record.profitRatio,jdbcType=DECIMAL},
+      RATE = #{record.rate,jdbcType=DECIMAL},
+      SERVICE_CLASS = #{record.serviceClass,jdbcType=VARCHAR},
+      CONTACTS_QQ = #{record.contactsQq,jdbcType=VARCHAR},
+      CUSTOMS_RECORD = #{record.customsRecord,jdbcType=CHAR},
+      INSPECTION_RECORD = #{record.inspectionRecord,jdbcType=CHAR},
+      RECOMMEND = #{record.recommend,jdbcType=CHAR},
+      pay_business_no = #{record.payBusinessNo,jdbcType=VARCHAR},
+      PAY_PRIVATE_KEY = #{record.payPrivateKey,jdbcType=VARCHAR},
+      CITY_ID = #{record.cityId,jdbcType=VARCHAR},
+      DISTRICT_ID = #{record.districtId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

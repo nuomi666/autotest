@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.merchant.MerchantImgDAO">
+  <resultMap id="BaseResultMap" type="dal.model.merchant.MerchantImgDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="business_license_url" jdbcType="VARCHAR" property="businessLicenseUrl" />
+    <result column="organization_code_url" jdbcType="VARCHAR" property="organizationCodeUrl" />
+    <result column="tax_certificate_url" jdbcType="VARCHAR" property="taxCertificateUrl" />
+    <result column="bank_settlement_url" jdbcType="VARCHAR" property="bankSettlementUrl" />
+    <result column="legal_cerificate_front_url" jdbcType="VARCHAR" property="legalCerificateFrontUrl" />
+    <result column="legal_cerificate_back_url" jdbcType="VARCHAR" property="legalCerificateBackUrl" />
+    <result column="old_business_license_url" jdbcType="VARCHAR" property="oldBusinessLicenseUrl" />
+    <result column="old_organization_code_url" jdbcType="VARCHAR" property="oldOrganizationCodeUrl" />
+    <result column="old_tax_certificate_url" jdbcType="VARCHAR" property="oldTaxCertificateUrl" />
+    <result column="old_bank_settlement_url" jdbcType="VARCHAR" property="oldBankSettlementUrl" />
+    <result column="old_legal_cerificate_front_url" jdbcType="VARCHAR" property="oldLegalCerificateFrontUrl" />
+    <result column="old_legal_cerificate_back_url" jdbcType="VARCHAR" property="oldLegalCerificateBackUrl" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, partner_id, business_license_url, organization_code_url, tax_certificate_url, 
+    bank_settlement_url, legal_cerificate_front_url, legal_cerificate_back_url, old_business_license_url, 
+    old_organization_code_url, old_tax_certificate_url, old_bank_settlement_url, old_legal_cerificate_front_url, 
+    old_legal_cerificate_back_url, status, raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.merchant.MerchantImgDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from merchant_img
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.merchant.MerchantImgDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from merchant_img
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.merchant.MerchantImgDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from merchant_img
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_img
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessLicenseUrl != null">
+        business_license_url = #{record.businessLicenseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationCodeUrl != null">
+        organization_code_url = #{record.organizationCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxCertificateUrl != null">
+        tax_certificate_url = #{record.taxCertificateUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankSettlementUrl != null">
+        bank_settlement_url = #{record.bankSettlementUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalCerificateFrontUrl != null">
+        legal_cerificate_front_url = #{record.legalCerificateFrontUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalCerificateBackUrl != null">
+        legal_cerificate_back_url = #{record.legalCerificateBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldBusinessLicenseUrl != null">
+        old_business_license_url = #{record.oldBusinessLicenseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldOrganizationCodeUrl != null">
+        old_organization_code_url = #{record.oldOrganizationCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldTaxCertificateUrl != null">
+        old_tax_certificate_url = #{record.oldTaxCertificateUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldBankSettlementUrl != null">
+        old_bank_settlement_url = #{record.oldBankSettlementUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldLegalCerificateFrontUrl != null">
+        old_legal_cerificate_front_url = #{record.oldLegalCerificateFrontUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldLegalCerificateBackUrl != null">
+        old_legal_cerificate_back_url = #{record.oldLegalCerificateBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update merchant_img
+    set id = #{record.id,jdbcType=BIGINT},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      business_license_url = #{record.businessLicenseUrl,jdbcType=VARCHAR},
+      organization_code_url = #{record.organizationCodeUrl,jdbcType=VARCHAR},
+      tax_certificate_url = #{record.taxCertificateUrl,jdbcType=VARCHAR},
+      bank_settlement_url = #{record.bankSettlementUrl,jdbcType=VARCHAR},
+      legal_cerificate_front_url = #{record.legalCerificateFrontUrl,jdbcType=VARCHAR},
+      legal_cerificate_back_url = #{record.legalCerificateBackUrl,jdbcType=VARCHAR},
+      old_business_license_url = #{record.oldBusinessLicenseUrl,jdbcType=VARCHAR},
+      old_organization_code_url = #{record.oldOrganizationCodeUrl,jdbcType=VARCHAR},
+      old_tax_certificate_url = #{record.oldTaxCertificateUrl,jdbcType=VARCHAR},
+      old_bank_settlement_url = #{record.oldBankSettlementUrl,jdbcType=VARCHAR},
+      old_legal_cerificate_front_url = #{record.oldLegalCerificateFrontUrl,jdbcType=VARCHAR},
+      old_legal_cerificate_back_url = #{record.oldLegalCerificateBackUrl,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

@@ -1,0 +1,4 @@
+testId,userName,password,name,namexx,couponType,amountData,couponBizType,goodsCode,goodsCode1,expirationType,effectDay,valueTime,thresholdAmount,useTimeUnit,startHours,endHours,memo,memoxx
+1001,aichelian,123456,youhuiquan66,修改优惠券,DISCOUNT,9.5,GAS_COUPON,92,95,INTERVAL,0,10,10,DAILY,12:10,14:10,新增测试券,修改优惠券
+1002,aichelian,123456,youhuiquan66,修改优惠券,OVER,5,GAS_COUPON,92,95,SECTION,0,10,10,WEEKLY,00:00,23:59,新增测试券,修改优惠券
+1003,aichelian,123456,youhuiquan66,修改优惠券,OVER,1,GOODS_COUPON,default,,INTERVAL,0,10,10,MONTHLY,00:00,23:59,新增测试券,修改优惠券

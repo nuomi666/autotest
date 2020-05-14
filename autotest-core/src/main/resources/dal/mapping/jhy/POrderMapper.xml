@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.jhy.POrderDAO">
+  <resultMap id="BaseResultMap" type="dal.model.jhy.POrderDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ENTITY_ID" jdbcType="VARCHAR" property="entityId" />
+    <result column="ORDER_NO" jdbcType="VARCHAR" property="orderNo" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="AMOUNT" jdbcType="BIGINT" property="amount" />
+    <result column="PAY_AMOUNT" jdbcType="BIGINT" property="payAmount" />
+    <result column="PAY_TYPE" jdbcType="VARCHAR" property="payType" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ORDER_SOURCE" jdbcType="VARCHAR" property="orderSource" />
+    <result column="SUPPLIER_ID" jdbcType="VARCHAR" property="supplierId" />
+    <result column="SUPPLIER_NAME" jdbcType="VARCHAR" property="supplierName" />
+    <result column="FINISH_DATE" jdbcType="TIMESTAMP" property="finishDate" />
+    <result column="AUTH_CODE" jdbcType="VARCHAR" property="authCode" />
+    <result column="USE_TYPE" jdbcType="VARCHAR" property="useType" />
+    <result column="DEVICE_NUMBER" jdbcType="VARCHAR" property="deviceNumber" />
+    <result column="PAY_NO" jdbcType="VARCHAR" property="payNo" />
+    <result column="LEMENT_STATUS" jdbcType="CHAR" property="lementStatus" />
+    <result column="INNER_STATUS" jdbcType="VARCHAR" property="innerStatus" />
+    <result column="STATION_ID" jdbcType="VARCHAR" property="stationId" />
+    <result column="STATION_NO" jdbcType="VARCHAR" property="stationNo" />
+    <result column="STATION_NAME" jdbcType="VARCHAR" property="stationName" />
+    <result column="CUSTOMER_ID" jdbcType="VARCHAR" property="customerId" />
+    <result column="FEE_AMOUNT" jdbcType="BIGINT" property="feeAmount" />
+    <result column="FEE" jdbcType="BIGINT" property="fee" />
+    <result column="CAR_NUMBER" jdbcType="VARCHAR" property="carNumber" />
+    <result column="ORDER_DAY" jdbcType="BIGINT" property="orderDay" />
+    <result column="COUPON_AMOUNT" jdbcType="BIGINT" property="couponAmount" />
+    <result column="PUSH_MSG" jdbcType="VARCHAR" property="pushMsg" />
+    <result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="UPDATED_USER" jdbcType="VARCHAR" property="updatedUser" />
+    <result column="MARK_DELETE" jdbcType="CHAR" property="markDelete" />
+    <result column="VERSION_ID" jdbcType="BIGINT" property="versionId" />
+    <result column="native_openId" jdbcType="VARCHAR" property="nativeOpenid" />
+    <result column="grade_amount" jdbcType="BIGINT" property="gradeAmount" />
+    <result column="activity_amount" jdbcType="BIGINT" property="activityAmount" />
+    <result column="motorcade_amount" jdbcType="BIGINT" property="motorcadeAmount" />
+    <result column="out_order_no" jdbcType="VARCHAR" property="outOrderNo" />
+    <result column="order_type" jdbcType="VARCHAR" property="orderType" />
+    <result column="merchant_id" jdbcType="VARCHAR" property="merchantId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ENTITY_ID, ORDER_NO, USER_NAME, USER_ID, STATUS, AMOUNT, PAY_AMOUNT, PAY_TYPE, REMARK, 
+    ORDER_SOURCE, SUPPLIER_ID, SUPPLIER_NAME, FINISH_DATE, AUTH_CODE, USE_TYPE, DEVICE_NUMBER, 
+    PAY_NO, LEMENT_STATUS, INNER_STATUS, STATION_ID, STATION_NO, STATION_NAME, CUSTOMER_ID, 
+    FEE_AMOUNT, FEE, CAR_NUMBER, ORDER_DAY, COUPON_AMOUNT, PUSH_MSG, CREATED_DATE, MODIFIED_DATE, 
+    CREATED_USER, UPDATED_USER, MARK_DELETE, VERSION_ID, native_openId, grade_amount, 
+    activity_amount, motorcade_amount, out_order_no, order_type, merchant_id
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.jhy.POrderDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from p_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.jhy.POrderDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from p_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.jhy.POrderDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from p_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_order
+    <set>
+      <if test="record.entityId != null">
+        ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNo != null">
+        ORDER_NO = #{record.orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userName != null">
+        USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amount != null">
+        AMOUNT = #{record.amount,jdbcType=BIGINT},
+      </if>
+      <if test="record.payAmount != null">
+        PAY_AMOUNT = #{record.payAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.payType != null">
+        PAY_TYPE = #{record.payType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderSource != null">
+        ORDER_SOURCE = #{record.orderSource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierId != null">
+        SUPPLIER_ID = #{record.supplierId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supplierName != null">
+        SUPPLIER_NAME = #{record.supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finishDate != null">
+        FINISH_DATE = #{record.finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.authCode != null">
+        AUTH_CODE = #{record.authCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useType != null">
+        USE_TYPE = #{record.useType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceNumber != null">
+        DEVICE_NUMBER = #{record.deviceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payNo != null">
+        PAY_NO = #{record.payNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lementStatus != null">
+        LEMENT_STATUS = #{record.lementStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.innerStatus != null">
+        INNER_STATUS = #{record.innerStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationId != null">
+        STATION_ID = #{record.stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationNo != null">
+        STATION_NO = #{record.stationNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stationName != null">
+        STATION_NAME = #{record.stationName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerId != null">
+        CUSTOMER_ID = #{record.customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.feeAmount != null">
+        FEE_AMOUNT = #{record.feeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.fee != null">
+        FEE = #{record.fee,jdbcType=BIGINT},
+      </if>
+      <if test="record.carNumber != null">
+        CAR_NUMBER = #{record.carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderDay != null">
+        ORDER_DAY = #{record.orderDay,jdbcType=BIGINT},
+      </if>
+      <if test="record.couponAmount != null">
+        COUPON_AMOUNT = #{record.couponAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.pushMsg != null">
+        PUSH_MSG = #{record.pushMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createdUser != null">
+        CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatedUser != null">
+        UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.markDelete != null">
+        MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.versionId != null">
+        VERSION_ID = #{record.versionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.nativeOpenid != null">
+        native_openId = #{record.nativeOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradeAmount != null">
+        grade_amount = #{record.gradeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.activityAmount != null">
+        activity_amount = #{record.activityAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.motorcadeAmount != null">
+        motorcade_amount = #{record.motorcadeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.outOrderNo != null">
+        out_order_no = #{record.outOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderType != null">
+        order_type = #{record.orderType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantId != null">
+        merchant_id = #{record.merchantId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update p_order
+    set ENTITY_ID = #{record.entityId,jdbcType=VARCHAR},
+      ORDER_NO = #{record.orderNo,jdbcType=VARCHAR},
+      USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      AMOUNT = #{record.amount,jdbcType=BIGINT},
+      PAY_AMOUNT = #{record.payAmount,jdbcType=BIGINT},
+      PAY_TYPE = #{record.payType,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      ORDER_SOURCE = #{record.orderSource,jdbcType=VARCHAR},
+      SUPPLIER_ID = #{record.supplierId,jdbcType=VARCHAR},
+      SUPPLIER_NAME = #{record.supplierName,jdbcType=VARCHAR},
+      FINISH_DATE = #{record.finishDate,jdbcType=TIMESTAMP},
+      AUTH_CODE = #{record.authCode,jdbcType=VARCHAR},
+      USE_TYPE = #{record.useType,jdbcType=VARCHAR},
+      DEVICE_NUMBER = #{record.deviceNumber,jdbcType=VARCHAR},
+      PAY_NO = #{record.payNo,jdbcType=VARCHAR},
+      LEMENT_STATUS = #{record.lementStatus,jdbcType=CHAR},
+      INNER_STATUS = #{record.innerStatus,jdbcType=VARCHAR},
+      STATION_ID = #{record.stationId,jdbcType=VARCHAR},
+      STATION_NO = #{record.stationNo,jdbcType=VARCHAR},
+      STATION_NAME = #{record.stationName,jdbcType=VARCHAR},
+      CUSTOMER_ID = #{record.customerId,jdbcType=VARCHAR},
+      FEE_AMOUNT = #{record.feeAmount,jdbcType=BIGINT},
+      FEE = #{record.fee,jdbcType=BIGINT},
+      CAR_NUMBER = #{record.carNumber,jdbcType=VARCHAR},
+      ORDER_DAY = #{record.orderDay,jdbcType=BIGINT},
+      COUPON_AMOUNT = #{record.couponAmount,jdbcType=BIGINT},
+      PUSH_MSG = #{record.pushMsg,jdbcType=VARCHAR},
+      CREATED_DATE = #{record.createdDate,jdbcType=TIMESTAMP},
+      MODIFIED_DATE = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      CREATED_USER = #{record.createdUser,jdbcType=VARCHAR},
+      UPDATED_USER = #{record.updatedUser,jdbcType=VARCHAR},
+      MARK_DELETE = #{record.markDelete,jdbcType=CHAR},
+      VERSION_ID = #{record.versionId,jdbcType=BIGINT},
+      native_openId = #{record.nativeOpenid,jdbcType=VARCHAR},
+      grade_amount = #{record.gradeAmount,jdbcType=BIGINT},
+      activity_amount = #{record.activityAmount,jdbcType=BIGINT},
+      motorcade_amount = #{record.motorcadeAmount,jdbcType=BIGINT},
+      out_order_no = #{record.outOrderNo,jdbcType=VARCHAR},
+      order_type = #{record.orderType,jdbcType=VARCHAR},
+      merchant_id = #{record.merchantId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

@@ -1,0 +1,3 @@
+testId,status,code,order-->,gid,partnerId,platPartnerId,goodsId,goodsType,goodsName,goodsDescription,goodsImg,forSaleTime,invalidTime,exchangePoint,storeNum,oneExchangeTimes,gainStyle,gainStations,station
+1001,FAIL,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,COUPON,傻子券,一张优惠券,56.uuu,,,1000,10,1,AUTO,,001if9yazl84g025eh00
+1002,FAIL,~comn_00_0000,,,S0301808271500000065,S0301808271500000065,,COUPON,傻子券,一张优惠券,78.fff,,,999,10,1,AUTO,,001if9yazl84g025eh00

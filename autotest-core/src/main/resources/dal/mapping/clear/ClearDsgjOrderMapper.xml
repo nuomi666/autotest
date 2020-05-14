@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dal.dao.clear.ClearDsgjOrderDAO">
+  <resultMap id="BaseResultMap" type="dal.model.clear.ClearDsgjOrderDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_key" jdbcType="VARCHAR" property="orderKey" />
+    <result column="partner_id" jdbcType="VARCHAR" property="partnerId" />
+    <result column="plat_partner_id" jdbcType="VARCHAR" property="platPartnerId" />
+    <result column="trade_type" jdbcType="VARCHAR" property="tradeType" />
+    <result column="trade_resource" jdbcType="VARCHAR" property="tradeResource" />
+    <result column="channel_trade_no" jdbcType="VARCHAR" property="channelTradeNo" />
+    <result column="channel_refund_no" jdbcType="VARCHAR" property="channelRefundNo" />
+    <result column="order_amount" jdbcType="BIGINT" property="orderAmount" />
+    <result column="trade_amount" jdbcType="BIGINT" property="tradeAmount" />
+    <result column="merchant_order_no" jdbcType="VARCHAR" property="merchantOrderNo" />
+    <result column="merchant_sub_order_no" jdbcType="VARCHAR" property="merchantSubOrderNo" />
+    <result column="order_rank_type" jdbcType="VARCHAR" property="orderRankType" />
+    <result column="plat_merchant_order_no" jdbcType="VARCHAR" property="platMerchantOrderNo" />
+    <result column="merchant_trade_no" jdbcType="VARCHAR" property="merchantTradeNo" />
+    <result column="merchant_refund_no" jdbcType="VARCHAR" property="merchantRefundNo" />
+    <result column="merchant_fee_amount" jdbcType="DECIMAL" property="merchantFeeAmount" />
+    <result column="merchant_fee" jdbcType="DECIMAL" property="merchantFee" />
+    <result column="channel_fee_amount" jdbcType="DECIMAL" property="channelFeeAmount" />
+    <result column="channel_fee" jdbcType="DECIMAL" property="channelFee" />
+    <result column="trade_time" jdbcType="TIMESTAMP" property="tradeTime" />
+    <result column="clear_date" jdbcType="VARCHAR" property="clearDate" />
+    <result column="clear_file_name" jdbcType="VARCHAR" property="clearFileName" />
+    <result column="raw_add_time" jdbcType="TIMESTAMP" property="rawAddTime" />
+    <result column="raw_update_time" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_key, partner_id, plat_partner_id, trade_type, trade_resource, channel_trade_no, 
+    channel_refund_no, order_amount, trade_amount, merchant_order_no, merchant_sub_order_no, 
+    order_rank_type, plat_merchant_order_no, merchant_trade_no, merchant_refund_no, merchant_fee_amount, 
+    merchant_fee, channel_fee_amount, channel_fee, trade_time, clear_date, clear_file_name, 
+    raw_add_time, raw_update_time
+  </sql>
+  <select id="selectByExample" parameterType="dal.model.clear.ClearDsgjOrderDOExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from clear_dsgj_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="dal.model.clear.ClearDsgjOrderDOExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from clear_dsgj_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="dal.model.clear.ClearDsgjOrderDOExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from clear_dsgj_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update clear_dsgj_order
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderKey != null">
+        order_key = #{record.orderKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partnerId != null">
+        partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platPartnerId != null">
+        plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeType != null">
+        trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeResource != null">
+        trade_resource = #{record.tradeResource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelTradeNo != null">
+        channel_trade_no = #{record.channelTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.channelRefundNo != null">
+        channel_refund_no = #{record.channelRefundNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderAmount != null">
+        order_amount = #{record.orderAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.tradeAmount != null">
+        trade_amount = #{record.tradeAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.merchantOrderNo != null">
+        merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantSubOrderNo != null">
+        merchant_sub_order_no = #{record.merchantSubOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderRankType != null">
+        order_rank_type = #{record.orderRankType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platMerchantOrderNo != null">
+        plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantTradeNo != null">
+        merchant_trade_no = #{record.merchantTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantRefundNo != null">
+        merchant_refund_no = #{record.merchantRefundNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantFeeAmount != null">
+        merchant_fee_amount = #{record.merchantFeeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merchantFee != null">
+        merchant_fee = #{record.merchantFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelFeeAmount != null">
+        channel_fee_amount = #{record.channelFeeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelFee != null">
+        channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.tradeTime != null">
+        trade_time = #{record.tradeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.clearDate != null">
+        clear_date = #{record.clearDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clearFileName != null">
+        clear_file_name = #{record.clearFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rawAddTime != null">
+        raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rawUpdateTime != null">
+        raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update clear_dsgj_order
+    set id = #{record.id,jdbcType=BIGINT},
+      order_key = #{record.orderKey,jdbcType=VARCHAR},
+      partner_id = #{record.partnerId,jdbcType=VARCHAR},
+      plat_partner_id = #{record.platPartnerId,jdbcType=VARCHAR},
+      trade_type = #{record.tradeType,jdbcType=VARCHAR},
+      trade_resource = #{record.tradeResource,jdbcType=VARCHAR},
+      channel_trade_no = #{record.channelTradeNo,jdbcType=VARCHAR},
+      channel_refund_no = #{record.channelRefundNo,jdbcType=VARCHAR},
+      order_amount = #{record.orderAmount,jdbcType=BIGINT},
+      trade_amount = #{record.tradeAmount,jdbcType=BIGINT},
+      merchant_order_no = #{record.merchantOrderNo,jdbcType=VARCHAR},
+      merchant_sub_order_no = #{record.merchantSubOrderNo,jdbcType=VARCHAR},
+      order_rank_type = #{record.orderRankType,jdbcType=VARCHAR},
+      plat_merchant_order_no = #{record.platMerchantOrderNo,jdbcType=VARCHAR},
+      merchant_trade_no = #{record.merchantTradeNo,jdbcType=VARCHAR},
+      merchant_refund_no = #{record.merchantRefundNo,jdbcType=VARCHAR},
+      merchant_fee_amount = #{record.merchantFeeAmount,jdbcType=DECIMAL},
+      merchant_fee = #{record.merchantFee,jdbcType=DECIMAL},
+      channel_fee_amount = #{record.channelFeeAmount,jdbcType=DECIMAL},
+      channel_fee = #{record.channelFee,jdbcType=DECIMAL},
+      trade_time = #{record.tradeTime,jdbcType=TIMESTAMP},
+      clear_date = #{record.clearDate,jdbcType=VARCHAR},
+      clear_file_name = #{record.clearFileName,jdbcType=VARCHAR},
+      raw_add_time = #{record.rawAddTime,jdbcType=TIMESTAMP},
+      raw_update_time = #{record.rawUpdateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

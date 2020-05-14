@@ -1,0 +1,4 @@
+testId,bizResult-->,status,code,message,description,params,idempotent,info,order-->,gid,reqId,partnerId,merchantOrderNo,platPartnerId,platMerchantOrderNo,externalMetaData,memo,extensionContext,notifyCategory,notifyUrl,notifyGroup,notifyVersion,redirectUrl,payerUserId,payerUserTag,amount,link,couponIds
+1001,,FAIL,~S005_00_0007,,,,,,,GID,OID,~20180615001234567890,OID,~20180615001234567800,OID,,余额免密支付,,DUBBO,http://rx.autotest.fun/api/receive.json,autotest-pay,1.0.0,,~20180615001234567891,~20180615001234567891,101,,
+1002,,FAIL,~S005_00_0007,,,,,,,GID,OID,~20180615001234567890,OID,~20180615001234567800,OID,,余额免密支付,,DUBBO,http://rx.autotest.fun/api/receive.json,autotest-pay,1.0.0,,~20180615001234567890,balance,102,,
+1003,,FAIL,~S005_00_0008,,,,,,,GID,OID,~20180615001234567890,OID,~20180615001234567800,OID,,余额免密支付,,DUBBO,http://rx.autotest.fun/api/receive.json,autotest-pay,1.0.0,,~20180615001234567890,111111,102,,
